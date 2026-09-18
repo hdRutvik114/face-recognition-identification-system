@@ -1,6 +1,7 @@
 from app.vectorstore.vector_store import VectorStore
 from insightface.app import FaceAnalysis
 import cv2
+import os
 
 
 class EnrollmentService:
@@ -16,10 +17,12 @@ class EnrollmentService:
         enrolled_count = 0
     
         for image_path in image_paths:
-    
-            image = cv2.imread(image_path)
-    
-            faces = self.face_app.get(image)
+            if not os.path.exists(image_path):
+                raise FileNotFoundError(f"Image not found: {image_path}")
+            img = cv2.imread(image_path)
+            if img is None:
+                raise ValueError(f"cv2.imread failed to read: {image_path}")
+            faces = self.face_app.get(img)
     
             if not faces:
                 print(f"No face detected in {image_path}")
