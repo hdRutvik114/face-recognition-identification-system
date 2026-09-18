@@ -40,8 +40,19 @@ class VectorStore:
         points=[point]
     )
 
-        print(f"Embedding stored for {person_name}.")
-           
+        print(f"Embedding  {person_name}.")
+      
+      
+      
+      # here i creted the search method ......
+    def search(self, embedding, limit=3):
+        results = self.client.query_points(
+        collection_name=settings.QDRANT_COLLECTION_NAME,
+        query=embedding.tolist(),
+        limit=limit,
+    )
+
+        return results.points     
            
            
            
