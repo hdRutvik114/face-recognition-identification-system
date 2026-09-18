@@ -1,6 +1,6 @@
 from qdrant_client import QdrantClient
-from qdrant_client.models import Distance, VectorParams
-
+from qdrant_client.models import Distance, VectorParams , PointStruct
+import uuid
 from app.config.settings import settings
 
 
@@ -25,6 +25,22 @@ class VectorStore:
             print("Collection we created in qdrantt.")
         else:
             print("Collection is there alreadry .")
+    
+    def add_embedding(self, embedding, person_name):
+        point = PointStruct(
+        id=str(uuid.uuid4()),
+        vector=embedding.tolist(),
+        payload={
+            "person_name": person_name
+        }
+    )
+
+        self.client.upsert(
+        collection_name=settings.QDRANT_COLLECTION_NAME,
+        points=[point]
+    )
+
+        print(f"Embedding stored for {person_name}.")
            
            
            
