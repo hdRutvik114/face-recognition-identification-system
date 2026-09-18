@@ -54,7 +54,26 @@ class VectorStore:
 
         return results.points     
            
-           
+    def image_exists(self, image_id):
+
+        results = self.client.scroll(
+        collection_name=settings.QDRANT_COLLECTION_NAME,
+        scroll_filter={
+            "must": [
+                {
+                    "key": "image_id",
+                    "match": {
+                        "value": image_id
+                    }
+                }
+            ]
+        },
+        limit=1,
+    )
+
+        points, _ = results
+
+        return len(points) > 0
            
            
 #here
