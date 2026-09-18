@@ -17,8 +17,8 @@ def get_embedding(image_path):
     return faces[0].embedding
 
 
-embedding_a = get_embedding("test1.jpeg")
-embedding_b = get_embedding("test2.jpeg")
+embedding_a = get_embedding("image.jpeg")
+embedding_b = get_embedding("test3.jpeg")
 
 #here we normalize the vectors in multidimensional space
 embedding_a = embedding_a / np.linalg.norm(embedding_a)
