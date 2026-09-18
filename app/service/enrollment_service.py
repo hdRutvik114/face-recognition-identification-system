@@ -11,25 +11,33 @@ class EnrollmentService:
 
         self.vector_store = VectorStore()
 
-    def enroll(self, image_path, person_name):
+    def enroll(self, image_paths, person_name):
 
-        image = cv2.imread(image_path)
-
-        faces = self.face_app.get(image)
-
-        if not faces:
-            raise ValueError("No face detected.")
-
-        face = faces[0]
-
-        embedding = face.embedding
-
-        self.vector_store.add_embedding(
-            embedding=embedding,
-            person_name=person_name
-        )
-
+        enrolled_count = 0
+    
+        for image_path in image_paths:
+    
+            image = cv2.imread(image_path)
+    
+            faces = self.face_app.get(image)
+    
+            if not faces:
+                print(f"No face detected in {image_path}")
+                continue
+    
+            face = faces[0]
+    
+            embedding = face.embedding
+    
+            self.vector_store.add_embedding(
+                embedding=embedding,
+                person_name=person_name
+            )
+    
+            enrolled_count += 1
+    
         return {
             "person_name": person_name,
-            "message": "Face enrolled successfully."
+            "enrolled_count": enrolled_count,
+            "message": "Enrollment completed."
         }
