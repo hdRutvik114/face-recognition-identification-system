@@ -40,6 +40,14 @@ class EnrollmentService:
             embedding = face.embedding
     
             image_id = self.get_image_id(image_path)
+            if self.vector_store.image_exists(image_id):
+                print(f"Image {image_path} already exists  bro.")
+                return {
+                    "person_id": person_id,
+                    "person_name": person_name,
+                    "enrolled_count": enrolled_count,
+                    "message": f"same exact {image_path} already exists."
+                }   
     
             self.vector_store.add_embedding(
                 embedding=embedding,
