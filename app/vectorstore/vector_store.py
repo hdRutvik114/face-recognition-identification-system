@@ -78,14 +78,10 @@ class VectorStore:
 
         return len(points) > 0
     
-    def find_best_match(self, embedding):
-        results = self.search(embedding, limit=1)
+    def find_top_matches(self, embedding, limit=2):
+        results = self.search(embedding, limit=limit)
     
-        if not results:
-            return None
-        print(f"Best similarity score: {results[0].score:.4f}")
-    
-        return results[0]  
+        return results 
     
     
     #this is a method to count how many id based on the person iddd
