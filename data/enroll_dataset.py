@@ -41,6 +41,9 @@ DISPLAY_NAME_OVERRIDES = {
     "sharukh": "Shah Rukh Khan",
     "thor": "Thor",
     "tony": "Tony Stark",
+    "rutvik": "Rutvik",
+    "nitish_singh": "Nitish Singh",
+    "krish_naik": "Krish Naik",
 }
 
 
