@@ -47,20 +47,19 @@ class IdentificationService:
         embedding = faces[0].embedding
 
         # Search Qdrant
-        best_match = self.vector_store.find_best_match(embedding)
-
+        best_match = self.vector_store.find_best_person_match(embedding)
+        # Here now instead of best match we do best person match 
         # Database is empty
         if best_match is None:
             return {
-                "status": "unknown",
-                "message": "No enrolled faces found."
-            }
+            "status": "unknown",
+             "message": "No enrolled faces found."
+          }
 
-        score = best_match.score
-
-        print(f"Best similarity score: {score:.4f}")
-
-        # Below threshold -> unknown
+        score = best_match["score"]
+        
+        print(f"Best person similarity score: {score:.4f}")
+        
         if score < self.threshold:
             return {
                 "status": "unknown",
@@ -69,12 +68,11 @@ class IdentificationService:
                 "score": score,
                 "message": "Unknown person."
             }
-
-        # Above threshold -> identified
+        
         return {
             "status": "identified",
-            "person_id": best_match.payload["person_id"],
-            "person_name": best_match.payload["person_name"],
+            "person_id": best_match["person_id"],
+            "person_name": best_match["person_name"],
             "score": score,
             "message": "Person identified successfully."
         }
