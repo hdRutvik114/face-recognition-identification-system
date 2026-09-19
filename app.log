@@ -1,0 +1,32 @@
+
+
+=== RUN START: 2026-09-19 10:51:43 ===
+
+C:\Users\YATIRAJ\OneDrive\Desktop\CODE_NIMUBS\.venv\Lib\site-packages\insightface\utils\face_align.py:23: FutureWarning: `estimate` is deprecated since version 0.26 and will be removed in version 2.2. Please use `SimilarityTransform.from_estimate` class constructor instead.
+  tform.estimate(lmk, dst)
+Image images/yan_lecun4.jpeg already exists bro.
+Traceback (most recent call last):
+  File [35m"<frozen runpy>"[0m, line [35m198[0m, in [35m_run_module_as_main[0m
+  File [35m"<frozen runpy>"[0m, line [35m88[0m, in [35m_run_code[0m
+  File [35m"C:\Users\YATIRAJ\OneDrive\Desktop\CODE_NIMUBS\tests\test_enrollment.py"[0m, line [35m6[0m, in [35m<module>[0m
+    result = service.enroll(
+        image_paths=[
+    ...<2 lines>...
+        person_name="Yan LeCun"
+    )
+  File [35m"C:\Users\YATIRAJ\OneDrive\Desktop\CODE_NIMUBS\app\service\enrollment_service.py"[0m, line [35m86[0m, in [35menroll[0m
+    "person_id": [1;31mperson_id[0m,
+                 [1;31m^^^^^^^^^[0m
+[1;35mUnboundLocalError[0m: [35mcannot access local variable 'person_id' where it is not associated with a value[0m
+
+
+=== RUN START: 2026-09-19 10:52:35 ===
+
+hello from log test
+second line for run check
+
+
+=== RUN START: 2026-09-19 11:06:40 ===
+
+[2026-09-19 11:06:40] simple log test
+[2026-09-19 11:06:40] second log line

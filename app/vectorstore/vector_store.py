@@ -3,6 +3,7 @@ from qdrant_client.models import Distance, VectorParams , PointStruct
 import uuid
 from app.config.settings import settings
 
+ENROLLMENT_THRESHOLD = 0.70
 
 class VectorStore:
 
@@ -76,7 +77,37 @@ class VectorStore:
         points, _ = results
 
         return len(points) > 0
-           
+    
+    def find_best_match(self, embedding):
+        results = self.search(embedding, limit=1)
+    
+        if not results:
+            return None
+        print(f"Best similarity score: {results[0].score:.4f}")
+    
+        return results[0]  
+    
+    
+    #this is a method to count how many id based on the person iddd
+    def count_person_images(self, person_id):
+        results = self.client.scroll(
+        collection_name=settings.QDRANT_COLLECTION_NAME,
+        scroll_filter={
+            "must": [
+                {
+                    "key": "person_id",
+                    "match": {
+                        "value": person_id
+                    }
+                }
+            ]
+        },
+        limit=100,
+    )
+
+        points, _ = results
+
+        return len(points)
            
 #here
 if __name__ == "__main__":
