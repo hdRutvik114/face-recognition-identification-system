@@ -61,3 +61,7 @@ Both top matches belonged to the person showing that multiple enrolled images ca
 This suggests that ambiguity checks should consider person_id than comparing only individual embedding results.
 
 This is important where Multiple embeddings can belong to the person. Therefore top-2 embeddings are not necessarily two competing identities. We need to look at their person_id before deciding whether the result is ambiguous.
+
+
+
+The thereshold till now 70 is good ...i have to check with more of them 
