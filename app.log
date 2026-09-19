@@ -30,3 +30,167 @@ second line for run check
 
 [2026-09-19 11:06:40] simple log test
 [2026-09-19 11:06:40] second log line
+
+
+=================================================================
+=== DATASET ENROLLMENT RUN: 2026-09-19 17:23:57 ===
+=================================================================
+
+[2026-09-19 17:23:57] Using dataset directory: 'images'
+[2026-09-19 17:24:07] Found 17 person identity group(s) to process.
+[2026-09-19 17:24:08] Image images\ananyapandey.jpg already exists. Skipping.
+[2026-09-19 17:24:08] Enrollment result for Ananya Pandey: {'person_id': None, 'person_name': 'Ananya Pandey', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-19 17:24:09] Image images\andrew_karpathy.jpg already exists. Skipping.
+[2026-09-19 17:24:09] Enrollment result for Andrew Karpathy: {'person_id': None, 'person_name': 'Andrew Karpathy', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-19 17:24:09] No face detected in images\Building.jpeg
+[2026-09-19 17:24:09] Enrollment result for Building: {'person_id': None, 'person_name': 'Building', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-19 17:24:11] Image images\dario1.jpeg already exists. Skipping.
+[2026-09-19 17:24:12] Image images\dario2.jpeg already exists. Skipping.
+[2026-09-19 17:24:13] Image images\dario3.jpeg already exists. Skipping.
+[2026-09-19 17:24:13] Enrollment result for Dario Amodei: {'person_id': None, 'person_name': 'Dario Amodei', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-19 17:24:14] Image images\darshan1.jpeg already exists. Skipping.
+[2026-09-19 17:24:15] Image images\darshan2.jpeg already exists. Skipping.
+[2026-09-19 17:24:15] Enrollment result for Darshan: {'person_id': None, 'person_name': 'Darshan', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-19 17:24:16] Image images\dhoni1.jpeg already exists. Skipping.
+[2026-09-19 17:24:17] Image images\dhoni2.jpeg already exists. Skipping.
+[2026-09-19 17:24:17] Image images\dhoni3.jpeg already exists. Skipping.
+[2026-09-19 17:24:17] Enrollment result for MS Dhoni: {'person_id': None, 'person_name': 'MS Dhoni', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-19 17:24:18] Image images\elon1.jpeg already exists. Skipping.
+[2026-09-19 17:24:19] Image images\elon2.jpeg already exists. Skipping.
+[2026-09-19 17:24:20] No face detected in images\elon3.jpeg
+[2026-09-19 17:24:20] Enrollment result for Elon Musk: {'person_id': None, 'person_name': 'Elon Musk', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-19 17:24:21] Image images\ilyasutskiver.jpg already exists. Skipping.
+[2026-09-19 17:24:22] Image images\ilyasutskiver2.jpg already exists. Skipping.
+[2026-09-19 17:24:23] Multiple faces detected in images\ilyasutskiver3.jpg
+[2026-09-19 17:24:23] Enrollment result for Ilya Sutskever: {'person_id': None, 'person_name': 'Ilya Sutskever', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-19 17:24:24] Image images\image.jpeg already exists. Skipping.
+[2026-09-19 17:24:24] Enrollment result for Image: {'person_id': None, 'person_name': 'Image', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-19 17:24:25] Image images\micheal1.jpeg already exists. Skipping.
+[2026-09-19 17:24:25] Image images\micheal2.jpeg already exists. Skipping.
+[2026-09-19 17:24:26] Image images\micheal3.jpeg already exists. Skipping.
+[2026-09-19 17:24:26] Enrollment result for Michael: {'person_id': None, 'person_name': 'Michael', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-19 17:24:28] Multiple faces detected in images\mulitple_ppl.png
+[2026-09-19 17:24:28] Enrollment result for Mulitple Ppl: {'person_id': None, 'person_name': 'Mulitple Ppl', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-19 17:24:29] Image images\rohit1.jpeg already exists. Skipping.
+[2026-09-19 17:24:30] Image images\rohit2.jpeg already exists. Skipping.
+[2026-09-19 17:24:31] Image images\rohit3.jpeg already exists. Skipping.
+[2026-09-19 17:24:31] Enrollment result for Rohit Sharma: {'person_id': None, 'person_name': 'Rohit Sharma', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-19 17:24:32] Image images\sam1.jpeg already exists. Skipping.
+[2026-09-19 17:24:33] Image images\sam2.jpeg already exists. Skipping.
+[2026-09-19 17:24:33] Image images\sam3.jpeg already exists. Skipping.
+[2026-09-19 17:24:33] Enrollment result for Sam Altman: {'person_id': None, 'person_name': 'Sam Altman', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-19 17:24:34] Image images\sundar1.jpeg already exists. Skipping.
+[2026-09-19 17:24:35] Image images\sundar2.jpeg already exists. Skipping.
+[2026-09-19 17:24:36] Image images\sundar3.jpeg already exists. Skipping.
+[2026-09-19 17:24:36] Enrollment result for Sundar Pichai: {'person_id': None, 'person_name': 'Sundar Pichai', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-19 17:24:37] Image images\test1.jpeg already exists. Skipping.
+[2026-09-19 17:24:38] Image images\test2.jpeg already exists. Skipping.
+[2026-09-19 17:24:39] Image images\test3.jpeg already exists. Skipping.
+[2026-09-19 17:24:39] Enrollment result for Test: {'person_id': None, 'person_name': 'Test', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-19 17:24:39] Image images\virat1.jpeg already exists. Skipping.
+[2026-09-19 17:24:40] Image images\virat2.jpeg already exists. Skipping.
+[2026-09-19 17:24:41] Image images\virat3.jpeg already exists. Skipping.
+[2026-09-19 17:24:41] Enrollment result for Virat Kohli: {'person_id': None, 'person_name': 'Virat Kohli', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-19 17:24:42] Image images\yan_lecun.jpeg already exists. Skipping.
+[2026-09-19 17:24:43] Image images\yan_lecun2.jpeg already exists. Skipping.
+[2026-09-19 17:24:44] Image images\yan_lecun4.jpeg already exists. Skipping.
+[2026-09-19 17:24:45] Yann LeCun already has 3 images. Skipping.
+[2026-09-19 17:24:47] Yann LeCun already has 3 images. Skipping.
+[2026-09-19 17:24:49] Yann LeCun already has 3 images. Skipping.
+[2026-09-19 17:24:49] Enrollment result for Yann LeCun: {'person_id': None, 'person_name': 'Yann LeCun', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-19 17:24:49] Batch enrollment completed. Total newly enrolled images: 0.
+
+-----------------------------------------------------------------
+=== RUN END: 2026-09-19 17:24:49 ===
+=================================================================
+
+
+
+=================================================================
+=== EVALUATION RUN: 2026-09-19 17:37:49 ===
+=================================================================
+
+[2026-09-19 17:37:49] Note: 'data/evaluation' is empty. Evaluating images in 'images'...
+[2026-09-19 17:37:54] Starting evaluation of 40 test image(s)...
+[2026-09-19 17:38:02] ananyapandey.jpg          | Ananya Pandey      | Ananya Pandey      | 1.0000  | CORRECT
+[2026-09-19 17:38:04] andrew_karpathy.jpg       | Andrew Karpathy    | Andrew Karpathy    | 1.0000  | CORRECT
+[2026-09-19 17:38:06] dario1.jpeg               | Dario Amodei       | Dario Amodei       | 1.0000  | CORRECT
+[2026-09-19 17:38:07] dario2.jpeg               | Dario Amodei       | Dario Amodei       | 1.0000  | CORRECT
+[2026-09-19 17:38:08] dario3.jpeg               | Dario Amodei       | Dario Amodei       | 1.0000  | CORRECT
+[2026-09-19 17:38:09] darshan1.jpeg             | Darshan            | Darshan            | 1.0000  | CORRECT
+[2026-09-19 17:38:11] darshan2.jpeg             | Darshan            | Darshan            | 1.0000  | CORRECT
+[2026-09-19 17:38:12] dhoni1.jpeg               | MS Dhoni           | MS Dhoni           | 1.0000  | CORRECT
+[2026-09-19 17:38:13] dhoni2.jpeg               | MS Dhoni           | MS Dhoni           | 1.0000  | CORRECT
+[2026-09-19 17:38:15] dhoni3.jpeg               | MS Dhoni           | MS Dhoni           | 1.0000  | CORRECT
+[2026-09-19 17:38:16] elon1.jpeg                | Elon Musk          | Elon Musk          | 1.0000  | CORRECT
+[2026-09-19 17:38:17] elon2.jpeg                | Elon Musk          | Elon Musk          | 1.0000  | CORRECT
+[2026-09-19 17:38:18] elon3.jpeg                | Elon Musk          | error              | N/A     | ERROR (No face detected.)
+[2026-09-19 17:38:19] ilyasutskiver.jpg         | Ilya Sutskever     | Ilya Sutskever     | 1.0000  | CORRECT
+[2026-09-19 17:38:21] ilyasutskiver2.jpg        | Ilya Sutskever     | Ilya Sutskever     | 1.0000  | CORRECT
+[2026-09-19 17:38:22] ilyasutskiver3.jpg        | Ilya Sutskever     | error              | N/A     | ERROR (Multiple faces detected.)
+[2026-09-19 17:38:24] micheal1.jpeg             | Michael            | Michael            | 1.0000  | CORRECT
+[2026-09-19 17:38:25] micheal2.jpeg             | Michael            | Michael            | 1.0000  | CORRECT
+[2026-09-19 17:38:26] micheal3.jpeg             | Michael            | Michael            | 1.0000  | CORRECT
+[2026-09-19 17:38:27] rohit1.jpeg               | Rohit Sharma       | Rohit Sharma       | 1.0000  | CORRECT
+[2026-09-19 17:38:28] rohit2.jpeg               | Rohit Sharma       | Rohit Sharma       | 1.0000  | CORRECT
+[2026-09-19 17:38:29] rohit3.jpeg               | Rohit Sharma       | Rohit Sharma       | 1.0000  | CORRECT
+[2026-09-19 17:38:30] sam1.jpeg                 | Sam Altman         | Sam Altman         | 1.0000  | CORRECT
+[2026-09-19 17:38:31] sam2.jpeg                 | Sam Altman         | Sam Altman         | 1.0000  | CORRECT
+[2026-09-19 17:38:32] sam3.jpeg                 | Sam Altman         | Sam Altman         | 1.0000  | CORRECT
+[2026-09-19 17:38:34] sundar1.jpeg              | Sundar Pichai      | Sundar Pichai      | 1.0000  | CORRECT
+[2026-09-19 17:38:34] sundar2.jpeg              | Sundar Pichai      | Sundar Pichai      | 1.0000  | CORRECT
+[2026-09-19 17:38:36] sundar3.jpeg              | Sundar Pichai      | Sundar Pichai      | 1.0000  | CORRECT
+[2026-09-19 17:38:37] test1.jpeg                | Test               | Test               | 1.0000  | CORRECT
+[2026-09-19 17:38:38] test2.jpeg                | Test               | Test               | 1.0000  | CORRECT
+[2026-09-19 17:38:39] test3.jpeg                | Test               | Test               | 1.0000  | CORRECT
+[2026-09-19 17:38:41] virat1.jpeg               | Virat Kohli        | Virat Kohli        | 1.0000  | CORRECT
+[2026-09-19 17:38:42] virat2.jpeg               | Virat Kohli        | Virat Kohli        | 1.0000  | CORRECT
+[2026-09-19 17:38:43] virat3.jpeg               | Virat Kohli        | Virat Kohli        | 1.0000  | CORRECT
+[2026-09-19 17:38:44] yan_lecun.jpeg            | Yann LeCun         | Yann LeCun         | 1.0000  | CORRECT
+[2026-09-19 17:38:46] yan_lecun2.jpeg           | Yann LeCun         | Yann LeCun         | 1.0000  | CORRECT
+[2026-09-19 17:38:47] yan_lecun4.jpeg           | Yann LeCun         | Yann LeCun         | 1.0000  | CORRECT
+[2026-09-19 17:38:48] yan_lecun5.jpeg           | Yann LeCun         | Yann LeCun         | 0.7572  | CORRECT
+[2026-09-19 17:38:49] yan_lecun6.jpeg           | Yann LeCun         | Yann LeCun         | 0.7490  | CORRECT
+[2026-09-19 17:38:50] yan_lecun7.jpeg           | Yann LeCun         | Yann LeCun         | 0.7485  | CORRECT
+[2026-09-19 17:38:50] EVALUATION COMPLETE: Total=40, Correct=38, Unknown=2, Mismatch=0, Accuracy=95.00%
+
+-----------------------------------------------------------------
+=== RUN END: 2026-09-19 17:38:50 ===
+=================================================================
+
+
+
+=================================================================
+=== EVALUATION RUN: 2026-09-19 17:48:40 ===
+=================================================================
+
+[2026-09-19 17:48:40] Using evaluation directory: 'data\evaluation'
+[2026-09-19 17:48:50] Starting evaluation of 4 test image(s)...
+[2026-09-19 17:48:53] dario4.jpeg               | Dario Amodei       | Dario Amodei       | 0.7048  | CORRECT
+[2026-09-19 17:48:54] darshan3.jpeg             | Darshan            | unknown            | 0.6553  | UNKNOWN
+[2026-09-19 17:48:55] micheal4.jpeg             | Michael            | Michael            | 0.7170  | CORRECT
+[2026-09-19 17:48:56] sam4.jpeg                 | Sam Altman         | Sam Altman         | 0.8072  | CORRECT
+[2026-09-19 17:48:56] EVALUATION COMPLETE: Total=4, Correct=3, Unknown=1, Mismatch=0, Accuracy=75.00%
+
+-----------------------------------------------------------------
+=== RUN END: 2026-09-19 17:48:56 ===
+=================================================================
+
+
+
+=================================================================
+=== EVALUATION RUN: 2026-09-19 17:50:15 ===
+=================================================================
+
+[2026-09-19 17:50:15] Using evaluation directory: 'data\evaluation'
+[2026-09-19 17:50:23] Starting evaluation of 4 test image(s)...
+[2026-09-19 17:50:27] dario4.jpeg               | Dario Amodei       | Dario Amodei       | 0.7048  | CORRECT
+[2026-09-19 17:50:28] darshan3.jpeg             | Darshan            | unknown            | 0.6553  | UNKNOWN
+[2026-09-19 17:50:28] micheal4.jpeg             | Michael            | Michael            | 0.7170  | CORRECT
+[2026-09-19 17:50:29] sam4.jpeg                 | Sam Altman         | Sam Altman         | 0.8072  | CORRECT
+[2026-09-19 17:50:29] EVALUATION COMPLETE: Total=4, Correct=3, Unknown=1, Mismatch=0, Accuracy=75.00%
+
+-----------------------------------------------------------------
+=== RUN END: 2026-09-19 17:50:29 ===
+=================================================================
+
