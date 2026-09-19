@@ -5,9 +5,11 @@ service = EnrollmentService()
 
 result = service.enroll(
     image_paths=[
-        "images/yan_lecun6.jpeg",
+        "images/sundar1.jpeg",
+        "images/sundar2.jpeg",
+        "images/sundar3.jpeg"
     ],
-    person_name="Yan LeCun"
+    person_name="Sundar Pichai"
 )
 
 print(result)
