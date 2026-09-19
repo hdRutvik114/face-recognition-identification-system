@@ -26,12 +26,14 @@ class VectorStore:
         else:
             print("Collection is there alreadry .")
     
-    def add_embedding(self, embedding, person_name):
+    def add_embedding(self, embedding, person_name,person_id,image_id):
         point = PointStruct(
         id=str(uuid.uuid4()),
         vector=embedding.tolist(),
         payload={
-            "person_name": person_name
+            "person_name": person_name,
+            "person_id": person_id,
+            "image_id": image_id
         }
     )
 
