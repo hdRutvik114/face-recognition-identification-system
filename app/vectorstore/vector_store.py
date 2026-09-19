@@ -8,7 +8,11 @@ ENROLLMENT_THRESHOLD = 0.70
 class VectorStore:
 
     def __init__(self):
-        self.client = QdrantClient(url=settings.QDRANT_URL, api_key=settings.QDRANT_API_KEY,)
+        self.client = QdrantClient(
+            url=settings.QDRANT_URL,
+            api_key=settings.QDRANT_API_KEY,
+            timeout=60,
+        )
 
     
     def create_collection(self):
@@ -104,7 +108,52 @@ class VectorStore:
         points, _ = results
 
         return len(points)
-           
+    
+    def find_person_matches(self, embedding, limit=6):
+        results = self.search(embedding, limit=limit)
+    
+        person_matches = {}
+    
+        for result in results:
+            person_id = result.payload["person_id"]
+    
+            if person_id not in person_matches:
+                person_matches[person_id] = {
+                    "person_name": result.payload["person_name"],
+                    "scores": []
+                }
+    
+            person_matches[person_id]["scores"].append(result.score)
+    
+        return person_matches
+    
+    
+    
+    # Here we are finding the best match based on the person id and the score of the person id ...using max of same person id 
+    def find_best_person_match(self, embedding, limit=6):
+        person_matches = self.find_person_matches(
+            embedding,
+            limit=limit
+        )
+    
+        if not person_matches:
+            return None
+    
+        best_person = None
+        best_score = float("-inf")
+    
+        for person_id, data in person_matches.items():
+            person_score = max(data["scores"])
+    
+            if person_score > best_score:
+                best_score = person_score
+                best_person = {
+                    "person_id": person_id,
+                    "person_name": data["person_name"],
+                    "score": person_score
+                }
+    
+        return best_person
 #here
 if __name__ == "__main__":
     store = VectorStore()

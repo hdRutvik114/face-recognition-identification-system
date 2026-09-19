@@ -194,3 +194,272 @@ second line for run check
 === RUN END: 2026-09-19 17:50:29 ===
 =================================================================
 
+
+
+=================================================================
+=== DATASET ENROLLMENT RUN: 2026-09-19 20:52:32 ===
+=================================================================
+
+[2026-09-19 20:52:32] Using dataset directory: 'images'
+[2026-09-19 20:52:45] Found 34 person identity group(s) to process.
+[2026-09-19 20:52:47] Enrolled image 'images\alakh1.jpeg' for Alakh Pandey (ID: 7f306f6a-fcb6-46c0-9316-137da5d39482)
+[2026-09-19 20:52:49] Enrolled image 'images\alakh2.jpeg' for Alakh Pandey (ID: 7f306f6a-fcb6-46c0-9316-137da5d39482)
+[2026-09-19 20:52:51] Enrolled image 'images\alakh3.jpeg' for Alakh Pandey (ID: 7f306f6a-fcb6-46c0-9316-137da5d39482)
+[2026-09-19 20:52:53] Alakh Pandey already has 3 images. Skipping.
+[2026-09-19 20:52:53] Enrollment result for Alakh Pandey: {'person_id': '7f306f6a-fcb6-46c0-9316-137da5d39482', 'person_name': 'Alakh Pandey', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-19 20:52:55] Enrolled image 'images\amit1.jpeg' for Amit (ID: 0b330c15-967f-4509-ba95-077d178e7bbc)
+[2026-09-19 20:52:58] Enrolled image 'images\amit2.jpeg' for Amit (ID: 0b330c15-967f-4509-ba95-077d178e7bbc)
+[2026-09-19 20:53:01] Enrolled image 'images\amit3.jpeg' for Amit (ID: 0b330c15-967f-4509-ba95-077d178e7bbc)
+[2026-09-19 20:53:03] Amit already has 3 images. Skipping.
+[2026-09-19 20:53:03] Enrollment result for Amit: {'person_id': '0b330c15-967f-4509-ba95-077d178e7bbc', 'person_name': 'Amit', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-19 20:53:04] Image images\ananyapandey.jpg already exists. Skipping.
+[2026-09-19 20:53:04] Enrollment result for Ananya Pandey: {'person_id': None, 'person_name': 'Ananya Pandey', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-19 20:53:05] Image images\andrew_karpathy.jpg already exists. Skipping.
+[2026-09-19 20:53:05] Enrollment result for Andrew Karpathy: {'person_id': None, 'person_name': 'Andrew Karpathy', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-19 20:53:07] Enrolled image 'images\arvind1.jpeg' for Arvind Srinivas (ID: cafb0909-742c-4593-a2ae-27c6ca872513)
+[2026-09-19 20:53:09] Enrolled image 'images\arvind2.jpeg' for Arvind Srinivas (ID: cafb0909-742c-4593-a2ae-27c6ca872513)
+[2026-09-19 20:53:10] Enrolled image 'images\arvind3.jpeg' for Arvind Srinivas (ID: cafb0909-742c-4593-a2ae-27c6ca872513)
+[2026-09-19 20:53:12] Arvind Srinivas already has 3 images. Skipping.
+[2026-09-19 20:53:12] Enrollment result for Arvind Srinivas: {'person_id': 'cafb0909-742c-4593-a2ae-27c6ca872513', 'person_name': 'Arvind Srinivas', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-19 20:53:12] No face detected in images\Building.jpeg
+[2026-09-19 20:53:12] Enrollment result for Building: {'person_id': None, 'person_name': 'Building', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-19 20:53:14] Enrolled image 'images\cristino1.jpeg' for Cristiano Ronaldo (ID: e2e3d3d7-f527-4cbf-a6d9-bff4e0758ef4)
+[2026-09-19 20:53:15] Enrolled image 'images\cristino2.jpeg' for Cristiano Ronaldo (ID: e2e3d3d7-f527-4cbf-a6d9-bff4e0758ef4)
+[2026-09-19 20:53:17] Enrolled image 'images\cristino3.jpeg' for Cristiano Ronaldo (ID: e2e3d3d7-f527-4cbf-a6d9-bff4e0758ef4)
+[2026-09-19 20:53:19] Enrolled image 'images\cristino4.jpeg' for Cristiano Ronaldo (ID: e2e3d3d7-f527-4cbf-a6d9-bff4e0758ef4)
+[2026-09-19 20:53:19] Enrollment result for Cristiano Ronaldo: {'person_id': 'e2e3d3d7-f527-4cbf-a6d9-bff4e0758ef4', 'person_name': 'Cristiano Ronaldo', 'enrolled_count': 4, 'message': 'Enrollment completed.'}
+[2026-09-19 20:53:20] Image images\dario1.jpeg already exists. Skipping.
+[2026-09-19 20:53:21] Image images\dario2.jpeg already exists. Skipping.
+[2026-09-19 20:53:22] Image images\dario3.jpeg already exists. Skipping.
+[2026-09-19 20:53:22] Enrollment result for Dario Amodei: {'person_id': None, 'person_name': 'Dario Amodei', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-19 20:53:23] Image images\darshan1.jpeg already exists. Skipping.
+[2026-09-19 20:53:24] Image images\darshan2.jpeg already exists. Skipping.
+[2026-09-19 20:53:26] Enrolled image 'images\darshan3.jpeg' for Darshan (ID: 02c58f89-4ab8-4623-95f8-f23c089e13c9)
+[2026-09-19 20:53:26] Enrollment result for Darshan: {'person_id': '02c58f89-4ab8-4623-95f8-f23c089e13c9', 'person_name': 'Darshan', 'enrolled_count': 1, 'message': 'Enrollment completed.'}
+[2026-09-19 20:53:26] Image images\dhoni1.jpeg already exists. Skipping.
+[2026-09-19 20:53:27] Image images\dhoni2.jpeg already exists. Skipping.
+[2026-09-19 20:53:28] Image images\dhoni3.jpeg already exists. Skipping.
+[2026-09-19 20:53:28] Enrollment result for MS Dhoni: {'person_id': None, 'person_name': 'MS Dhoni', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-19 20:53:30] Enrolled image 'images\donald1.jpeg' for Donald Trump (ID: 8732e824-3a34-4233-8a1d-2fcda87b9bc7)
+[2026-09-19 20:53:32] Enrolled image 'images\donald2.jpeg' for Donald Trump (ID: 8732e824-3a34-4233-8a1d-2fcda87b9bc7)
+[2026-09-19 20:53:34] Enrolled image 'images\donald3.jpeg' for Donald Trump (ID: 8732e824-3a34-4233-8a1d-2fcda87b9bc7)
+[2026-09-19 20:53:36] Enrolled image 'images\donald4.jpeg' for Donald Trump (ID: 8732e824-3a34-4233-8a1d-2fcda87b9bc7)
+[2026-09-19 20:53:36] Enrollment result for Donald Trump: {'person_id': '8732e824-3a34-4233-8a1d-2fcda87b9bc7', 'person_name': 'Donald Trump', 'enrolled_count': 4, 'message': 'Enrollment completed.'}
+[2026-09-19 20:53:36] Image images\elon1.jpeg already exists. Skipping.
+[2026-09-19 20:53:37] Image images\elon2.jpeg already exists. Skipping.
+[2026-09-19 20:53:37] No face detected in images\elon3.jpeg
+[2026-09-19 20:53:37] Enrollment result for Elon Musk: {'person_id': None, 'person_name': 'Elon Musk', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-19 20:53:40] Enrolled image 'images\gandhi1.jpeg' for Mahatma Gandhi (ID: 366d4f8c-42c2-4eb7-92d7-fedf30eade21)
+[2026-09-19 20:53:41] Enrolled image 'images\gandhi2.jpeg' for Mahatma Gandhi (ID: 366d4f8c-42c2-4eb7-92d7-fedf30eade21)
+[2026-09-19 20:53:44] Enrolled image 'images\gandhi3.jpeg' for Mahatma Gandhi (ID: 366d4f8c-42c2-4eb7-92d7-fedf30eade21)
+[2026-09-19 20:53:44] Enrollment result for Mahatma Gandhi: {'person_id': '366d4f8c-42c2-4eb7-92d7-fedf30eade21', 'person_name': 'Mahatma Gandhi', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-19 20:53:44] Image images\ilyasutskiver.jpg already exists. Skipping.
+[2026-09-19 20:53:45] Image images\ilyasutskiver2.jpg already exists. Skipping.
+[2026-09-19 20:53:46] Multiple faces detected in images\ilyasutskiver3.jpg
+[2026-09-19 20:53:46] Enrollment result for Ilya Sutskever: {'person_id': None, 'person_name': 'Ilya Sutskever', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-19 20:53:47] Image images\image.jpeg already exists. Skipping.
+[2026-09-19 20:53:47] Enrollment result for Image: {'person_id': None, 'person_name': 'Image', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-19 20:53:49] Enrolled image 'images\jeffbezos.jpeg' for Jeff Bezos (ID: 50cee47b-8a9a-494f-bb3c-6dbe0623f295)
+[2026-09-19 20:53:51] Enrolled image 'images\jeffbezos2.jpeg' for Jeff Bezos (ID: 50cee47b-8a9a-494f-bb3c-6dbe0623f295)
+[2026-09-19 20:53:53] Enrolled image 'images\jeffbezos3.jpeg' for Jeff Bezos (ID: 50cee47b-8a9a-494f-bb3c-6dbe0623f295)
+[2026-09-19 20:53:55] Jeff Bezos already has 3 images. Skipping.
+[2026-09-19 20:53:55] Enrollment result for Jeff Bezos: {'person_id': '50cee47b-8a9a-494f-bb3c-6dbe0623f295', 'person_name': 'Jeff Bezos', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-19 20:53:56] Image images\micheal1.jpeg already exists. Skipping.
+[2026-09-19 20:53:57] Image images\micheal2.jpeg already exists. Skipping.
+[2026-09-19 20:53:58] Image images\micheal3.jpeg already exists. Skipping.
+[2026-09-19 20:54:00] Michael already has 3 images. Skipping.
+[2026-09-19 20:54:00] Enrollment result for Michael: {'person_id': None, 'person_name': 'Michael', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-19 20:54:02] Enrolled image 'images\modi1.jpeg' for Narendra Modi (ID: f3f5efb1-6230-4788-b3a6-ee5c0bf17141)
+[2026-09-19 20:54:05] Enrolled image 'images\modi2.jpeg' for Narendra Modi (ID: f3f5efb1-6230-4788-b3a6-ee5c0bf17141)
+[2026-09-19 20:54:05] Multiple faces detected in images\modi3.jpeg
+[2026-09-19 20:54:08] Enrolled image 'images\modi4.jpeg' for Narendra Modi (ID: f3f5efb1-6230-4788-b3a6-ee5c0bf17141)
+[2026-09-19 20:54:08] Enrollment result for Narendra Modi: {'person_id': 'f3f5efb1-6230-4788-b3a6-ee5c0bf17141', 'person_name': 'Narendra Modi', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-19 20:54:10] Enrolled image 'images\mrbeast1.jpeg' for MrBeast (ID: 79580519-3c37-4fc7-9402-98435e9c8045)
+[2026-09-19 20:54:12] Enrolled image 'images\mrbeast2.jpeg' for MrBeast (ID: 79580519-3c37-4fc7-9402-98435e9c8045)
+[2026-09-19 20:54:14] Enrolled image 'images\mrbeast3.jpeg' for MrBeast (ID: 79580519-3c37-4fc7-9402-98435e9c8045)
+[2026-09-19 20:54:16] MrBeast already has 3 images. Skipping.
+[2026-09-19 20:54:16] Enrollment result for MrBeast: {'person_id': '79580519-3c37-4fc7-9402-98435e9c8045', 'person_name': 'MrBeast', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-19 20:54:18] Multiple faces detected in images\mulitple_ppl.png
+[2026-09-19 20:54:18] Enrollment result for Mulitple Ppl: {'person_id': None, 'person_name': 'Mulitple Ppl', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-19 20:54:19] Enrolled image 'images\naryanmurthy1.jpeg' for Narayana Murthy (ID: 6860d6bc-01d2-4db8-92ad-1ddc609b3816)
+[2026-09-19 20:54:22] Enrolled image 'images\naryanmurthy2.jpeg' for Narayana Murthy (ID: 6860d6bc-01d2-4db8-92ad-1ddc609b3816)
+[2026-09-19 20:54:23] Enrolled image 'images\naryanmurthy3.jpeg' for Narayana Murthy (ID: 6860d6bc-01d2-4db8-92ad-1ddc609b3816)
+[2026-09-19 20:54:25] Narayana Murthy already has 3 images. Skipping.
+[2026-09-19 20:54:25] Enrollment result for Narayana Murthy: {'person_id': '6860d6bc-01d2-4db8-92ad-1ddc609b3816', 'person_name': 'Narayana Murthy', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-19 20:54:27] Enrolled image 'images\parth1.jpeg' for Parth (ID: 2fe6985f-0c46-4b74-93f6-aca82569bb37)
+[2026-09-19 20:54:29] Enrolled image 'images\parth2.jpeg' for Parth (ID: 2fe6985f-0c46-4b74-93f6-aca82569bb37)
+[2026-09-19 20:54:30] Enrolled image 'images\parth3.jpeg' for Parth (ID: 2fe6985f-0c46-4b74-93f6-aca82569bb37)
+[2026-09-19 20:54:32] Enrolled image 'images\parth4.jpeg' for Parth (ID: 2fe6985f-0c46-4b74-93f6-aca82569bb37)
+[2026-09-19 20:54:32] Enrollment result for Parth: {'person_id': '2fe6985f-0c46-4b74-93f6-aca82569bb37', 'person_name': 'Parth', 'enrolled_count': 4, 'message': 'Enrollment completed.'}
+[2026-09-19 20:54:34] Enrolled image 'images\piyush1.jpeg' for Piyush Bansal (ID: 92ea5af5-36e2-454d-94de-5a882cd0f839)
+[2026-09-19 20:54:36] Enrolled image 'images\piyush2.jpeg' for Piyush Bansal (ID: 92ea5af5-36e2-454d-94de-5a882cd0f839)
+[2026-09-19 20:54:38] Enrolled image 'images\piyush3.jpeg' for Piyush Bansal (ID: 92ea5af5-36e2-454d-94de-5a882cd0f839)
+[2026-09-19 20:54:40] Enrolled image 'images\piyush4.jpeg' for Piyush Bansal (ID: 92ea5af5-36e2-454d-94de-5a882cd0f839)
+[2026-09-19 20:54:40] Enrollment result for Piyush Bansal: {'person_id': '92ea5af5-36e2-454d-94de-5a882cd0f839', 'person_name': 'Piyush Bansal', 'enrolled_count': 4, 'message': 'Enrollment completed.'}
+[2026-09-19 20:54:42] Enrolled image 'images\putin1.jpeg' for Vladimir Putin (ID: 36df23ba-b2d5-42b6-83ce-547f7d7d8ffc)
+[2026-09-19 20:54:44] Enrolled image 'images\putin2.jpeg' for Vladimir Putin (ID: 36df23ba-b2d5-42b6-83ce-547f7d7d8ffc)
+[2026-09-19 20:54:46] Enrolled image 'images\putin3.jpeg' for Vladimir Putin (ID: 36df23ba-b2d5-42b6-83ce-547f7d7d8ffc)
+[2026-09-19 20:54:48] Vladimir Putin already has 3 images. Skipping.
+[2026-09-19 20:54:48] Enrollment result for Vladimir Putin: {'person_id': '36df23ba-b2d5-42b6-83ce-547f7d7d8ffc', 'person_name': 'Vladimir Putin', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-19 20:54:49] Image images\rohit1.jpeg already exists. Skipping.
+[2026-09-19 20:54:50] Image images\rohit2.jpeg already exists. Skipping.
+[2026-09-19 20:54:51] Image images\rohit3.jpeg already exists. Skipping.
+[2026-09-19 20:54:51] Enrollment result for Rohit Sharma: {'person_id': None, 'person_name': 'Rohit Sharma', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-19 20:54:52] Image images\sam1.jpeg already exists. Skipping.
+[2026-09-19 20:54:53] Image images\sam2.jpeg already exists. Skipping.
+[2026-09-19 20:54:53] Image images\sam3.jpeg already exists. Skipping.
+[2026-09-19 20:54:55] Sam Altman already has 3 images. Skipping.
+[2026-09-19 20:54:55] Enrollment result for Sam Altman: {'person_id': None, 'person_name': 'Sam Altman', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-19 20:54:57] Enrolled image 'images\sardha.jpeg' for Shraddha Khapra (ID: 1764f210-1770-48b3-b22f-96de1477e924)
+[2026-09-19 20:54:59] Enrolled image 'images\sardha2.jpeg' for Shraddha Khapra (ID: 1764f210-1770-48b3-b22f-96de1477e924)
+[2026-09-19 20:55:02] Enrolled image 'images\sardha3.jpeg' for Shraddha Khapra (ID: 1764f210-1770-48b3-b22f-96de1477e924)
+[2026-09-19 20:55:04] Shraddha Khapra already has 3 images. Skipping.
+[2026-09-19 20:55:04] Enrollment result for Shraddha Khapra: {'person_id': '1764f210-1770-48b3-b22f-96de1477e924', 'person_name': 'Shraddha Khapra', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-19 20:55:08] Enrolled image 'images\sharukh1.jpeg' for Shah Rukh Khan (ID: 13ff4f70-005c-4aa9-94df-64b41940eab3)
+[2026-09-19 20:55:09] Enrolled image 'images\sharukh2.jpeg' for Shah Rukh Khan (ID: 13ff4f70-005c-4aa9-94df-64b41940eab3)
+[2026-09-19 20:55:12] Enrolled image 'images\sharukh3.jpeg' for Shah Rukh Khan (ID: 13ff4f70-005c-4aa9-94df-64b41940eab3)
+[2026-09-19 20:55:13] Shah Rukh Khan already has 3 images. Skipping.
+[2026-09-19 20:55:13] Enrollment result for Shah Rukh Khan: {'person_id': '13ff4f70-005c-4aa9-94df-64b41940eab3', 'person_name': 'Shah Rukh Khan', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-19 20:55:14] Image images\sundar1.jpeg already exists. Skipping.
+[2026-09-19 20:55:15] Image images\sundar2.jpeg already exists. Skipping.
+[2026-09-19 20:55:16] Image images\sundar3.jpeg already exists. Skipping.
+[2026-09-19 20:55:16] Enrollment result for Sundar Pichai: {'person_id': None, 'person_name': 'Sundar Pichai', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-19 20:55:17] Image images\test1.jpeg already exists. Skipping.
+[2026-09-19 20:55:18] Image images\test2.jpeg already exists. Skipping.
+[2026-09-19 20:55:19] Image images\test3.jpeg already exists. Skipping.
+[2026-09-19 20:55:19] Enrollment result for Test: {'person_id': None, 'person_name': 'Test', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-19 20:55:20] Enrolled image 'images\thor2.jpeg' for Thor (ID: 6c142ff1-227f-4eb4-8c70-6c9756e65c71)
+[2026-09-19 20:55:22] Enrolled image 'images\thor3.jpeg' for Thor (ID: 6c142ff1-227f-4eb4-8c70-6c9756e65c71)
+[2026-09-19 20:55:22] Enrollment result for Thor: {'person_id': '6c142ff1-227f-4eb4-8c70-6c9756e65c71', 'person_name': 'Thor', 'enrolled_count': 2, 'message': 'Enrollment completed.'}
+[2026-09-19 20:55:24] Enrolled image 'images\tony1.jpeg' for Tony Stark (ID: b5b34e8e-22b7-49bc-8af2-685256279ae9)
+[2026-09-19 20:55:26] Enrolled image 'images\tony2.jpeg' for Tony Stark (ID: b5b34e8e-22b7-49bc-8af2-685256279ae9)
+[2026-09-19 20:55:28] Enrolled image 'images\tony3.jpeg' for Tony Stark (ID: b5b34e8e-22b7-49bc-8af2-685256279ae9)
+[2026-09-19 20:55:28] Enrollment result for Tony Stark: {'person_id': 'b5b34e8e-22b7-49bc-8af2-685256279ae9', 'person_name': 'Tony Stark', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-19 20:55:29] Image images\virat1.jpeg already exists. Skipping.
+[2026-09-19 20:55:29] Image images\virat2.jpeg already exists. Skipping.
+[2026-09-19 20:55:31] Image images\virat3.jpeg already exists. Skipping.
+[2026-09-19 20:55:31] Enrollment result for Virat Kohli: {'person_id': None, 'person_name': 'Virat Kohli', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-19 20:55:32] Image images\yan_lecun.jpeg already exists. Skipping.
+[2026-09-19 20:55:33] Image images\yan_lecun2.jpeg already exists. Skipping.
+[2026-09-19 20:55:33] Image images\yan_lecun4.jpeg already exists. Skipping.
+[2026-09-19 20:55:35] Yann LeCun already has 3 images. Skipping.
+[2026-09-19 20:55:37] Yann LeCun already has 3 images. Skipping.
+[2026-09-19 20:55:39] Yann LeCun already has 3 images. Skipping.
+[2026-09-19 20:55:39] Enrollment result for Yann LeCun: {'person_id': None, 'person_name': 'Yann LeCun', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-19 20:55:39] Batch enrollment completed. Total newly enrolled images: 55.
+
+-----------------------------------------------------------------
+=== RUN END: 2026-09-19 20:55:39 ===
+=================================================================
+
+
+
+=================================================================
+=== EVALUATION RUN: 2026-09-19 20:56:56 ===
+=================================================================
+
+[2026-09-19 20:56:56] Using evaluation directory: 'data\evaluation'
+[2026-09-19 20:57:11] Starting evaluation of 4 test image(s)...
+[2026-09-19 20:57:13] dario4.jpeg               | Dario Amodei       | Dario Amodei       | 0.7048  | CORRECT
+[2026-09-19 20:57:15] darshan3.jpeg             | Darshan            | Darshan            | 1.0000  | CORRECT
+[2026-09-19 20:57:16] micheal4.jpeg             | Michael            | Michael            | 0.7170  | CORRECT
+[2026-09-19 20:57:17] sam4.jpeg                 | Sam Altman         | Sam Altman         | 0.8072  | CORRECT
+[2026-09-19 20:57:17] EVALUATION COMPLETE: Total=4, Correct=4, Unknown=0, Mismatch=0, Accuracy=100.00%
+
+-----------------------------------------------------------------
+=== RUN END: 2026-09-19 20:57:17 ===
+=================================================================
+
+
+
+=================================================================
+=== EVALUATION RUN: 2026-09-19 21:11:57 ===
+=================================================================
+
+[2026-09-19 21:11:57] Using evaluation directory: 'data\evaluation'
+[2026-09-19 21:12:02] Starting evaluation of 22 test image(s)...
+[2026-09-19 21:12:10] alakh4.jpeg               | Alakh              | Alakh Pandey       | 0.7076  | MISMATCH
+[2026-09-19 21:12:12] amit4.jpeg                | Amit               | Amit               | 0.7443  | CORRECT
+[2026-09-19 21:12:13] arvind4.jpeg              | Arvind             | Arvind Srinivas    | 0.7077  | MISMATCH
+[2026-09-19 21:12:17] cristino4.jpeg            | Cristino           | Cristiano Ronaldo  | 1.0000  | MISMATCH
+[2026-09-19 21:12:19] dario4.jpeg               | Dario Amodei       | Dario Amodei       | 0.7048  | CORRECT
+[2026-09-19 21:12:21] darshan3.jpeg             | Darshan            | Darshan            | 1.0000  | CORRECT
+[2026-09-19 21:12:23] donald4.jpeg              | Donald             | Donald Trump       | 1.0000  | MISMATCH
+[2026-09-19 21:12:25] jeffbezos4.jpeg           | Jeffbezos          | Jeff Bezos         | 0.7175  | MISMATCH
+[2026-09-19 21:12:26] micheal4.jpeg             | Michael            | Michael            | 0.7170  | CORRECT
+[2026-09-19 21:12:29] modi4.jpeg                | Modi               | Narendra Modi      | 1.0000  | MISMATCH
+[2026-09-19 21:12:30] mrbeast4.jpeg             | Mrbeast            | MrBeast            | 0.8172  | MISMATCH
+[2026-09-19 21:12:32] naryanmurthy4.jpeg        | Naryanmurthy       | Narayana Murthy    | 0.7996  | MISMATCH
+[2026-09-19 21:12:33] parth4.jpeg               | Parth              | Parth              | 1.0000  | CORRECT
+
+
+=================================================================
+=== EVALUATION RUN: 2026-09-19 21:24:44 ===
+=================================================================
+
+[2026-09-19 21:24:44] Using evaluation directory: 'data\evaluation'
+[2026-09-19 21:24:50] Starting evaluation of 22 test image(s)...
+[2026-09-19 21:24:53] alakh4.jpeg               | Alakh              | Alakh Pandey       | 0.7076  | MISMATCH
+[2026-09-19 21:24:54] amit4.jpeg                | Amit               | Amit               | 0.7443  | CORRECT
+[2026-09-19 21:24:55] arvind4.jpeg              | Arvind             | Arvind Srinivas    | 0.7077  | MISMATCH
+[2026-09-19 21:24:56] cristino4.jpeg            | Cristino           | Cristiano Ronaldo  | 1.0000  | MISMATCH
+[2026-09-19 21:24:58] dario4.jpeg               | Dario Amodei       | Dario Amodei       | 0.7048  | CORRECT
+[2026-09-19 21:24:59] darshan3.jpeg             | Darshan            | Darshan            | 1.0000  | CORRECT
+[2026-09-19 21:25:00] donald4.jpeg              | Donald             | Donald Trump       | 1.0000  | MISMATCH
+[2026-09-19 21:25:01] jeffbezos4.jpeg           | Jeffbezos          | Jeff Bezos         | 0.7175  | MISMATCH
+[2026-09-19 21:25:02] micheal4.jpeg             | Michael            | Michael            | 0.7170  | CORRECT
+[2026-09-19 21:25:03] modi4.jpeg                | Modi               | Narendra Modi      | 1.0000  | MISMATCH
+[2026-09-19 21:25:04] mrbeast4.jpeg             | Mrbeast            | MrBeast            | 0.8172  | MISMATCH
+[2026-09-19 21:25:05] naryanmurthy4.jpeg        | Naryanmurthy       | Narayana Murthy    | 0.7996  | MISMATCH
+[2026-09-19 21:25:06] parth4.jpeg               | Parth              | Parth              | 1.0000  | CORRECT
+[2026-09-19 21:25:07] piyush4.jpeg              | Piyush             | Piyush Bansal      | 1.0000  | MISMATCH
+[2026-09-19 21:25:08] putin4.jpeg               | Putin              | Vladimir Putin     | 0.7415  | MISMATCH
+[2026-09-19 21:25:09] sam4.jpeg                 | Sam Altman         | Sam Altman         | 0.8072  | CORRECT
+[2026-09-19 21:25:10] sardha4.jpeg              | Sardha             | Shraddha Khapra    | 0.7459  | MISMATCH
+[2026-09-19 21:25:11] sharukh4.jpeg             | Sharukh            | Shah Rukh Khan     | 0.7289  | MISMATCH
+[2026-09-19 21:25:12] yan_lecun4.jpeg           | Yann LeCun         | Yann LeCun         | 1.0000  | CORRECT
+[2026-09-19 21:25:13] yan_lecun5.jpeg           | Yann LeCun         | Yann LeCun         | 0.7572  | CORRECT
+[2026-09-19 21:25:14] yan_lecun6.jpeg           | Yann LeCun         | Yann LeCun         | 0.7490  | CORRECT
+[2026-09-19 21:25:15] yan_lecun7.jpeg           | Yann LeCun         | Yann LeCun         | 0.7485  | CORRECT
+[2026-09-19 21:25:15] EVALUATION COMPLETE: Total=22, Correct=10, Unknown=0, Mismatch=12, Accuracy=45.45%
+
+-----------------------------------------------------------------
+=== RUN END: 2026-09-19 21:25:15 ===
+=================================================================
+
+
+
+=================================================================
+=== EVALUATION RUN: 2026-09-19 21:26:05 ===
+=================================================================
+
+[2026-09-19 21:26:05] Using evaluation directory: 'data\evaluation'
+[2026-09-19 21:26:11] Starting evaluation of 22 test image(s)...
+[2026-09-19 21:26:14] alakh4.jpeg               | Alakh Pandey       | Alakh Pandey       | 0.7076  | CORRECT
+[2026-09-19 21:26:14] amit4.jpeg                | Amit               | Amit               | 0.7443  | CORRECT
+[2026-09-19 21:26:15] arvind4.jpeg              | Arvind Srinivas    | Arvind Srinivas    | 0.7077  | CORRECT
+[2026-09-19 21:26:16] cristino4.jpeg            | Cristiano Ronaldo  | Cristiano Ronaldo  | 1.0000  | CORRECT
+[2026-09-19 21:26:17] dario4.jpeg               | Dario Amodei       | Dario Amodei       | 0.7048  | CORRECT
+[2026-09-19 21:26:18] darshan3.jpeg             | Darshan            | Darshan            | 1.0000  | CORRECT
+[2026-09-19 21:26:19] donald4.jpeg              | Donald Trump       | Donald Trump       | 1.0000  | CORRECT
+[2026-09-19 21:26:20] jeffbezos4.jpeg           | Jeff Bezos         | Jeff Bezos         | 0.7175  | CORRECT
+[2026-09-19 21:26:21] micheal4.jpeg             | Michael            | Michael            | 0.7170  | CORRECT
+[2026-09-19 21:26:22] modi4.jpeg                | Narendra Modi      | Narendra Modi      | 1.0000  | CORRECT
+[2026-09-19 21:26:23] mrbeast4.jpeg             | MrBeast            | MrBeast            | 0.8172  | CORRECT
+[2026-09-19 21:26:24] naryanmurthy4.jpeg        | Narayana Murthy    | Narayana Murthy    | 0.7996  | CORRECT
+[2026-09-19 21:26:25] parth4.jpeg               | Parth              | Parth              | 1.0000  | CORRECT
+[2026-09-19 21:26:26] piyush4.jpeg              | Piyush Bansal      | Piyush Bansal      | 1.0000  | CORRECT
+[2026-09-19 21:26:27] putin4.jpeg               | Vladimir Putin     | Vladimir Putin     | 0.7415  | CORRECT
+[2026-09-19 21:26:28] sam4.jpeg                 | Sam Altman         | Sam Altman         | 0.8072  | CORRECT
+[2026-09-19 21:26:29] sardha4.jpeg              | Shraddha Khapra    | Shraddha Khapra    | 0.7459  | CORRECT
+[2026-09-19 21:26:30] sharukh4.jpeg             | Shah Rukh Khan     | Shah Rukh Khan     | 0.7289  | CORRECT
+[2026-09-19 21:26:32] yan_lecun4.jpeg           | Yann LeCun         | Yann LeCun         | 1.0000  | CORRECT
+[2026-09-19 21:26:33] yan_lecun5.jpeg           | Yann LeCun         | Yann LeCun         | 0.7572  | CORRECT
+[2026-09-19 21:26:33] yan_lecun6.jpeg           | Yann LeCun         | Yann LeCun         | 0.7490  | CORRECT
+[2026-09-19 21:26:34] yan_lecun7.jpeg           | Yann LeCun         | Yann LeCun         | 0.7485  | CORRECT
+[2026-09-19 21:26:34] EVALUATION COMPLETE: Total=22, Correct=22, Unknown=0, Mismatch=0, Accuracy=100.00%
+
+-----------------------------------------------------------------
+=== RUN END: 2026-09-19 21:26:34 ===
+=================================================================
+
