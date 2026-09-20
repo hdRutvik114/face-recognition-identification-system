@@ -70,14 +70,29 @@ def get_display_name(person_key: str) -> str:
 
 
 def get_dataset_dir() -> Path:
-    # Check images directory first for flat dataset
-    images_dir = Path("images")
-    if images_dir.exists() and any(images_dir.iterdir()):
-        return images_dir
+    """
+    Enrollment reads ONLY from data/enrolled/. It deliberately does not
+    fall back to a flat images/ directory: that legacy folder is known
+    to mix enrollment shots with evaluation holdouts for the same
+    people (e.g. alakh1-3 for enrollment, alakh4 for evaluation), and
+    silently reading it here is exactly what previously contaminated
+    Qdrant with evaluation images.
+    """
     enrolled_dir = Path("data/enrolled")
-    if enrolled_dir.exists() and any(enrolled_dir.iterdir()):
-        return enrolled_dir
-    return images_dir
+
+    legacy_images_dir = Path("images")
+    if legacy_images_dir.exists() and any(legacy_images_dir.iterdir()):
+        warn = (
+            "Found a legacy 'images/' directory — it is being IGNORED "
+            "by enrollment on purpose, because it may contain files "
+            "that were also used for evaluation. If you still need any "
+            "of those images enrolled, move them into "
+            "'data/enrolled/<person_name>/' explicitly."
+        )
+        print(warn)
+        log_message(warn)
+
+    return enrolled_dir
 
 
 def group_images_by_person(dataset_path: Path) -> dict[str, list[str]]:
@@ -85,29 +100,12 @@ def group_images_by_person(dataset_path: Path) -> dict[str, list[str]]:
     groups = {}
 
     subdirs = sorted(p for p in dataset_path.iterdir() if p.is_dir())
-    if subdirs:
-        for subdir in subdirs:
-            image_paths = sorted(
-                str(p) for p in subdir.iterdir() if p.suffix.lower() in IMAGE_EXTENSIONS
-            )
-            if image_paths:
-                person_name = get_display_name(subdir.name)
-                groups[person_name] = image_paths
-    else:
-        flat_groups = {}
-        for img_path in sorted(dataset_path.iterdir()):
-            if not img_path.is_file() or img_path.suffix.lower() not in IMAGE_EXTENSIONS:
-                continue
-            stem = img_path.stem
-            person_key = re.sub(r"\d+$", "", stem).strip("_").lower()
-            if not person_key:
-                person_key = stem.lower()
-            if person_key not in flat_groups:
-                flat_groups[person_key] = []
-            flat_groups[person_key].append(str(img_path))
-
-        for person_key, image_paths in flat_groups.items():
-            person_name = get_display_name(person_key)
+    for subdir in subdirs:
+        image_paths = sorted(
+            str(p) for p in subdir.iterdir() if p.suffix.lower() in IMAGE_EXTENSIONS
+        )
+        if image_paths:
+            person_name = get_display_name(subdir.name)
             groups[person_name] = image_paths
 
     return groups
