@@ -61,6 +61,10 @@ class IdentificationService:
         print(f"Best person similarity score: {score:.4f}")
         
         if score < self.threshold:
+            print(
+                f"Best candidate: {best_match['person_name']} "
+                f"| score: {score:.6f}"
+            )
             return {
                 "status": "unknown",
                 "person_id": None,
@@ -68,7 +72,7 @@ class IdentificationService:
                 "score": score,
                 "message": "Unknown person."
             }
-        
+                
         return {
             "status": "identified",
             "person_id": best_match["person_id"],
