@@ -2,6 +2,7 @@ from qdrant_client import QdrantClient
 from qdrant_client.models import Distance, VectorParams , PointStruct
 import uuid
 from app.config.settings import settings
+from qdrant_client.models import PayloadSchemaType
 
 ENROLLMENT_THRESHOLD = 0.70
 
@@ -17,20 +18,47 @@ class VectorStore:
     
     def create_collection(self):
         collections = self.client.get_collections().collections
-         #here man what we do is actually we are checking that the qdant collection exist or nto ...if it exists then we print  that the hcollection exitss he
-        collection_namess = [collection.name for collection in collections]
-
-        if settings.QDRANT_COLLECTION_NAME not in collection_namess: 
+    
+        collection_names = [collection.name for collection in collections]
+    
+        if settings.QDRANT_COLLECTION_NAME not in collection_names:
+    
             self.client.create_collection(
                 collection_name=settings.QDRANT_COLLECTION_NAME,
                 vectors_config=VectorParams(
-                    size=settings.EMBEDDING_VECTOR_SIZE, distance=Distance.COSINE,
+                    size=settings.EMBEDDING_VECTOR_SIZE,
+                    distance=Distance.COSINE,
                 ),
             )
-            print("Collection we created in qdrantt.")
-        else:
-            print("Collection is there alreadry .")
     
+            print("Collection created in Qdrant.")
+    
+        else:
+            print("Collection already exists.")
+    
+        collection_info = self.client.get_collection(
+            settings.QDRANT_COLLECTION_NAME
+        )
+    
+        payload_schema = collection_info.payload_schema
+    
+        if "image_id" not in payload_schema:
+            self.client.create_payload_index(
+                collection_name=settings.QDRANT_COLLECTION_NAME,
+                field_name="image_id",
+                field_schema=PayloadSchemaType.KEYWORD,
+            )
+            print("Created image_id index.")
+    
+        if "person_id" not in payload_schema:
+            self.client.create_payload_index(
+                collection_name=settings.QDRANT_COLLECTION_NAME,
+                field_name="person_id",
+                field_schema=PayloadSchemaType.KEYWORD,
+            )
+            print("Created person_id index.")
+    
+        print("Payload indexes are ready.")
     def add_embedding(self, embedding, person_name,person_id,image_id):
         point = PointStruct(
         id=str(uuid.uuid4()),

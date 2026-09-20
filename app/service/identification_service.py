@@ -14,7 +14,7 @@ class IdentificationService:
 
         # Temporary threshold.
         # We will calibrate this properly during evaluation.
-        self.threshold = 0.70
+        self.threshold = 0.65
 
     def identify(self, image_path):
 
@@ -39,7 +39,7 @@ class IdentificationService:
         # More than one face
         if len(faces) > 1:
             return {
-                "status": "error",
+                "status": "multiple",
                 "message": "Multiple faces detected."
             }
 

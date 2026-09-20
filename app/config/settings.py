@@ -9,7 +9,7 @@ class Settings(BaseSettings):
     QDRANT_URL: str
     QDRANT_API_KEY: str
 
-    QDRANT_COLLECTION_NAME: str = "face_embeddings"
+    QDRANT_COLLECTION_NAME: str = "face_embeddings_2"
 
     EMBEDDING_MODEL_NAME: str = "buffalo_l"
     EMBEDDING_VECTOR_SIZE: int = 512
