@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+python-multipart
+opencv-python
+numpy
+insightface
+onnxruntime
+qdrant-client
+pydantic-settings

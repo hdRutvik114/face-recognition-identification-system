@@ -1,17 +1,16 @@
-from fastapi import FastAPI, UploadFile, File, Form
-import tempfile
 import os
+import tempfile
+from typing import Annotated,List
+
+from fastapi import FastAPI, File, Form, UploadFile
 
 from app.logging_utils import log_message, log_run_start
 from app.service.enrollment_service import EnrollmentService
-
 from app.service.identification_service import IdentificationService
 
 log_run_start()
 
-app = FastAPI(
-    title="Face Recognition Identification System"
-)
+app = FastAPI(title="Face Recognition Identification System")
 
 enrollment_service = EnrollmentService()
 
@@ -19,72 +18,78 @@ enrollment_service = EnrollmentService()
 @app.get("/")
 def root():
     log_message("GET / called")
-    return {
-        "message": "Face Recognition API is running"
-    }
+    return {"message": "Face Recognition API is running"}
 
 
-
-#This is for Enroll 
+# This is for Enroll
 @app.post("/enroll")
+
 async def enroll(
-    name: str = Form(...),
-    image: UploadFile = File(...)
+    name: Annotated[str, Form(...)],
+    images: List[UploadFile] = File(..., description="Select up to 3 images")
 ):
     image_paths = []
 
     try:
-        suffix = os.path.splitext(image.filename)[1]
-        log_message(f"Enrollment request for '{name}' with file '{image.filename}'")
+        if len(images) == 0:
+            return {
+                "status": "error",
+                "message": "At least one image is required.",
+            }
 
-        with tempfile.NamedTemporaryFile(
-            delete=False,
-            suffix=suffix
-        ) as temp_file:
+        if len(images) > 3:
+            return {
+                "status": "error",
+                "message": "You can enroll a maximum of 3 images at a time.",
+            }
 
-            temp_file.write(await image.read())
-            image_paths.append(temp_file.name)
+        log_message(
+            f"Enrollment request for '{name}' with {len(images)} image(s)"
+        )
+
+        for image in images:
+            suffix = os.path.splitext(image.filename)[1] if image.filename else ""
+
+            with tempfile.NamedTemporaryFile(
+                delete=False, suffix=suffix
+            ) as temp_file:
+                temp_file.write(await image.read())
+                image_paths.append(temp_file.name)
 
         result = enrollment_service.enroll(
-            image_paths=image_paths,
-            person_name=name
+            image_paths=image_paths, person_name=name
         )
 
         log_message(f"Enrollment result: {result}")
+
         return result
 
     finally:
         for path in image_paths:
             if os.path.exists(path):
                 os.remove(path)
-                
-      
-      
-#This is for the IDENTIFICATION           
+
+
+# This is for the IDENTIFICATION
 @app.post("/identify")
-async def identify(
-    image: UploadFile = File(...)
-):
+async def identify(image: UploadFile = File(...)):
     image_path = None
 
     try:
-        suffix = os.path.splitext(image.filename)[1]
+        suffix = os.path.splitext(image.filename)[1] if image.filename else ""
 
         log_message(
             f"Identification request with file '{image.filename}'"
         )
 
         with tempfile.NamedTemporaryFile(
-            delete=False,
-            suffix=suffix
+            delete=False, suffix=suffix
         ) as temp_file:
-
             temp_file.write(await image.read())
             image_path = temp_file.name
+
         identification_service = IdentificationService()
-        result = identification_service.identify(
-            image_path=image_path
-        )
+        result = identification_service.identify(image_path=image_path)
 
         log_message(f"Identification result: {result}")
 

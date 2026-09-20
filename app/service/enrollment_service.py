@@ -52,104 +52,138 @@ class EnrollmentService:
             )
 
     def enroll(self, image_paths, person_name):
-        # --------------------------------------------------
-        # Identity is resolved ONCE, from the name, before we
-        # look at a single pixel. It is never re-derived per image
-        # and never influenced by embedding similarity.
-        # --------------------------------------------------
         person_id = self.resolve_person_id(person_name)
+    
         enrolled_count = 0
-
+        skipped_count = 0
+        rejected_count = 0
+    
+        details = []
+    
         for image_path in image_paths:
-
-            # --------------------------------------------------
-            # 0. Refuse anything outside data/enrolled/
-            # --------------------------------------------------
+    
             self._assert_path_is_enrollable(image_path)
-
+    
             image = cv2.imread(image_path)
-
+    
+            if image is None:
+                msg = f"Could not read image: {image_path}"
+                print(msg)
+                log_message(msg)
+    
+                rejected_count += 1
+                details.append({
+                    "image": os.path.basename(image_path),
+                    "status": "rejected",
+                    "reason": "Could not read image"
+                })
+                continue
+    
             faces = self.face_app.get(image)
-
+    
             # No face
             if len(faces) == 0:
                 msg = f"No face detected in {image_path}"
                 print(msg)
                 log_message(msg)
+    
+                rejected_count += 1
+                details.append({
+                    "image": os.path.basename(image_path),
+                    "status": "rejected",
+                    "reason": "No face detected"
+                })
                 continue
-
+    
             # Multiple faces
             if len(faces) > 1:
                 msg = f"Multiple faces detected in {image_path}"
                 print(msg)
                 log_message(msg)
+    
+                rejected_count += 1
+                details.append({
+                    "image": os.path.basename(image_path),
+                    "status": "rejected",
+                    "reason": "Multiple faces detected"
+                })
                 continue
-
+    
             face = faces[0]
             embedding = face.embedding
-
-            # --------------------------------------------------
-            # 1. Check if the exact same image was already enrolled
-            # --------------------------------------------------
+    
+            # Check duplicate image
             image_id = self.get_image_id(image_path)
-
+    
             if self.vector_store.image_exists(image_id):
                 msg = f"Image {image_path} already exists. Skipping."
                 print(msg)
                 log_message(msg)
+    
+                skipped_count += 1
+                details.append({
+                    "image": os.path.basename(image_path),
+                    "status": "skipped",
+                    "reason": "Image already exists"
+                })
                 continue
-
-            # --------------------------------------------------
-            # 2. Ask Qdrant (source of truth) how many images this
-            #    person already has, right before every insert.
-            # --------------------------------------------------
+    
+            # Check person's current image count
             image_count = self.vector_store.count_person_images(person_id)
+    
             if image_count >= 3:
-                msg = f"{person_name} already has {image_count} images in Qdrant. Skipping."
+                msg = (
+                    f"{person_name} already has "
+                    f"{image_count} images in Qdrant. Skipping."
+                )
                 print(msg)
                 log_message(msg)
+    
+                skipped_count += 1
+                details.append({
+                    "image": os.path.basename(image_path),
+                    "status": "skipped",
+                    "reason": "Maximum 3 images already enrolled"
+                })
                 continue
-
-            # --------------------------------------------------
-            # 3. Store the new face embedding
-            #    (vector_store.add_embedding must call
-            #    upsert(..., wait=True) internally)
-            # --------------------------------------------------
+    
+            # Store embedding
             self.vector_store.add_embedding(
                 embedding=embedding,
                 person_id=person_id,
                 person_name=person_name,
                 image_id=image_id
             )
-
+    
             enrolled_count += 1
-            log_message(f"Enrolled image '{image_path}' for {person_name} (ID: {person_id})")
-
-        # ------------------------------------------------------
-        # 4. Nothing was enrolled
-        # ------------------------------------------------------
-        if enrolled_count == 0:
-            res = {
-                "person_id": person_id,
-                "person_name": person_name,
-                "enrolled_count": 0,
-                "message": "No new images were enrolled."
-            }
-            log_message(f"Enrollment result for {person_name}: {res}")
-            return res
-
-        # ------------------------------------------------------
-        # 5. Enrollment successful
-        # ------------------------------------------------------
+    
+            details.append({
+                "image": os.path.basename(image_path),
+                "status": "enrolled",
+                "reason": "Successfully enrolled"
+            })
+    
+            log_message(
+                f"Enrolled image '{image_path}' "
+                f"for {person_name} (ID: {person_id})"
+            )
+    
         res = {
             "person_id": person_id,
             "person_name": person_name,
             "enrolled_count": enrolled_count,
+            "skipped_count": skipped_count,
+            "rejected_count": rejected_count,
+            "details": details,
             "message": "Enrollment completed."
         }
-        log_message(f"Enrollment result for {person_name}: {res}")
+    
+        log_message(
+            f"Enrollment result for {person_name}: {res}"
+        )
+    
         return res
-
+    
     def get_image_id(self, image_path):
         with open(image_path, "rb") as file:
             image_bytes = file.read()
