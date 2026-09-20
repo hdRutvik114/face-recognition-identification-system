@@ -2605,3 +2605,49 @@ second line for run check
 === RUN START: 2026-09-20 19:34:08 ===
 =================================================================
 
+
+
+=================================================================
+=== RUN START: 2026-09-20 22:09:38 ===
+=================================================================
+
+[2026-09-20 22:10:38] Enrollment request for 'Ryan' with 3 image(s)
+[2026-09-20 22:10:43] Image C:\Users\YATIRAJ\AppData\Local\Temp\tmpn0hq4039.jpeg already exists. Skipping.
+[2026-09-20 22:10:45] Multiple faces detected in C:\Users\YATIRAJ\AppData\Local\Temp\tmpf6ju182e.jpeg
+[2026-09-20 22:10:46] Image C:\Users\YATIRAJ\AppData\Local\Temp\tmp0li1tiql.jpeg already exists. Skipping.
+[2026-09-20 22:10:46] Enrollment result for Ryan: {'person_id': 'fe9c80b0-c438-548e-a64c-e01a4416c18d', 'person_name': 'Ryan', 'enrolled_count': 0, 'skipped_count': 2, 'rejected_count': 1, 'details': [{'image': 'tmpn0hq4039.jpeg', 'status': 'skipped', 'reason': 'Image already exists'}, {'image': 'tmpf6ju182e.jpeg', 'status': 'rejected', 'reason': 'Multiple faces detected'}, {'image': 'tmp0li1tiql.jpeg', 'status': 'skipped', 'reason': 'Image already exists'}], 'message': 'Enrollment completed.'}
+[2026-09-20 22:10:46] Enrollment result: {'person_id': 'fe9c80b0-c438-548e-a64c-e01a4416c18d', 'person_name': 'Ryan', 'enrolled_count': 0, 'skipped_count': 2, 'rejected_count': 1, 'details': [{'image': 'tmpn0hq4039.jpeg', 'status': 'skipped', 'reason': 'Image already exists'}, {'image': 'tmpf6ju182e.jpeg', 'status': 'rejected', 'reason': 'Multiple faces detected'}, {'image': 'tmp0li1tiql.jpeg', 'status': 'skipped', 'reason': 'Image already exists'}], 'message': 'Enrollment completed.'}
+[2026-09-20 22:14:36] Identification request with file 'rutvik.jpeg'
+[2026-09-20 22:14:49] Identification result: {'status': 'unknown', 'person_id': None, 'person_name': None, 'score': 0.14863747, 'message': 'Unknown person.'}
+[2026-09-20 22:15:00] Identification request with file 'rutvik.jpeg'
+[2026-09-20 22:15:09] Identification result: {'status': 'unknown', 'person_id': None, 'person_name': None, 'score': 0.14863747, 'message': 'Unknown person.'}
+[2026-09-20 22:20:54] Identification request with file 'virat1.jpeg'
+[2026-09-20 22:21:02] Identification result: {'status': 'identified', 'person_id': '6076e6f7-3d31-5757-a1b3-47467aa5bd96', 'person_name': 'Virat Kohli', 'score': 1.0, 'message': 'Person identified successfully.'}
+[2026-09-20 22:21:09] Identification request with file 'mulitple_ppl.png'
+[2026-09-20 22:21:18] Identification result: {'status': 'multiple', 'message': 'Multiple faces detected.'}
+[2026-09-20 22:21:26] Identification request with file 'Building.jpeg'
+[2026-09-20 22:21:32] Identification result: {'status': 'error', 'message': 'No face detected.'}
+[2026-09-20 22:22:26] Identification request with file 'rutvik.jpeg'
+[2026-09-20 22:22:40] Identification result: {'status': 'unknown', 'person_id': None, 'person_name': None, 'score': 0.14863747, 'message': 'Unknown person.'}
+[2026-09-20 22:33:43] Enrollment request for 'TestPersonNew' with 2 image(s)
+[2026-09-20 22:33:56] Image C:\Users\YATIRAJ\AppData\Local\Temp\tmp0r8r51qe.jpeg already exists. Skipping.
+[2026-09-20 22:33:58] Image C:\Users\YATIRAJ\AppData\Local\Temp\tmp0ebopj6l.jpeg already exists. Skipping.
+[2026-09-20 22:33:58] Enrollment result for TestPersonNew: {'person_id': '05c9d2f8-e446-5244-9e7e-b8c3dc58f2d6', 'person_name': 'TestPersonNew', 'enrolled_count': 0, 'skipped_count': 2, 'rejected_count': 0, 'details': [{'image': 'tmp0r8r51qe.jpeg', 'status': 'skipped', 'reason': 'Image already exists'}, {'image': 'tmp0ebopj6l.jpeg', 'status': 'skipped', 'reason': 'Image already exists'}], 'message': 'Enrollment completed.'}
+[2026-09-20 22:33:58] Enrollment result: {'person_id': '05c9d2f8-e446-5244-9e7e-b8c3dc58f2d6', 'person_name': 'TestPersonNew', 'enrolled_count': 0, 'skipped_count': 2, 'rejected_count': 0, 'details': [{'image': 'tmp0r8r51qe.jpeg', 'status': 'skipped', 'reason': 'Image already exists'}, {'image': 'tmp0ebopj6l.jpeg', 'status': 'skipped', 'reason': 'Image already exists'}], 'message': 'Enrollment completed.'}
+[2026-09-20 22:36:04] Enrollment request for 'Ryan' with 3 image(s)
+[2026-09-20 22:36:09] Multiple faces detected in C:\Users\YATIRAJ\AppData\Local\Temp\tmpy3gy08w2.jpeg
+[2026-09-20 22:36:12] Image C:\Users\YATIRAJ\AppData\Local\Temp\tmpcjt7d_fk.jpeg already exists. Skipping.
+[2026-09-20 22:36:14] Image C:\Users\YATIRAJ\AppData\Local\Temp\tmprskus62k.jpeg already exists. Skipping.
+[2026-09-20 22:36:14] Enrollment result for Ryan: {'person_id': 'fe9c80b0-c438-548e-a64c-e01a4416c18d', 'person_name': 'Ryan', 'enrolled_count': 0, 'skipped_count': 2, 'rejected_count': 1, 'details': [{'image': 'tmpy3gy08w2.jpeg', 'status': 'rejected', 'reason': 'Multiple faces detected'}, {'image': 'tmpcjt7d_fk.jpeg', 'status': 'skipped', 'reason': 'Image already exists'}, {'image': 'tmprskus62k.jpeg', 'status': 'skipped', 'reason': 'Image already exists'}], 'message': 'Enrollment completed.'}
+[2026-09-20 22:36:14] Enrollment result: {'person_id': 'fe9c80b0-c438-548e-a64c-e01a4416c18d', 'person_name': 'Ryan', 'enrolled_count': 0, 'skipped_count': 2, 'rejected_count': 1, 'details': [{'image': 'tmpy3gy08w2.jpeg', 'status': 'rejected', 'reason': 'Multiple faces detected'}, {'image': 'tmpcjt7d_fk.jpeg', 'status': 'skipped', 'reason': 'Image already exists'}, {'image': 'tmprskus62k.jpeg', 'status': 'skipped', 'reason': 'Image already exists'}], 'message': 'Enrollment completed.'}
+[2026-09-20 22:39:40] Identification request with file 'putin4.jpeg'
+[2026-09-20 22:40:19] Identification request with file 'putin4.jpeg'
+
+
+=================================================================
+=== RUN START: 2026-09-20 22:42:15 ===
+=================================================================
+
+[2026-09-20 22:42:31] Identification request with file 'putin4.jpeg'
+[2026-09-20 22:50:39] Identification request with file 'putin4.jpeg'
+[2026-09-20 22:50:59] Identification result: {'status': 'identified', 'person_id': '99c3c26e-eb61-5bc2-a60c-283da511dee2', 'person_name': 'Vladimir Putin', 'score': 0.7414956, 'message': 'Person identified successfully.'}
