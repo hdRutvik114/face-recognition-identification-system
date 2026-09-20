@@ -502,3 +502,638 @@ second line for run check
 === RUN END: 2026-09-19 21:47:37 ===
 =================================================================
 
+
+
+=================================================================
+=== DATASET ENROLLMENT RUN: 2026-09-20 04:40:35 ===
+=================================================================
+
+[2026-09-20 04:40:35] Using dataset directory: 'images'
+[2026-09-20 04:40:42] Found 51 person identity group(s) to process.
+[2026-09-20 04:40:43] Image images\alakh1.jpeg already exists. Skipping.
+[2026-09-20 04:40:45] Image images\alakh2.jpeg already exists. Skipping.
+[2026-09-20 04:40:46] Image images\alakh3.jpeg already exists. Skipping.
+[2026-09-20 04:40:48] Alakh Pandey already has 3 images. Skipping.
+[2026-09-20 04:40:48] Enrollment result for Alakh Pandey: {'person_id': None, 'person_name': 'Alakh Pandey', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 04:40:50] Enrolled image 'images\alexandra1.jpeg' for Alexandra Daddario (ID: 12eebadd-da1d-4e15-b876-4a00fe105e98)
+[2026-09-20 04:40:52] Enrolled image 'images\alexandra2.jpeg' for Alexandra Daddario (ID: 12eebadd-da1d-4e15-b876-4a00fe105e98)
+[2026-09-20 04:40:53] Enrolled image 'images\alexandra3.jpeg' for Alexandra Daddario (ID: 12eebadd-da1d-4e15-b876-4a00fe105e98)
+[2026-09-20 04:40:55] Enrolled image 'images\alexandra4.jpeg' for Alexandra Daddario (ID: 12eebadd-da1d-4e15-b876-4a00fe105e98)
+[2026-09-20 04:40:55] Enrollment result for Alexandra Daddario: {'person_id': '12eebadd-da1d-4e15-b876-4a00fe105e98', 'person_name': 'Alexandra Daddario', 'enrolled_count': 4, 'message': 'Enrollment completed.'}
+[2026-09-20 04:40:56] Image images\amit1.jpeg already exists. Skipping.
+[2026-09-20 04:40:57] Image images\amit2.jpeg already exists. Skipping.
+[2026-09-20 04:40:58] Image images\amit3.jpeg already exists. Skipping.
+[2026-09-20 04:41:00] Amit already has 3 images. Skipping.
+[2026-09-20 04:41:00] Enrollment result for Amit: {'person_id': None, 'person_name': 'Amit', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 04:41:01] Image images\ananyapandey.jpg already exists. Skipping.
+[2026-09-20 04:41:01] Enrollment result for Ananya Pandey: {'person_id': None, 'person_name': 'Ananya Pandey', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 04:41:03] Enrolled image 'images\andrew1.jpeg' for Andrew (ID: a999d743-9740-42ea-aaa9-8f99f560787c)
+[2026-09-20 04:41:05] Enrolled image 'images\andrew2.jpeg' for Andrew (ID: a999d743-9740-42ea-aaa9-8f99f560787c)
+[2026-09-20 04:41:07] Enrolled image 'images\andrew3.jpeg' for Andrew (ID: a999d743-9740-42ea-aaa9-8f99f560787c)
+[2026-09-20 04:41:08] Enrolled image 'images\andrew4.jpeg' for Andrew (ID: a999d743-9740-42ea-aaa9-8f99f560787c)
+[2026-09-20 04:41:08] Enrollment result for Andrew: {'person_id': 'a999d743-9740-42ea-aaa9-8f99f560787c', 'person_name': 'Andrew', 'enrolled_count': 4, 'message': 'Enrollment completed.'}
+[2026-09-20 04:41:09] Image images\andrew_karpathy.jpg already exists. Skipping.
+[2026-09-20 04:41:09] Enrollment result for Andrew Karpathy: {'person_id': None, 'person_name': 'Andrew Karpathy', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 04:41:10] Image images\arvind1.jpeg already exists. Skipping.
+[2026-09-20 04:41:11] Image images\arvind2.jpeg already exists. Skipping.
+[2026-09-20 04:41:12] Image images\arvind3.jpeg already exists. Skipping.
+[2026-09-20 04:41:14] Arvind Srinivas already has 3 images. Skipping.
+[2026-09-20 04:41:14] Enrollment result for Arvind Srinivas: {'person_id': None, 'person_name': 'Arvind Srinivas', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 04:41:15] Enrolled image 'images\bradpit1.jpeg' for Brad Pitt (ID: 9c43d2d7-3512-4bea-aeb4-1ff97d3efbe4)
+[2026-09-20 04:41:17] Enrolled image 'images\bradpit2.jpeg' for Brad Pitt (ID: 9c43d2d7-3512-4bea-aeb4-1ff97d3efbe4)
+[2026-09-20 04:41:19] Enrolled image 'images\bradpit3.jpeg' for Brad Pitt (ID: 9c43d2d7-3512-4bea-aeb4-1ff97d3efbe4)
+[2026-09-20 04:41:21] Enrolled image 'images\bradpit4.jpeg' for Brad Pitt (ID: 9c43d2d7-3512-4bea-aeb4-1ff97d3efbe4)
+[2026-09-20 04:41:21] Enrollment result for Brad Pitt: {'person_id': '9c43d2d7-3512-4bea-aeb4-1ff97d3efbe4', 'person_name': 'Brad Pitt', 'enrolled_count': 4, 'message': 'Enrollment completed.'}
+[2026-09-20 04:41:21] No face detected in images\Building.jpeg
+[2026-09-20 04:41:21] Enrollment result for Building: {'person_id': None, 'person_name': 'Building', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 04:41:23] Enrolled image 'images\cox1.jpeg' for Courteney Cox (ID: 1631bc78-276c-4c8d-b6d5-d80ec1db9416)
+[2026-09-20 04:41:24] Enrolled image 'images\cox2.jpeg' for Courteney Cox (ID: 1631bc78-276c-4c8d-b6d5-d80ec1db9416)
+[2026-09-20 04:41:26] Enrolled image 'images\cox3.jpeg' for Courteney Cox (ID: 1631bc78-276c-4c8d-b6d5-d80ec1db9416)
+[2026-09-20 04:41:28] Enrolled image 'images\cox4.jpeg' for Courteney Cox (ID: 1631bc78-276c-4c8d-b6d5-d80ec1db9416)
+[2026-09-20 04:41:28] Enrollment result for Courteney Cox: {'person_id': '1631bc78-276c-4c8d-b6d5-d80ec1db9416', 'person_name': 'Courteney Cox', 'enrolled_count': 4, 'message': 'Enrollment completed.'}
+[2026-09-20 04:41:29] Image images\cristino1.jpeg already exists. Skipping.
+[2026-09-20 04:41:30] Image images\cristino2.jpeg already exists. Skipping.
+[2026-09-20 04:41:31] Image images\cristino3.jpeg already exists. Skipping.
+[2026-09-20 04:41:32] Image images\cristino4.jpeg already exists. Skipping.
+[2026-09-20 04:41:32] Enrollment result for Cristiano Ronaldo: {'person_id': None, 'person_name': 'Cristiano Ronaldo', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 04:41:33] Image images\dario1.jpeg already exists. Skipping.
+[2026-09-20 04:41:34] Image images\dario2.jpeg already exists. Skipping.
+[2026-09-20 04:41:35] Image images\dario3.jpeg already exists. Skipping.
+[2026-09-20 04:41:35] Enrollment result for Dario Amodei: {'person_id': None, 'person_name': 'Dario Amodei', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 04:41:36] Image images\darshan1.jpeg already exists. Skipping.
+[2026-09-20 04:41:37] Image images\darshan2.jpeg already exists. Skipping.
+[2026-09-20 04:41:38] Image images\darshan3.jpeg already exists. Skipping.
+[2026-09-20 04:41:38] Enrollment result for Darshan: {'person_id': None, 'person_name': 'Darshan', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 04:41:39] Image images\dhoni1.jpeg already exists. Skipping.
+[2026-09-20 04:41:40] Image images\dhoni2.jpeg already exists. Skipping.
+[2026-09-20 04:41:40] Image images\dhoni3.jpeg already exists. Skipping.
+[2026-09-20 04:41:40] Enrollment result for MS Dhoni: {'person_id': None, 'person_name': 'MS Dhoni', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 04:41:41] Image images\donald1.jpeg already exists. Skipping.
+[2026-09-20 04:41:42] Image images\donald2.jpeg already exists. Skipping.
+[2026-09-20 04:41:43] Image images\donald3.jpeg already exists. Skipping.
+[2026-09-20 04:41:44] Image images\donald4.jpeg already exists. Skipping.
+[2026-09-20 04:41:44] Enrollment result for Donald Trump: {'person_id': None, 'person_name': 'Donald Trump', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 04:41:45] Image images\elon1.jpeg already exists. Skipping.
+[2026-09-20 04:41:46] Image images\elon2.jpeg already exists. Skipping.
+[2026-09-20 04:41:46] No face detected in images\elon3.jpeg
+[2026-09-20 04:41:46] Enrollment result for Elon Musk: {'person_id': None, 'person_name': 'Elon Musk', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 04:41:48] Enrolled image 'images\emma1.jpeg' for Emma Watson (ID: bddbde87-550f-401b-9888-95fb364feca4)
+[2026-09-20 04:41:49] Multiple faces detected in images\emma2.jpeg
+[2026-09-20 04:41:51] Enrolled image 'images\emma3.jpeg' for Emma Watson (ID: bddbde87-550f-401b-9888-95fb364feca4)
+[2026-09-20 04:41:52] Enrolled image 'images\emma4.jpeg' for Emma Watson (ID: bddbde87-550f-401b-9888-95fb364feca4)
+[2026-09-20 04:41:52] Enrollment result for Emma Watson: {'person_id': 'bddbde87-550f-401b-9888-95fb364feca4', 'person_name': 'Emma Watson', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-20 04:41:53] Image images\gandhi1.jpeg already exists. Skipping.
+[2026-09-20 04:41:54] Image images\gandhi2.jpeg already exists. Skipping.
+[2026-09-20 04:41:55] Image images\gandhi3.jpeg already exists. Skipping.
+[2026-09-20 04:41:55] Enrollment result for Mahatma Gandhi: {'person_id': None, 'person_name': 'Mahatma Gandhi', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 04:41:56] Multiple faces detected in images\girl1.jpeg
+[2026-09-20 04:41:58] Enrolled image 'images\girl2.jpeg' for Girl (ID: 42b67d31-47f7-44d9-a1b1-9301faa66d57)
+[2026-09-20 04:42:00] Enrolled image 'images\girl3.jpeg' for Girl (ID: 42b67d31-47f7-44d9-a1b1-9301faa66d57)
+[2026-09-20 04:42:01] Enrolled image 'images\girl4.jpeg' for Girl (ID: 42b67d31-47f7-44d9-a1b1-9301faa66d57)
+[2026-09-20 04:42:01] Enrollment result for Girl: {'person_id': '42b67d31-47f7-44d9-a1b1-9301faa66d57', 'person_name': 'Girl', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-20 04:42:03] Enrolled image 'images\gordan1.jpeg' for Gordon Ramsay (ID: 4c38b924-4141-4d8f-9958-b7b8c0974aab)
+[2026-09-20 04:42:06] Enrolled image 'images\gordan2.jpeg' for Gordon Ramsay (ID: 4c38b924-4141-4d8f-9958-b7b8c0974aab)
+[2026-09-20 04:42:09] Enrolled image 'images\gordan3.jpeg' for Gordon Ramsay (ID: 4c38b924-4141-4d8f-9958-b7b8c0974aab)
+[2026-09-20 04:42:11] Gordon Ramsay already has 3 images. Skipping.
+[2026-09-20 04:42:11] Enrollment result for Gordon Ramsay: {'person_id': '4c38b924-4141-4d8f-9958-b7b8c0974aab', 'person_name': 'Gordon Ramsay', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-20 04:42:12] Image images\ilyasutskiver.jpg already exists. Skipping.
+[2026-09-20 04:42:13] Image images\ilyasutskiver2.jpg already exists. Skipping.
+[2026-09-20 04:42:14] Multiple faces detected in images\ilyasutskiver3.jpg
+[2026-09-20 04:42:14] Enrollment result for Ilya Sutskever: {'person_id': None, 'person_name': 'Ilya Sutskever', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 04:42:15] Image images\image.jpeg already exists. Skipping.
+[2026-09-20 04:42:15] Enrollment result for Image: {'person_id': None, 'person_name': 'Image', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 04:42:16] Image images\jeffbezos.jpeg already exists. Skipping.
+[2026-09-20 04:42:17] Image images\jeffbezos2.jpeg already exists. Skipping.
+[2026-09-20 04:42:18] Image images\jeffbezos3.jpeg already exists. Skipping.
+[2026-09-20 04:42:19] Jeff Bezos already has 3 images. Skipping.
+[2026-09-20 04:42:19] Enrollment result for Jeff Bezos: {'person_id': None, 'person_name': 'Jeff Bezos', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 04:42:21] Enrolled image 'images\joseph1.jpeg' for Joseph Gordon-Levitt (ID: 361af476-7870-4a85-93d4-9a8db4c88e27)
+[2026-09-20 04:42:23] Enrolled image 'images\joseph2.jpeg' for Joseph Gordon-Levitt (ID: 361af476-7870-4a85-93d4-9a8db4c88e27)
+[2026-09-20 04:42:24] Enrolled image 'images\joseph3.jpeg' for Joseph Gordon-Levitt (ID: 361af476-7870-4a85-93d4-9a8db4c88e27)
+[2026-09-20 04:42:26] Enrolled image 'images\joseph4.jpeg' for Joseph Gordon-Levitt (ID: 361af476-7870-4a85-93d4-9a8db4c88e27)
+[2026-09-20 04:42:26] Enrollment result for Joseph Gordon-Levitt: {'person_id': '361af476-7870-4a85-93d4-9a8db4c88e27', 'person_name': 'Joseph Gordon-Levitt', 'enrolled_count': 4, 'message': 'Enrollment completed.'}
+[2026-09-20 04:42:28] Enrolled image 'images\krish_naik.jpeg' for Krish Naik (ID: e5a77214-84ab-4a53-a720-6bd7af4dc6e4)
+[2026-09-20 04:42:28] Enrollment result for Krish Naik: {'person_id': 'e5a77214-84ab-4a53-a720-6bd7af4dc6e4', 'person_name': 'Krish Naik', 'enrolled_count': 1, 'message': 'Enrollment completed.'}
+[2026-09-20 04:42:29] Image images\micheal1.jpeg already exists. Skipping.
+[2026-09-20 04:42:30] Image images\micheal2.jpeg already exists. Skipping.
+[2026-09-20 04:42:31] Image images\micheal3.jpeg already exists. Skipping.
+[2026-09-20 04:42:32] Michael already has 3 images. Skipping.
+[2026-09-20 04:42:32] Enrollment result for Michael: {'person_id': None, 'person_name': 'Michael', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 04:42:33] Image images\modi1.jpeg already exists. Skipping.
+[2026-09-20 04:42:34] Image images\modi2.jpeg already exists. Skipping.
+[2026-09-20 04:42:35] Multiple faces detected in images\modi3.jpeg
+[2026-09-20 04:42:36] Image images\modi4.jpeg already exists. Skipping.
+[2026-09-20 04:42:36] Enrollment result for Narendra Modi: {'person_id': None, 'person_name': 'Narendra Modi', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 04:42:36] Image images\mrbeast1.jpeg already exists. Skipping.
+[2026-09-20 04:42:37] Image images\mrbeast2.jpeg already exists. Skipping.
+[2026-09-20 04:42:38] Image images\mrbeast3.jpeg already exists. Skipping.
+[2026-09-20 04:42:40] MrBeast already has 3 images. Skipping.
+[2026-09-20 04:42:40] Enrollment result for MrBeast: {'person_id': None, 'person_name': 'MrBeast', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 04:42:42] Multiple faces detected in images\mulitple_ppl.png
+[2026-09-20 04:42:42] Enrollment result for Mulitple Ppl: {'person_id': None, 'person_name': 'Mulitple Ppl', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 04:42:43] Image images\naryanmurthy1.jpeg already exists. Skipping.
+[2026-09-20 04:42:44] Image images\naryanmurthy2.jpeg already exists. Skipping.
+[2026-09-20 04:42:45] Image images\naryanmurthy3.jpeg already exists. Skipping.
+[2026-09-20 04:42:47] Narayana Murthy already has 3 images. Skipping.
+[2026-09-20 04:42:47] Enrollment result for Narayana Murthy: {'person_id': None, 'person_name': 'Narayana Murthy', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 04:42:49] Enrolled image 'images\nishida1.jpeg' for Yuji Nishida (ID: 129700f1-05e3-4ebd-ba7d-d2289dbb3453)
+[2026-09-20 04:42:51] Enrolled image 'images\nishida2.jpeg' for Yuji Nishida (ID: 129700f1-05e3-4ebd-ba7d-d2289dbb3453)
+[2026-09-20 04:42:53] Enrolled image 'images\nishida3.jpeg' for Yuji Nishida (ID: 129700f1-05e3-4ebd-ba7d-d2289dbb3453)
+[2026-09-20 04:42:54] Yuji Nishida already has 3 images. Skipping.
+[2026-09-20 04:42:54] Enrollment result for Yuji Nishida: {'person_id': '129700f1-05e3-4ebd-ba7d-d2289dbb3453', 'person_name': 'Yuji Nishida', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-20 04:42:56] Enrolled image 'images\nitish_singh.jpeg' for Nitish Singh (ID: a7e4a426-730d-4fc8-9c7e-921b91ff4c48)
+[2026-09-20 04:42:56] Enrollment result for Nitish Singh: {'person_id': 'a7e4a426-730d-4fc8-9c7e-921b91ff4c48', 'person_name': 'Nitish Singh', 'enrolled_count': 1, 'message': 'Enrollment completed.'}
+[2026-09-20 04:42:57] Image images\parth1.jpeg already exists. Skipping.
+[2026-09-20 04:42:58] Image images\parth2.jpeg already exists. Skipping.
+[2026-09-20 04:42:59] Image images\parth3.jpeg already exists. Skipping.
+[2026-09-20 04:43:00] Image images\parth4.jpeg already exists. Skipping.
+[2026-09-20 04:43:00] Enrollment result for Parth: {'person_id': None, 'person_name': 'Parth', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 04:43:01] Image images\piyush1.jpeg already exists. Skipping.
+[2026-09-20 04:43:02] Image images\piyush2.jpeg already exists. Skipping.
+[2026-09-20 04:43:03] Image images\piyush3.jpeg already exists. Skipping.
+[2026-09-20 04:43:04] Image images\piyush4.jpeg already exists. Skipping.
+[2026-09-20 04:43:04] Enrollment result for Piyush Bansal: {'person_id': None, 'person_name': 'Piyush Bansal', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 04:43:05] Image images\putin1.jpeg already exists. Skipping.
+[2026-09-20 04:43:05] Image images\putin2.jpeg already exists. Skipping.
+[2026-09-20 04:43:06] Image images\putin3.jpeg already exists. Skipping.
+[2026-09-20 04:43:08] Vladimir Putin already has 3 images. Skipping.
+[2026-09-20 04:43:08] Enrollment result for Vladimir Putin: {'person_id': None, 'person_name': 'Vladimir Putin', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 04:43:09] Image images\rohit1.jpeg already exists. Skipping.
+[2026-09-20 04:43:10] Image images\rohit2.jpeg already exists. Skipping.
+[2026-09-20 04:43:11] Image images\rohit3.jpeg already exists. Skipping.
+[2026-09-20 04:43:11] Enrollment result for Rohit Sharma: {'person_id': None, 'person_name': 'Rohit Sharma', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 04:43:12] Multiple faces detected in images\ryan1.jpeg
+[2026-09-20 04:43:13] Multiple faces detected in images\ryan2.jpeg
+[2026-09-20 04:43:15] Enrolled image 'images\ryan3.jpeg' for Ryan Gosling (ID: a0d6c95b-7ccc-4dac-a034-e7b87d175add)
+[2026-09-20 04:43:15] Multiple faces detected in images\ryan4.jpeg
+[2026-09-20 04:43:15] Enrollment result for Ryan Gosling: {'person_id': 'a0d6c95b-7ccc-4dac-a034-e7b87d175add', 'person_name': 'Ryan Gosling', 'enrolled_count': 1, 'message': 'Enrollment completed.'}
+[2026-09-20 04:43:16] Image images\sam1.jpeg already exists. Skipping.
+[2026-09-20 04:43:17] Image images\sam2.jpeg already exists. Skipping.
+[2026-09-20 04:43:18] Image images\sam3.jpeg already exists. Skipping.
+[2026-09-20 04:43:20] Sam Altman already has 3 images. Skipping.
+[2026-09-20 04:43:20] Enrollment result for Sam Altman: {'person_id': None, 'person_name': 'Sam Altman', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 04:43:21] Image images\sardha.jpeg already exists. Skipping.
+[2026-09-20 04:43:21] Image images\sardha2.jpeg already exists. Skipping.
+[2026-09-20 04:43:22] Image images\sardha3.jpeg already exists. Skipping.
+[2026-09-20 04:43:24] Shraddha Khapra already has 3 images. Skipping.
+[2026-09-20 04:43:24] Enrollment result for Shraddha Khapra: {'person_id': None, 'person_name': 'Shraddha Khapra', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 04:43:25] Image images\sharukh1.jpeg already exists. Skipping.
+[2026-09-20 04:43:26] Image images\sharukh2.jpeg already exists. Skipping.
+[2026-09-20 04:43:27] Image images\sharukh3.jpeg already exists. Skipping.
+[2026-09-20 04:43:29] Shah Rukh Khan already has 3 images. Skipping.
+[2026-09-20 04:43:29] Enrollment result for Shah Rukh Khan: {'person_id': None, 'person_name': 'Shah Rukh Khan', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 04:43:29] Multiple faces detected in images\sheren1.jpeg
+[2026-09-20 04:43:31] Enrolled image 'images\sheren2.jpeg' for Sheren (ID: bdb2d501-8f17-40e8-8c5a-cecaabe0bb54)
+[2026-09-20 04:43:33] Enrolled image 'images\sheren3.jpeg' for Sheren (ID: bdb2d501-8f17-40e8-8c5a-cecaabe0bb54)
+[2026-09-20 04:43:35] Enrolled image 'images\sheren4.jpeg' for Sheren (ID: bdb2d501-8f17-40e8-8c5a-cecaabe0bb54)
+[2026-09-20 04:43:35] Enrollment result for Sheren: {'person_id': 'bdb2d501-8f17-40e8-8c5a-cecaabe0bb54', 'person_name': 'Sheren', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-20 04:43:37] Enrolled image 'images\shisho1.jpeg' for Shisho (ID: 80732979-cdb9-4eb6-8956-8637a0a78cec)
+[2026-09-20 04:43:38] Enrolled image 'images\shisho2.jpeg' for Shisho (ID: 80732979-cdb9-4eb6-8956-8637a0a78cec)
+[2026-09-20 04:43:40] Enrolled image 'images\shisho3.jpeg' for Shisho (ID: 80732979-cdb9-4eb6-8956-8637a0a78cec)
+[2026-09-20 04:43:43] Multiple faces detected in images\shisho4.jpeg
+[2026-09-20 04:43:43] Enrollment result for Shisho: {'person_id': '80732979-cdb9-4eb6-8956-8637a0a78cec', 'person_name': 'Shisho', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-20 04:43:45] Enrolled image 'images\sink1.jpeg' for Sadie Sink (ID: bf5f8d03-ca11-4607-bd81-4d0d73aba26e)
+[2026-09-20 04:43:46] Enrolled image 'images\sink2.jpeg' for Sadie Sink (ID: bf5f8d03-ca11-4607-bd81-4d0d73aba26e)
+[2026-09-20 04:43:47] Multiple faces detected in images\sink3.jpeg
+[2026-09-20 04:43:49] Enrolled image 'images\sink4.jpeg' for Sadie Sink (ID: bf5f8d03-ca11-4607-bd81-4d0d73aba26e)
+[2026-09-20 04:43:49] Enrollment result for Sadie Sink: {'person_id': 'bf5f8d03-ca11-4607-bd81-4d0d73aba26e', 'person_name': 'Sadie Sink', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-20 04:43:51] Enrolled image 'images\stefani1.jpeg' for Gwen Stefani (ID: 772903fa-b4e1-4d10-900b-90f0d76dd1c9)
+[2026-09-20 04:43:53] Enrolled image 'images\stefani2.jpeg' for Gwen Stefani (ID: 772903fa-b4e1-4d10-900b-90f0d76dd1c9)
+[2026-09-20 04:43:55] Enrolled image 'images\stefani3.jpeg' for Gwen Stefani (ID: 772903fa-b4e1-4d10-900b-90f0d76dd1c9)
+[2026-09-20 04:43:56] Gwen Stefani already has 3 images. Skipping.
+[2026-09-20 04:43:56] Enrollment result for Gwen Stefani: {'person_id': '772903fa-b4e1-4d10-900b-90f0d76dd1c9', 'person_name': 'Gwen Stefani', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-20 04:43:57] Image images\sundar1.jpeg already exists. Skipping.
+[2026-09-20 04:43:58] Image images\sundar2.jpeg already exists. Skipping.
+[2026-09-20 04:43:59] Image images\sundar3.jpeg already exists. Skipping.
+[2026-09-20 04:43:59] Enrollment result for Sundar Pichai: {'person_id': None, 'person_name': 'Sundar Pichai', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 04:44:00] Image images\test1.jpeg already exists. Skipping.
+[2026-09-20 04:44:01] Image images\test2.jpeg already exists. Skipping.
+[2026-09-20 04:44:02] Image images\test3.jpeg already exists. Skipping.
+[2026-09-20 04:44:02] Enrollment result for Test: {'person_id': None, 'person_name': 'Test', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 04:44:03] Image images\thor2.jpeg already exists. Skipping.
+[2026-09-20 04:44:04] Image images\thor3.jpeg already exists. Skipping.
+[2026-09-20 04:44:04] Enrollment result for Thor: {'person_id': None, 'person_name': 'Thor', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 04:44:06] Enrolled image 'images\tom1.jpeg' for Tom Cruise (ID: c2cb8e92-a78f-44ba-ac59-dffc815a5334)
+[2026-09-20 04:44:08] Enrolled image 'images\tom2.jpeg' for Tom Cruise (ID: c2cb8e92-a78f-44ba-ac59-dffc815a5334)
+[2026-09-20 04:44:10] Enrolled image 'images\tom3.jpeg' for Tom Cruise (ID: c2cb8e92-a78f-44ba-ac59-dffc815a5334)
+[2026-09-20 04:44:12] Enrolled image 'images\tom4.jpeg' for Tom Cruise (ID: c2cb8e92-a78f-44ba-ac59-dffc815a5334)
+[2026-09-20 04:44:12] Enrollment result for Tom Cruise: {'person_id': 'c2cb8e92-a78f-44ba-ac59-dffc815a5334', 'person_name': 'Tom Cruise', 'enrolled_count': 4, 'message': 'Enrollment completed.'}
+[2026-09-20 04:44:13] Image images\tony1.jpeg already exists. Skipping.
+[2026-09-20 04:44:13] Image images\tony2.jpeg already exists. Skipping.
+[2026-09-20 04:44:14] Image images\tony3.jpeg already exists. Skipping.
+[2026-09-20 04:44:14] Enrollment result for Tony Stark: {'person_id': None, 'person_name': 'Tony Stark', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 04:44:15] Image images\virat1.jpeg already exists. Skipping.
+[2026-09-20 04:44:16] Image images\virat2.jpeg already exists. Skipping.
+[2026-09-20 04:44:17] Image images\virat3.jpeg already exists. Skipping.
+[2026-09-20 04:44:17] Enrollment result for Virat Kohli: {'person_id': None, 'person_name': 'Virat Kohli', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 04:44:18] Image images\yan_lecun.jpeg already exists. Skipping.
+[2026-09-20 04:44:19] Image images\yan_lecun2.jpeg already exists. Skipping.
+[2026-09-20 04:44:20] Image images\yan_lecun4.jpeg already exists. Skipping.
+[2026-09-20 04:44:22] Yann LeCun already has 3 images. Skipping.
+[2026-09-20 04:44:24] Yann LeCun already has 3 images. Skipping.
+[2026-09-20 04:44:26] Yann LeCun already has 3 images. Skipping.
+[2026-09-20 04:44:26] Enrollment result for Yann LeCun: {'person_id': None, 'person_name': 'Yann LeCun', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 04:44:26] Batch enrollment completed. Total newly enrolled images: 51.
+
+-----------------------------------------------------------------
+=== RUN END: 2026-09-20 04:44:26 ===
+=================================================================
+
+
+
+=================================================================
+=== EVALUATION RUN: 2026-09-20 04:46:25 ===
+=================================================================
+
+[2026-09-20 04:46:25] Using evaluation directory: 'data\evaluation'
+[2026-09-20 04:46:30] Starting evaluation of 40 test image(s)...
+[2026-09-20 04:46:33] alakh4.jpeg               | Alakh Pandey       | Alakh Pandey       | 0.7076  | CORRECT
+[2026-09-20 04:46:34] alexandra4.jpeg           | Alexandra Daddario | Alexandra Daddario | 1.0000  | CORRECT
+[2026-09-20 04:46:34] amit4.jpeg                | Amit               | Amit               | 0.7443  | CORRECT
+[2026-09-20 04:46:35] andrew4.jpeg              | Andrew             | Andrew             | 1.0000  | CORRECT
+[2026-09-20 04:46:36] arvind4.jpeg              | Arvind Srinivas    | Arvind Srinivas    | 0.7077  | CORRECT
+[2026-09-20 04:46:37] bradpit4.jpeg             | Brad Pitt          | Brad Pitt          | 1.0000  | CORRECT
+[2026-09-20 04:46:38] cox4.jpeg                 | Courteney Cox      | Courteney Cox      | 1.0000  | CORRECT
+[2026-09-20 04:46:39] cristino4.jpeg            | Cristiano Ronaldo  | Cristiano Ronaldo  | 1.0000  | CORRECT
+[2026-09-20 04:46:40] dario4.jpeg               | Dario Amodei       | Dario Amodei       | 0.7048  | CORRECT
+[2026-09-20 04:46:41] darshan3.jpeg             | Darshan            | Darshan            | 1.0000  | CORRECT
+[2026-09-20 04:46:41] donald4.jpeg              | Donald Trump       | Donald Trump       | 1.0000  | CORRECT
+[2026-09-20 04:46:42] emma4.jpeg                | Emma Watson        | Emma Watson        | 1.0000  | CORRECT
+[2026-09-20 04:46:43] girl4.jpeg                | Girl               | Girl               | 1.0000  | CORRECT
+[2026-09-20 04:46:44] gordan4.jpeg              | Gordon Ramsay      | Gordon Ramsay      | 0.8838  | CORRECT
+[2026-09-20 04:46:45] jeffbezos4.jpeg           | Jeff Bezos         | Jeff Bezos         | 0.7175  | CORRECT
+[2026-09-20 04:46:46] joseph4.jpeg              | Joseph Gordon-Levitt | Joseph Gordon-Levitt | 1.0000  | CORRECT
+[2026-09-20 04:46:47] krish_naik.jpeg           | Krish Naik         | Krish Naik         | 1.0000  | CORRECT
+[2026-09-20 04:46:48] micheal4.jpeg             | Michael            | Michael            | 0.7170  | CORRECT
+[2026-09-20 04:46:49] modi4.jpeg                | Narendra Modi      | Narendra Modi      | 1.0000  | CORRECT
+[2026-09-20 04:46:50] mrbeast4.jpeg             | MrBeast            | MrBeast            | 0.8172  | CORRECT
+[2026-09-20 04:46:51] naryanmurthy4.jpeg        | Narayana Murthy    | Narayana Murthy    | 0.7996  | CORRECT
+[2026-09-20 04:46:52] nishida4.jpeg             | Yuji Nishida       | Yuji Nishida       | 0.7248  | CORRECT
+[2026-09-20 04:46:53] nitish_singh.jpeg         | Nitish Singh       | Nitish Singh       | 1.0000  | CORRECT
+[2026-09-20 04:46:54] parth4.jpeg               | Parth              | Parth              | 1.0000  | CORRECT
+[2026-09-20 04:46:55] piyush4.jpeg              | Piyush Bansal      | Piyush Bansal      | 1.0000  | CORRECT
+[2026-09-20 04:46:55] putin4.jpeg               | Vladimir Putin     | Vladimir Putin     | 0.7415  | CORRECT
+[2026-09-20 04:46:56] rutvik.jpeg               | Rutvik             | unknown            | 0.1854  | UNKNOWN
+[2026-09-20 04:46:57] ryan4.jpeg                | Ryan Gosling       | error              | N/A     | ERROR (Multiple faces detected.)
+[2026-09-20 04:46:58] sam4.jpeg                 | Sam Altman         | Sam Altman         | 0.8072  | CORRECT
+[2026-09-20 04:46:59] sardha4.jpeg              | Shraddha Khapra    | Shraddha Khapra    | 0.7459  | CORRECT
+[2026-09-20 04:46:59] sharukh4.jpeg             | Shah Rukh Khan     | Shah Rukh Khan     | 0.7289  | CORRECT
+[2026-09-20 04:47:00] sheren4.jpeg              | Sheren             | Sheren             | 1.0000  | CORRECT
+[2026-09-20 04:47:02] shisho4.jpeg              | Shisho             | error              | N/A     | ERROR (Multiple faces detected.)
+[2026-09-20 04:47:03] sink4.jpeg                | Sadie Sink         | Sadie Sink         | 1.0000  | CORRECT
+[2026-09-20 04:47:04] stefani4.jpeg             | Gwen Stefani       | Gwen Stefani       | 0.7001  | CORRECT
+[2026-09-20 04:47:05] tom4.jpeg                 | Tom Cruise         | Tom Cruise         | 1.0000  | CORRECT
+[2026-09-20 04:47:06] yan_lecun4.jpeg           | Yann LeCun         | Yann LeCun         | 1.0000  | CORRECT
+[2026-09-20 04:47:07] yan_lecun5.jpeg           | Yann LeCun         | Yann LeCun         | 0.7572  | CORRECT
+[2026-09-20 04:47:08] yan_lecun6.jpeg           | Yann LeCun         | Yann LeCun         | 0.7490  | CORRECT
+[2026-09-20 04:47:08] yan_lecun7.jpeg           | Yann LeCun         | Yann LeCun         | 0.7485  | CORRECT
+[2026-09-20 04:47:08] EVALUATION COMPLETE: Total=40, Correct=37, Unknown=3, Mismatch=0, Accuracy=92.50%
+
+-----------------------------------------------------------------
+=== RUN END: 2026-09-20 04:47:08 ===
+=================================================================
+
+
+
+=================================================================
+=== TEST ENROLLMENT RUN: 2026-09-20 05:07:18 ===
+=================================================================
+
+[2026-09-20 05:07:25] Found 51 person group(s) in 'images'
+[2026-09-20 05:07:26] Image images\alakh1.jpeg already exists. Skipping.
+[2026-09-20 05:07:27] Image images\alakh2.jpeg already exists. Skipping.
+[2026-09-20 05:07:28] Image images\alakh3.jpeg already exists. Skipping.
+[2026-09-20 05:07:30] Alakh Pandey already has 3 images in Qdrant. Skipping.
+[2026-09-20 05:07:30] Enrollment result for Alakh Pandey: {'person_id': None, 'person_name': 'Alakh Pandey', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:07:31] Image images\alexandra1.jpeg already exists. Skipping.
+[2026-09-20 05:07:32] Image images\alexandra2.jpeg already exists. Skipping.
+[2026-09-20 05:07:32] Image images\alexandra3.jpeg already exists. Skipping.
+[2026-09-20 05:07:33] Image images\alexandra4.jpeg already exists. Skipping.
+[2026-09-20 05:07:33] Enrollment result for Alexandra Daddario: {'person_id': None, 'person_name': 'Alexandra Daddario', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:07:34] Image images\amit1.jpeg already exists. Skipping.
+[2026-09-20 05:07:35] Image images\amit2.jpeg already exists. Skipping.
+[2026-09-20 05:07:36] Image images\amit3.jpeg already exists. Skipping.
+[2026-09-20 05:07:38] Amit already has 3 images in Qdrant. Skipping.
+[2026-09-20 05:07:38] Enrollment result for Amit: {'person_id': None, 'person_name': 'Amit', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:07:38] Image images\ananyapandey.jpg already exists. Skipping.
+[2026-09-20 05:07:38] Enrollment result for Ananya Pandey: {'person_id': None, 'person_name': 'Ananya Pandey', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:07:39] Image images\andrew1.jpeg already exists. Skipping.
+[2026-09-20 05:07:40] Image images\andrew2.jpeg already exists. Skipping.
+[2026-09-20 05:07:41] Image images\andrew3.jpeg already exists. Skipping.
+[2026-09-20 05:07:42] Image images\andrew4.jpeg already exists. Skipping.
+[2026-09-20 05:07:42] Enrollment result for Andrew: {'person_id': None, 'person_name': 'Andrew', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:07:43] Image images\andrew_karpathy.jpg already exists. Skipping.
+[2026-09-20 05:07:43] Enrollment result for Andrew Karpathy: {'person_id': None, 'person_name': 'Andrew Karpathy', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:07:44] Image images\arvind1.jpeg already exists. Skipping.
+[2026-09-20 05:07:45] Image images\arvind2.jpeg already exists. Skipping.
+[2026-09-20 05:07:46] Image images\arvind3.jpeg already exists. Skipping.
+[2026-09-20 05:07:47] Arvind Srinivas already has 3 images in Qdrant. Skipping.
+[2026-09-20 05:07:47] Enrollment result for Arvind Srinivas: {'person_id': None, 'person_name': 'Arvind Srinivas', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:07:48] Image images\bradpit1.jpeg already exists. Skipping.
+[2026-09-20 05:07:49] Image images\bradpit2.jpeg already exists. Skipping.
+[2026-09-20 05:07:50] Image images\bradpit3.jpeg already exists. Skipping.
+[2026-09-20 05:07:51] Image images\bradpit4.jpeg already exists. Skipping.
+[2026-09-20 05:07:51] Enrollment result for Brad Pitt: {'person_id': None, 'person_name': 'Brad Pitt', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:07:51] No face detected in images\Building.jpeg
+[2026-09-20 05:07:51] Enrollment result for Building: {'person_id': None, 'person_name': 'Building', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:07:52] Image images\cox1.jpeg already exists. Skipping.
+[2026-09-20 05:07:53] Image images\cox2.jpeg already exists. Skipping.
+[2026-09-20 05:07:54] Image images\cox3.jpeg already exists. Skipping.
+[2026-09-20 05:07:55] Image images\cox4.jpeg already exists. Skipping.
+[2026-09-20 05:07:55] Enrollment result for Courteney Cox: {'person_id': None, 'person_name': 'Courteney Cox', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:07:56] Image images\cristino1.jpeg already exists. Skipping.
+[2026-09-20 05:07:56] Image images\cristino2.jpeg already exists. Skipping.
+[2026-09-20 05:07:57] Image images\cristino3.jpeg already exists. Skipping.
+[2026-09-20 05:07:58] Image images\cristino4.jpeg already exists. Skipping.
+[2026-09-20 05:07:58] Enrollment result for Cristiano Ronaldo: {'person_id': None, 'person_name': 'Cristiano Ronaldo', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:07:59] Image images\dario1.jpeg already exists. Skipping.
+[2026-09-20 05:08:00] Image images\dario2.jpeg already exists. Skipping.
+[2026-09-20 05:08:01] Image images\dario3.jpeg already exists. Skipping.
+[2026-09-20 05:08:01] Enrollment result for Dario Amodei: {'person_id': None, 'person_name': 'Dario Amodei', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:08:02] Image images\darshan1.jpeg already exists. Skipping.
+[2026-09-20 05:08:03] Image images\darshan2.jpeg already exists. Skipping.
+[2026-09-20 05:08:04] Image images\darshan3.jpeg already exists. Skipping.
+[2026-09-20 05:08:04] Enrollment result for Darshan: {'person_id': None, 'person_name': 'Darshan', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:08:04] Image images\dhoni1.jpeg already exists. Skipping.
+[2026-09-20 05:08:05] Image images\dhoni2.jpeg already exists. Skipping.
+[2026-09-20 05:08:06] Image images\dhoni3.jpeg already exists. Skipping.
+[2026-09-20 05:08:06] Enrollment result for MS Dhoni: {'person_id': None, 'person_name': 'MS Dhoni', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:08:07] Image images\donald1.jpeg already exists. Skipping.
+[2026-09-20 05:08:08] Image images\donald2.jpeg already exists. Skipping.
+[2026-09-20 05:08:09] Image images\donald3.jpeg already exists. Skipping.
+[2026-09-20 05:08:10] Image images\donald4.jpeg already exists. Skipping.
+[2026-09-20 05:08:10] Enrollment result for Donald Trump: {'person_id': None, 'person_name': 'Donald Trump', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:08:10] Image images\elon1.jpeg already exists. Skipping.
+[2026-09-20 05:08:11] Image images\elon2.jpeg already exists. Skipping.
+[2026-09-20 05:08:12] No face detected in images\elon3.jpeg
+[2026-09-20 05:08:12] Enrollment result for Elon Musk: {'person_id': None, 'person_name': 'Elon Musk', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:08:13] Image images\emma1.jpeg already exists. Skipping.
+[2026-09-20 05:08:13] Multiple faces detected in images\emma2.jpeg
+[2026-09-20 05:08:14] Image images\emma3.jpeg already exists. Skipping.
+[2026-09-20 05:08:15] Image images\emma4.jpeg already exists. Skipping.
+[2026-09-20 05:08:15] Enrollment result for Emma Watson: {'person_id': None, 'person_name': 'Emma Watson', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:08:16] Image images\gandhi1.jpeg already exists. Skipping.
+[2026-09-20 05:08:17] Image images\gandhi2.jpeg already exists. Skipping.
+[2026-09-20 05:08:18] Image images\gandhi3.jpeg already exists. Skipping.
+[2026-09-20 05:08:18] Enrollment result for Mahatma Gandhi: {'person_id': None, 'person_name': 'Mahatma Gandhi', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:08:18] Multiple faces detected in images\girl1.jpeg
+[2026-09-20 05:08:19] Image images\girl2.jpeg already exists. Skipping.
+[2026-09-20 05:08:20] Image images\girl3.jpeg already exists. Skipping.
+[2026-09-20 05:08:21] Image images\girl4.jpeg already exists. Skipping.
+[2026-09-20 05:08:21] Enrollment result for Girl: {'person_id': None, 'person_name': 'Girl', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:08:22] Image images\gordan1.jpeg already exists. Skipping.
+[2026-09-20 05:08:23] Image images\gordan2.jpeg already exists. Skipping.
+[2026-09-20 05:08:24] Image images\gordan3.jpeg already exists. Skipping.
+[2026-09-20 05:08:26] Gordon Ramsay already has 3 images in Qdrant. Skipping.
+[2026-09-20 05:08:26] Enrollment result for Gordon Ramsay: {'person_id': None, 'person_name': 'Gordon Ramsay', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:08:27] Image images\ilyasutskiver.jpg already exists. Skipping.
+[2026-09-20 05:08:27] Image images\ilyasutskiver2.jpg already exists. Skipping.
+[2026-09-20 05:08:28] Multiple faces detected in images\ilyasutskiver3.jpg
+[2026-09-20 05:08:28] Enrollment result for Ilya Sutskever: {'person_id': None, 'person_name': 'Ilya Sutskever', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:08:29] Image images\image.jpeg already exists. Skipping.
+[2026-09-20 05:08:29] Enrollment result for Image: {'person_id': None, 'person_name': 'Image', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:08:30] Image images\jeffbezos.jpeg already exists. Skipping.
+[2026-09-20 05:08:31] Image images\jeffbezos2.jpeg already exists. Skipping.
+[2026-09-20 05:08:32] Image images\jeffbezos3.jpeg already exists. Skipping.
+[2026-09-20 05:08:33] Jeff Bezos already has 3 images in Qdrant. Skipping.
+[2026-09-20 05:08:33] Enrollment result for Jeff Bezos: {'person_id': None, 'person_name': 'Jeff Bezos', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:08:34] Image images\joseph1.jpeg already exists. Skipping.
+[2026-09-20 05:08:35] Image images\joseph2.jpeg already exists. Skipping.
+[2026-09-20 05:08:36] Image images\joseph3.jpeg already exists. Skipping.
+[2026-09-20 05:08:37] Image images\joseph4.jpeg already exists. Skipping.
+[2026-09-20 05:08:37] Enrollment result for Joseph Gordon-Levitt: {'person_id': None, 'person_name': 'Joseph Gordon-Levitt', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:08:38] Image images\krish_naik.jpeg already exists. Skipping.
+[2026-09-20 05:08:38] Enrollment result for Krish Naik: {'person_id': None, 'person_name': 'Krish Naik', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:08:39] Image images\micheal1.jpeg already exists. Skipping.
+[2026-09-20 05:08:40] Image images\micheal2.jpeg already exists. Skipping.
+[2026-09-20 05:08:40] Image images\micheal3.jpeg already exists. Skipping.
+[2026-09-20 05:08:42] Michael already has 3 images in Qdrant. Skipping.
+[2026-09-20 05:08:42] Enrollment result for Michael: {'person_id': None, 'person_name': 'Michael', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:08:43] Image images\modi1.jpeg already exists. Skipping.
+[2026-09-20 05:08:44] Image images\modi2.jpeg already exists. Skipping.
+[2026-09-20 05:08:45] Multiple faces detected in images\modi3.jpeg
+[2026-09-20 05:08:46] Image images\modi4.jpeg already exists. Skipping.
+[2026-09-20 05:08:46] Enrollment result for Narendra Modi: {'person_id': None, 'person_name': 'Narendra Modi', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:08:47] Image images\mrbeast1.jpeg already exists. Skipping.
+[2026-09-20 05:08:47] Image images\mrbeast2.jpeg already exists. Skipping.
+[2026-09-20 05:08:48] Image images\mrbeast3.jpeg already exists. Skipping.
+[2026-09-20 05:08:50] MrBeast already has 3 images in Qdrant. Skipping.
+[2026-09-20 05:08:50] Enrollment result for MrBeast: {'person_id': None, 'person_name': 'MrBeast', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:08:52] Multiple faces detected in images\mulitple_ppl.png
+[2026-09-20 05:08:52] Enrollment result for Mulitple Ppl: {'person_id': None, 'person_name': 'Mulitple Ppl', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:08:53] Image images\naryanmurthy1.jpeg already exists. Skipping.
+[2026-09-20 05:08:54] Image images\naryanmurthy2.jpeg already exists. Skipping.
+[2026-09-20 05:08:55] Image images\naryanmurthy3.jpeg already exists. Skipping.
+[2026-09-20 05:08:56] Narayana Murthy already has 3 images in Qdrant. Skipping.
+[2026-09-20 05:08:56] Enrollment result for Narayana Murthy: {'person_id': None, 'person_name': 'Narayana Murthy', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:08:57] Image images\nishida1.jpeg already exists. Skipping.
+[2026-09-20 05:08:58] Image images\nishida2.jpeg already exists. Skipping.
+[2026-09-20 05:08:59] Image images\nishida3.jpeg already exists. Skipping.
+[2026-09-20 05:09:01] Yuji Nishida already has 3 images in Qdrant. Skipping.
+[2026-09-20 05:09:01] Enrollment result for Yuji Nishida: {'person_id': None, 'person_name': 'Yuji Nishida', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:09:01] Image images\nitish_singh.jpeg already exists. Skipping.
+[2026-09-20 05:09:01] Enrollment result for Nitish Singh: {'person_id': None, 'person_name': 'Nitish Singh', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:09:02] Image images\parth1.jpeg already exists. Skipping.
+[2026-09-20 05:09:03] Image images\parth2.jpeg already exists. Skipping.
+[2026-09-20 05:09:04] Image images\parth3.jpeg already exists. Skipping.
+[2026-09-20 05:09:05] Image images\parth4.jpeg already exists. Skipping.
+[2026-09-20 05:09:05] Enrollment result for Parth: {'person_id': None, 'person_name': 'Parth', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:09:06] Image images\piyush1.jpeg already exists. Skipping.
+[2026-09-20 05:09:07] Image images\piyush2.jpeg already exists. Skipping.
+[2026-09-20 05:09:08] Image images\piyush3.jpeg already exists. Skipping.
+[2026-09-20 05:09:08] Image images\piyush4.jpeg already exists. Skipping.
+[2026-09-20 05:09:08] Enrollment result for Piyush Bansal: {'person_id': None, 'person_name': 'Piyush Bansal', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:09:09] Image images\putin1.jpeg already exists. Skipping.
+[2026-09-20 05:09:10] Image images\putin2.jpeg already exists. Skipping.
+[2026-09-20 05:09:11] Image images\putin3.jpeg already exists. Skipping.
+[2026-09-20 05:09:13] Vladimir Putin already has 3 images in Qdrant. Skipping.
+[2026-09-20 05:09:13] Enrollment result for Vladimir Putin: {'person_id': None, 'person_name': 'Vladimir Putin', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:09:14] Image images\rohit1.jpeg already exists. Skipping.
+[2026-09-20 05:09:14] Image images\rohit2.jpeg already exists. Skipping.
+[2026-09-20 05:09:15] Image images\rohit3.jpeg already exists. Skipping.
+[2026-09-20 05:09:15] Enrollment result for Rohit Sharma: {'person_id': None, 'person_name': 'Rohit Sharma', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:09:16] Multiple faces detected in images\ryan1.jpeg
+[2026-09-20 05:09:17] Multiple faces detected in images\ryan2.jpeg
+[2026-09-20 05:09:18] Image images\ryan3.jpeg already exists. Skipping.
+[2026-09-20 05:09:18] Multiple faces detected in images\ryan4.jpeg
+[2026-09-20 05:09:18] Enrollment result for Ryan Gosling: {'person_id': None, 'person_name': 'Ryan Gosling', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:09:19] Image images\sam1.jpeg already exists. Skipping.
+[2026-09-20 05:09:20] Image images\sam2.jpeg already exists. Skipping.
+[2026-09-20 05:09:21] Image images\sam3.jpeg already exists. Skipping.
+[2026-09-20 05:09:23] Sam Altman already has 3 images in Qdrant. Skipping.
+[2026-09-20 05:09:23] Enrollment result for Sam Altman: {'person_id': None, 'person_name': 'Sam Altman', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:09:23] Image images\sardha.jpeg already exists. Skipping.
+[2026-09-20 05:09:24] Image images\sardha2.jpeg already exists. Skipping.
+[2026-09-20 05:09:25] Image images\sardha3.jpeg already exists. Skipping.
+[2026-09-20 05:09:27] Shraddha Khapra already has 3 images in Qdrant. Skipping.
+[2026-09-20 05:09:27] Enrollment result for Shraddha Khapra: {'person_id': None, 'person_name': 'Shraddha Khapra', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:09:28] Image images\sharukh1.jpeg already exists. Skipping.
+[2026-09-20 05:09:28] Image images\sharukh2.jpeg already exists. Skipping.
+[2026-09-20 05:09:29] Image images\sharukh3.jpeg already exists. Skipping.
+[2026-09-20 05:09:31] Shah Rukh Khan already has 3 images in Qdrant. Skipping.
+[2026-09-20 05:09:31] Enrollment result for Shah Rukh Khan: {'person_id': None, 'person_name': 'Shah Rukh Khan', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:09:32] Multiple faces detected in images\sheren1.jpeg
+[2026-09-20 05:09:33] Image images\sheren2.jpeg already exists. Skipping.
+[2026-09-20 05:09:33] Image images\sheren3.jpeg already exists. Skipping.
+[2026-09-20 05:09:34] Image images\sheren4.jpeg already exists. Skipping.
+[2026-09-20 05:09:34] Enrollment result for Sheren: {'person_id': None, 'person_name': 'Sheren', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:09:35] Image images\shisho1.jpeg already exists. Skipping.
+[2026-09-20 05:09:36] Image images\shisho2.jpeg already exists. Skipping.
+[2026-09-20 05:09:37] Image images\shisho3.jpeg already exists. Skipping.
+[2026-09-20 05:09:38] Multiple faces detected in images\shisho4.jpeg
+[2026-09-20 05:09:38] Enrollment result for Shisho: {'person_id': None, 'person_name': 'Shisho', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:09:39] Image images\sink1.jpeg already exists. Skipping.
+[2026-09-20 05:09:40] Image images\sink2.jpeg already exists. Skipping.
+[2026-09-20 05:09:41] Multiple faces detected in images\sink3.jpeg
+[2026-09-20 05:09:42] Image images\sink4.jpeg already exists. Skipping.
+[2026-09-20 05:09:42] Enrollment result for Sadie Sink: {'person_id': None, 'person_name': 'Sadie Sink', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:09:43] Image images\stefani1.jpeg already exists. Skipping.
+[2026-09-20 05:09:44] Image images\stefani2.jpeg already exists. Skipping.
+[2026-09-20 05:09:45] Image images\stefani3.jpeg already exists. Skipping.
+[2026-09-20 05:09:47] Gwen Stefani already has 3 images in Qdrant. Skipping.
+[2026-09-20 05:09:47] Enrollment result for Gwen Stefani: {'person_id': None, 'person_name': 'Gwen Stefani', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:09:47] Image images\sundar1.jpeg already exists. Skipping.
+[2026-09-20 05:09:48] Image images\sundar2.jpeg already exists. Skipping.
+[2026-09-20 05:09:49] Image images\sundar3.jpeg already exists. Skipping.
+[2026-09-20 05:09:49] Enrollment result for Sundar Pichai: {'person_id': None, 'person_name': 'Sundar Pichai', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:09:50] Image images\test1.jpeg already exists. Skipping.
+[2026-09-20 05:09:51] Image images\test2.jpeg already exists. Skipping.
+[2026-09-20 05:09:52] Image images\test3.jpeg already exists. Skipping.
+[2026-09-20 05:09:52] Enrollment result for Test: {'person_id': None, 'person_name': 'Test', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:09:52] Image images\thor2.jpeg already exists. Skipping.
+[2026-09-20 05:09:53] Image images\thor3.jpeg already exists. Skipping.
+[2026-09-20 05:09:53] Enrollment result for Thor: {'person_id': None, 'person_name': 'Thor', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:09:54] Image images\tom1.jpeg already exists. Skipping.
+[2026-09-20 05:09:55] Image images\tom2.jpeg already exists. Skipping.
+[2026-09-20 05:09:56] Image images\tom3.jpeg already exists. Skipping.
+[2026-09-20 05:09:57] Image images\tom4.jpeg already exists. Skipping.
+[2026-09-20 05:09:57] Enrollment result for Tom Cruise: {'person_id': None, 'person_name': 'Tom Cruise', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:09:58] Image images\tony1.jpeg already exists. Skipping.
+[2026-09-20 05:09:59] Image images\tony2.jpeg already exists. Skipping.
+[2026-09-20 05:10:00] Image images\tony3.jpeg already exists. Skipping.
+[2026-09-20 05:10:00] Enrollment result for Tony Stark: {'person_id': None, 'person_name': 'Tony Stark', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:10:01] Image images\virat1.jpeg already exists. Skipping.
+[2026-09-20 05:10:01] Image images\virat2.jpeg already exists. Skipping.
+[2026-09-20 05:10:02] Image images\virat3.jpeg already exists. Skipping.
+[2026-09-20 05:10:02] Enrollment result for Virat Kohli: {'person_id': None, 'person_name': 'Virat Kohli', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:10:03] Image images\yan_lecun.jpeg already exists. Skipping.
+[2026-09-20 05:10:04] Image images\yan_lecun2.jpeg already exists. Skipping.
+[2026-09-20 05:10:05] Image images\yan_lecun4.jpeg already exists. Skipping.
+[2026-09-20 05:10:07] Yann LeCun already has 3 images in Qdrant. Skipping.
+[2026-09-20 05:10:08] Yann LeCun already has 3 images in Qdrant. Skipping.
+[2026-09-20 05:10:10] Yann LeCun already has 3 images in Qdrant. Skipping.
+[2026-09-20 05:10:10] Enrollment result for Yann LeCun: {'person_id': None, 'person_name': 'Yann LeCun', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 05:10:10] Batch enrollment complete. Total newly enrolled images: 0
+
+-----------------------------------------------------------------
+=== RUN END: 2026-09-20 05:10:10 ===
+=================================================================
+
+
+
+=================================================================
+=== EVALUATION RUN: 2026-09-20 05:30:37 ===
+=================================================================
+
+[2026-09-20 05:30:37] Using evaluation directory: 'data\evaluation'
+[2026-09-20 05:30:44] Starting evaluation of 40 test image(s)...
+[2026-09-20 05:30:46] alakh4.jpeg               | Alakh Pandey       | Alakh Pandey       | 0.7076  | CORRECT
+[2026-09-20 05:30:47] alexandra4.jpeg           | Alexandra Daddario | Alexandra Daddario | 1.0000  | CORRECT
+[2026-09-20 05:30:49] amit4.jpeg                | Amit               | Amit               | 0.7443  | CORRECT
+[2026-09-20 05:30:50] andrew4.jpeg              | Andrew             | unknown            | 0.5261  | UNKNOWN
+[2026-09-20 05:30:51] arvind4.jpeg              | Arvind Srinivas    | Arvind Srinivas    | 0.7077  | CORRECT
+[2026-09-20 05:30:52] bradpit4.jpeg             | Brad Pitt          | Brad Pitt          | 1.0000  | CORRECT
+[2026-09-20 05:30:53] cox4.jpeg                 | Courteney Cox      | Courteney Cox      | 1.0000  | CORRECT
+[2026-09-20 05:30:54] cristino4.jpeg            | Cristiano Ronaldo  | Cristiano Ronaldo  | 1.0000  | CORRECT
+[2026-09-20 05:30:55] dario4.jpeg               | Dario Amodei       | Dario Amodei       | 0.7048  | CORRECT
+[2026-09-20 05:30:56] darshan3.jpeg             | Darshan            | Darshan            | 1.0000  | CORRECT
+[2026-09-20 05:30:57] donald4.jpeg              | Donald Trump       | unknown            | 0.6942  | UNKNOWN
+[2026-09-20 05:30:57] emma4.jpeg                | Emma Watson        | Emma Watson        | 1.0000  | CORRECT
+[2026-09-20 05:30:58] girl4.jpeg                | Girl               | Girl               | 1.0000  | CORRECT
+[2026-09-20 05:30:59] gordan4.jpeg              | Gordon Ramsay      | Gordon Ramsay      | 0.8838  | CORRECT
+[2026-09-20 05:31:00] jeffbezos4.jpeg           | Jeff Bezos         | Jeff Bezos         | 0.7175  | CORRECT
+[2026-09-20 05:31:01] joseph4.jpeg              | Joseph Gordon-Levitt | Joseph Gordon-Levitt | 1.0000  | CORRECT
+[2026-09-20 05:31:02] krish_naik.jpeg           | Krish Naik         | Krish Naik         | 1.0000  | CORRECT
+[2026-09-20 05:31:03] micheal4.jpeg             | Michael            | Michael            | 0.7170  | CORRECT
+[2026-09-20 05:31:04] modi4.jpeg                | Narendra Modi      | Narendra Modi      | 1.0000  | CORRECT
+[2026-09-20 05:31:05] mrbeast4.jpeg             | MrBeast            | MrBeast            | 0.8172  | CORRECT
+[2026-09-20 05:31:06] naryanmurthy4.jpeg        | Narayana Murthy    | Narayana Murthy    | 0.7996  | CORRECT
+[2026-09-20 05:31:06] nishida4.jpeg             | Yuji Nishida       | Yuji Nishida       | 0.7248  | CORRECT
+[2026-09-20 05:31:07] nitish_singh.jpeg         | Nitish Singh       | Nitish Singh       | 1.0000  | CORRECT
+[2026-09-20 05:31:08] parth4.jpeg               | Parth              | Parth              | 1.0000  | CORRECT
+[2026-09-20 05:31:09] piyush4.jpeg              | Piyush Bansal      | Piyush Bansal      | 1.0000  | CORRECT
+[2026-09-20 05:31:10] putin4.jpeg               | Vladimir Putin     | Vladimir Putin     | 0.7415  | CORRECT
+[2026-09-20 05:31:11] rutvik.jpeg               | Rutvik             | unknown            | 0.1854  | UNKNOWN
+[2026-09-20 05:31:11] ryan4.jpeg                | Ryan Gosling       | error              | N/A     | ERROR (Multiple faces detected.)
+[2026-09-20 05:31:12] sam4.jpeg                 | Sam Altman         | Sam Altman         | 0.8072  | CORRECT
+[2026-09-20 05:31:13] sardha4.jpeg              | Shraddha Khapra    | Shraddha Khapra    | 0.7459  | CORRECT
+[2026-09-20 05:31:14] sharukh4.jpeg             | Shah Rukh Khan     | Shah Rukh Khan     | 0.7289  | CORRECT
+[2026-09-20 05:31:15] sheren4.jpeg              | Sheren             | Sheren             | 1.0000  | CORRECT
+[2026-09-20 05:31:16] shisho4.jpeg              | Shisho             | error              | N/A     | ERROR (Multiple faces detected.)
+[2026-09-20 05:31:17] sink4.jpeg                | Sadie Sink         | Sadie Sink         | 1.0000  | CORRECT
+[2026-09-20 05:31:18] stefani4.jpeg             | Gwen Stefani       | Gwen Stefani       | 0.7001  | CORRECT
+[2026-09-20 05:31:19] tom4.jpeg                 | Tom Cruise         | Tom Cruise         | 1.0000  | CORRECT
+[2026-09-20 05:31:20] yan_lecun4.jpeg           | Yann LeCun         | Yann LeCun         | 1.0000  | CORRECT
+[2026-09-20 05:31:21] yan_lecun5.jpeg           | Yann LeCun         | Yann LeCun         | 0.7572  | CORRECT
+[2026-09-20 05:31:22] yan_lecun6.jpeg           | Yann LeCun         | Yann LeCun         | 0.7490  | CORRECT
+[2026-09-20 05:31:22] yan_lecun7.jpeg           | Yann LeCun         | Yann LeCun         | 0.7485  | CORRECT
+[2026-09-20 05:31:22] EVALUATION COMPLETE: Total=40, Correct=35, Unknown=5, Mismatch=0, Accuracy=87.50%
+
+-----------------------------------------------------------------
+=== RUN END: 2026-09-20 05:31:22 ===
+=================================================================
+
+
+
+=================================================================
+=== EVALUATION RUN: 2026-09-20 05:34:28 ===
+=================================================================
+
+[2026-09-20 05:34:28] Using evaluation directory: 'data\evaluation'
+[2026-09-20 05:34:33] Starting evaluation of 40 test image(s)...
+[2026-09-20 05:34:35] alakh4.jpeg               | Alakh Pandey       | Alakh Pandey       | 0.7076  | CORRECT
+[2026-09-20 05:34:36] alexandra4.jpeg           | Alexandra Daddario | Alexandra Daddario | 1.0000  | CORRECT
+[2026-09-20 05:34:37] amit4.jpeg                | Amit               | Amit               | 0.7443  | CORRECT
+[2026-09-20 05:34:38] andrew4.jpeg              | Andrew             | unknown            | 0.5261  | UNKNOWN
+[2026-09-20 05:34:39] arvind4.jpeg              | Arvind Srinivas    | Arvind Srinivas    | 0.7077  | CORRECT
+[2026-09-20 05:34:40] bradpit4.jpeg             | Brad Pitt          | Brad Pitt          | 1.0000  | CORRECT
+[2026-09-20 05:34:41] cox4.jpeg                 | Courteney Cox      | Courteney Cox      | 1.0000  | CORRECT
+[2026-09-20 05:34:42] cristino4.jpeg            | Cristiano Ronaldo  | Cristiano Ronaldo  | 1.0000  | CORRECT
+[2026-09-20 05:34:42] dario4.jpeg               | Dario Amodei       | Dario Amodei       | 0.7048  | CORRECT
+[2026-09-20 05:34:43] darshan3.jpeg             | Darshan            | unknown            | 0.6553  | UNKNOWN
+[2026-09-20 05:34:44] donald4.jpeg              | Donald Trump       | unknown            | 0.6942  | UNKNOWN
+[2026-09-20 05:34:46] emma4.jpeg                | Emma Watson        | Emma Watson        | 1.0000  | CORRECT
+[2026-09-20 05:34:47] girl4.jpeg                | Girl               | Girl               | 1.0000  | CORRECT
+[2026-09-20 05:34:48] gordan4.jpeg              | Gordon Ramsay      | Gordon Ramsay      | 0.8838  | CORRECT
+[2026-09-20 05:34:49] jeffbezos4.jpeg           | Jeff Bezos         | Jeff Bezos         | 0.7175  | CORRECT
+[2026-09-20 05:34:50] joseph4.jpeg              | Joseph Gordon-Levitt | Joseph Gordon-Levitt | 1.0000  | CORRECT
+[2026-09-20 05:34:51] krish_naik.jpeg           | Krish Naik         | Krish Naik         | 1.0000  | CORRECT
+[2026-09-20 05:34:52] micheal4.jpeg             | Michael            | Michael            | 0.7170  | CORRECT
+[2026-09-20 05:34:53] modi4.jpeg                | Narendra Modi      | Narendra Modi      | 1.0000  | CORRECT
+[2026-09-20 05:34:54] mrbeast4.jpeg             | MrBeast            | MrBeast            | 0.8172  | CORRECT
+[2026-09-20 05:34:55] naryanmurthy4.jpeg        | Narayana Murthy    | Narayana Murthy    | 0.7996  | CORRECT
+[2026-09-20 05:34:56] nishida4.jpeg             | Yuji Nishida       | Yuji Nishida       | 0.7248  | CORRECT
+[2026-09-20 05:34:57] nitish_singh.jpeg         | Nitish Singh       | Nitish Singh       | 1.0000  | CORRECT
+[2026-09-20 05:34:57] parth4.jpeg               | Parth              | Parth              | 1.0000  | CORRECT
+[2026-09-20 05:34:59] piyush4.jpeg              | Piyush Bansal      | Piyush Bansal      | 1.0000  | CORRECT
+[2026-09-20 05:34:59] putin4.jpeg               | Vladimir Putin     | Vladimir Putin     | 0.7415  | CORRECT
+[2026-09-20 05:35:00] rutvik.jpeg               | Rutvik             | unknown            | 0.1854  | UNKNOWN
+[2026-09-20 05:35:01] ryan4.jpeg                | Ryan Gosling       | error              | N/A     | ERROR (Multiple faces detected.)
+[2026-09-20 05:35:02] sam4.jpeg                 | Sam Altman         | Sam Altman         | 0.8072  | CORRECT
+[2026-09-20 05:35:03] sardha4.jpeg              | Shraddha Khapra    | Shraddha Khapra    | 0.7459  | CORRECT
+[2026-09-20 05:35:04] sharukh4.jpeg             | Shah Rukh Khan     | Shah Rukh Khan     | 0.7289  | CORRECT
+[2026-09-20 05:35:05] sheren4.jpeg              | Sheren             | Sheren             | 1.0000  | CORRECT
+[2026-09-20 05:35:07] shisho4.jpeg              | Shisho             | error              | N/A     | ERROR (Multiple faces detected.)
+[2026-09-20 05:35:08] sink4.jpeg                | Sadie Sink         | Sadie Sink         | 1.0000  | CORRECT
+[2026-09-20 05:35:09] stefani4.jpeg             | Gwen Stefani       | Gwen Stefani       | 0.7001  | CORRECT
+[2026-09-20 05:35:10] tom4.jpeg                 | Tom Cruise         | Tom Cruise         | 1.0000  | CORRECT
+[2026-09-20 05:35:11] yan_lecun4.jpeg           | Yann LeCun         | Yann LeCun         | 1.0000  | CORRECT
+[2026-09-20 05:35:12] yan_lecun5.jpeg           | Yann LeCun         | Yann LeCun         | 0.7572  | CORRECT
+[2026-09-20 05:35:13] yan_lecun6.jpeg           | Yann LeCun         | Yann LeCun         | 0.7490  | CORRECT
+[2026-09-20 05:35:14] yan_lecun7.jpeg           | Yann LeCun         | Yann LeCun         | 0.7485  | CORRECT
+[2026-09-20 05:35:14] EVALUATION COMPLETE: Total=40, Correct=34, Unknown=6, Mismatch=0, Accuracy=85.00%
+
+-----------------------------------------------------------------
+=== RUN END: 2026-09-20 05:35:14 ===
+=================================================================
+

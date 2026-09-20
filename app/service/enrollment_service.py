@@ -64,26 +64,24 @@ class EnrollmentService:
                 # Existing person
                 person_id = best_match["person_id"]
                 existing_person_name = best_match["person_name"]
-    
-                # Count existing images
-                image_count = self.vector_store.count_person_images(person_id)
-    
-                # Maximum 3 images per person
-                if image_count >= 3:
-                    msg = f"{existing_person_name} already has {image_count} images. Skipping."
-                    print(msg)
-                    log_message(msg)
-                    continue
-    
-                # Keep the original name stored for this person
                 person_name = existing_person_name
-    
+
             else:
     
                 # No matching person found
                 # Create a new identity if not already created in this batch
                 if person_id is None:
                     person_id = str(uuid.uuid4())
+
+            # --------------------------------------------------
+            # 3. Check Qdrant for existing image count of person
+            # --------------------------------------------------
+            image_count = self.vector_store.count_person_images(person_id)
+            if image_count >= 3:
+                msg = f"{person_name} already has {image_count} images in Qdrant. Skipping."
+                print(msg)
+                log_message(msg)
+                continue
     
             # --------------------------------------------------
             # 3. Store the new face embedding

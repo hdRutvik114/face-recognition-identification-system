@@ -51,6 +51,21 @@ DISPLAY_NAME_OVERRIDES = {
     "rutvik": "Rutvik",
     "nitish_singh": "Nitish Singh",
     "krish_naik": "Krish Naik",
+    "alexandra": "Alexandra Daddario",
+    "andrew": "Andrew",
+    "bradpit": "Brad Pitt",
+    "cox": "Courteney Cox",
+    "emma": "Emma Watson",
+    "girl": "Girl",
+    "gordan": "Gordon Ramsay",
+    "joseph": "Joseph Gordon-Levitt",
+    "nishida": "Yuji Nishida",
+    "ryan": "Ryan Gosling",
+    "sheren": "Sheren",
+    "shisho": "Shisho",
+    "sink": "Sadie Sink",
+    "stefani": "Gwen Stefani",
+    "tom": "Tom Cruise",
 }
 
 

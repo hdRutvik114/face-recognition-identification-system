@@ -44,6 +44,21 @@ DISPLAY_NAME_OVERRIDES = {
     "rutvik": "Rutvik",
     "nitish_singh": "Nitish Singh",
     "krish_naik": "Krish Naik",
+    "alexandra": "Alexandra Daddario",
+    "andrew": "Andrew",
+    "bradpit": "Brad Pitt",
+    "cox": "Courteney Cox",
+    "emma": "Emma Watson",
+    "girl": "Girl",
+    "gordan": "Gordon Ramsay",
+    "joseph": "Joseph Gordon-Levitt",
+    "nishida": "Yuji Nishida",
+    "ryan": "Ryan Gosling",
+    "sheren": "Sheren",
+    "shisho": "Shisho",
+    "sink": "Sadie Sink",
+    "stefani": "Gwen Stefani",
+    "tom": "Tom Cruise",
 }
 
 
@@ -55,15 +70,14 @@ def get_display_name(person_key: str) -> str:
 
 
 def get_dataset_dir() -> Path:
-    # Check data/enrolled first
-    enrolled_dir = Path("data/enrolled")
-    if enrolled_dir.exists() and any(enrolled_dir.iterdir()):
-        return enrolled_dir
-    # Fallback to images/
+    # Check images directory first for flat dataset
     images_dir = Path("images")
     if images_dir.exists() and any(images_dir.iterdir()):
         return images_dir
-    return enrolled_dir
+    enrolled_dir = Path("data/enrolled")
+    if enrolled_dir.exists() and any(enrolled_dir.iterdir()):
+        return enrolled_dir
+    return images_dir
 
 
 def group_images_by_person(dataset_path: Path) -> dict[str, list[str]]:

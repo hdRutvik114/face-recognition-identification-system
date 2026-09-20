@@ -43,9 +43,10 @@ class VectorStore:
     )
 
         self.client.upsert(
-        collection_name=settings.QDRANT_COLLECTION_NAME,
-        points=[point]
-    )
+            collection_name=settings.QDRANT_COLLECTION_NAME,
+            points=[point],
+            wait=True,
+        )
 
         print(f"Embedding  {person_name}.")
       
