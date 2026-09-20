@@ -1711,3 +1711,316 @@ second line for run check
 === RUN END: 2026-09-20 10:22:25 ===
 =================================================================
 
+
+
+=================================================================
+=== DATASET ENROLLMENT RUN: 2026-09-20 11:21:26 ===
+=================================================================
+
+[2026-09-20 11:21:26] Found a legacy 'images/' directory — it is being IGNORED by enrollment on purpose, because it may contain files that were also used for evaluation. If you still need any of those images enrolled, move them into 'data/enrolled/<person_name>/' explicitly.
+[2026-09-20 11:21:26] Using dataset directory: 'data\enrolled'
+[2026-09-20 11:21:44] Found 31 person identity group(s) to process.
+
+
+=================================================================
+=== DATASET ENROLLMENT RUN: 2026-09-20 11:25:56 ===
+=================================================================
+
+[2026-09-20 11:25:56] Found a legacy 'images/' directory — it is being IGNORED by enrollment on purpose, because it may contain files that were also used for evaluation. If you still need any of those images enrolled, move them into 'data/enrolled/<person_name>/' explicitly.
+[2026-09-20 11:25:56] Using dataset directory: 'data\enrolled'
+[2026-09-20 11:26:22] Found 31 person identity group(s) to process.
+
+
+=================================================================
+=== DATASET ENROLLMENT RUN: 2026-09-20 11:28:22 ===
+=================================================================
+
+[2026-09-20 11:28:22] Found a legacy 'images/' directory — it is being IGNORED by enrollment on purpose, because it may contain files that were also used for evaluation. If you still need any of those images enrolled, move them into 'data/enrolled/<person_name>/' explicitly.
+[2026-09-20 11:28:22] Using dataset directory: 'data\enrolled'
+[2026-09-20 11:28:57] Found 31 person identity group(s) to process.
+[2026-09-20 11:29:13] Enrolled image 'data\enrolled\alakh_pandey\alakh1.jpeg' for Alakh Pandey (ID: 50552519-16e3-51bd-8d3a-93ce1d2f96e4)
+[2026-09-20 11:29:47] Enrolled image 'data\enrolled\alakh_pandey\alakh2.jpeg' for Alakh Pandey (ID: 50552519-16e3-51bd-8d3a-93ce1d2f96e4)
+[2026-09-20 11:29:59] Enrolled image 'data\enrolled\alakh_pandey\alakh3.jpeg' for Alakh Pandey (ID: 50552519-16e3-51bd-8d3a-93ce1d2f96e4)
+[2026-09-20 11:29:59] Enrollment result for Alakh Pandey: {'person_id': '50552519-16e3-51bd-8d3a-93ce1d2f96e4', 'person_name': 'Alakh Pandey', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-20 11:30:14] Enrolled image 'data\enrolled\amit\amit1.jpeg' for Amit (ID: 195e21e4-956a-5a50-afea-c931b61fc7a9)
+[2026-09-20 11:30:27] Enrolled image 'data\enrolled\amit\amit2.jpeg' for Amit (ID: 195e21e4-956a-5a50-afea-c931b61fc7a9)
+[2026-09-20 11:30:30] Enrolled image 'data\enrolled\amit\amit3.jpeg' for Amit (ID: 195e21e4-956a-5a50-afea-c931b61fc7a9)
+[2026-09-20 11:30:30] Enrollment result for Amit: {'person_id': '195e21e4-956a-5a50-afea-c931b61fc7a9', 'person_name': 'Amit', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-20 11:30:31] Enrolled image 'data\enrolled\ananya_pandey\ananyapandey.jpg' for Ananya Pandey (ID: 75b7446d-711a-5df2-a5cf-1052dd00c32c)
+[2026-09-20 11:30:31] Enrollment result for Ananya Pandey: {'person_id': '75b7446d-711a-5df2-a5cf-1052dd00c32c', 'person_name': 'Ananya Pandey', 'enrolled_count': 1, 'message': 'Enrollment completed.'}
+[2026-09-20 11:30:34] Enrolled image 'data\enrolled\andrew_karpathy\andrew_karpathy.jpg' for Andrew Karpathy (ID: dfac7a0f-42b3-5e4c-b24f-9206c6b7c3c4)
+[2026-09-20 11:30:34] Enrollment result for Andrew Karpathy: {'person_id': 'dfac7a0f-42b3-5e4c-b24f-9206c6b7c3c4', 'person_name': 'Andrew Karpathy', 'enrolled_count': 1, 'message': 'Enrollment completed.'}
+[2026-09-20 11:30:37] Enrolled image 'data\enrolled\arvind_srinivas\arvind1.jpeg' for Arvind Srinivas (ID: 432a82d9-42ff-5eaa-92c3-c3b4384a4722)
+[2026-09-20 11:30:43] Enrolled image 'data\enrolled\arvind_srinivas\arvind2.jpeg' for Arvind Srinivas (ID: 432a82d9-42ff-5eaa-92c3-c3b4384a4722)
+[2026-09-20 11:30:50] Enrolled image 'data\enrolled\arvind_srinivas\arvind3.jpeg' for Arvind Srinivas (ID: 432a82d9-42ff-5eaa-92c3-c3b4384a4722)
+[2026-09-20 11:30:50] Enrollment result for Arvind Srinivas: {'person_id': '432a82d9-42ff-5eaa-92c3-c3b4384a4722', 'person_name': 'Arvind Srinivas', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-20 11:30:55] Enrolled image 'data\enrolled\cristiano_ronaldo\cristino1.jpeg' for Cristiano Ronaldo (ID: d6c018fd-fd39-51b2-94ce-abf38cd8700d)
+[2026-09-20 11:31:01] Enrolled image 'data\enrolled\cristiano_ronaldo\cristino2.jpeg' for Cristiano Ronaldo (ID: d6c018fd-fd39-51b2-94ce-abf38cd8700d)
+[2026-09-20 11:31:06] Enrolled image 'data\enrolled\cristiano_ronaldo\cristino3.jpeg' for Cristiano Ronaldo (ID: d6c018fd-fd39-51b2-94ce-abf38cd8700d)
+[2026-09-20 11:31:06] Enrollment result for Cristiano Ronaldo: {'person_id': 'd6c018fd-fd39-51b2-94ce-abf38cd8700d', 'person_name': 'Cristiano Ronaldo', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-20 11:31:21] Enrolled image 'data\enrolled\dario_amodei\dario1.jpeg' for Dario Amodei (ID: 4796c2cb-3d61-52f3-a171-fbda3be497e4)
+[2026-09-20 11:31:25] Enrolled image 'data\enrolled\dario_amodei\dario2.jpeg' for Dario Amodei (ID: 4796c2cb-3d61-52f3-a171-fbda3be497e4)
+[2026-09-20 11:31:50] Enrolled image 'data\enrolled\dario_amodei\dario3.jpeg' for Dario Amodei (ID: 4796c2cb-3d61-52f3-a171-fbda3be497e4)
+[2026-09-20 11:31:50] Enrollment result for Dario Amodei: {'person_id': '4796c2cb-3d61-52f3-a171-fbda3be497e4', 'person_name': 'Dario Amodei', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-20 11:32:01] Enrolled image 'data\enrolled\darshan\darshan1.jpeg' for Darshan (ID: 32dbf4d6-a3f5-51fb-8541-ee07687204da)
+[2026-09-20 11:32:09] Enrolled image 'data\enrolled\darshan\darshan2.jpeg' for Darshan (ID: 32dbf4d6-a3f5-51fb-8541-ee07687204da)
+[2026-09-20 11:32:15] Enrolled image 'data\enrolled\darshan\darshan3.jpeg' for Darshan (ID: 32dbf4d6-a3f5-51fb-8541-ee07687204da)
+[2026-09-20 11:32:15] Enrollment result for Darshan: {'person_id': '32dbf4d6-a3f5-51fb-8541-ee07687204da', 'person_name': 'Darshan', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-20 11:32:21] Enrolled image 'data\enrolled\donald_trump\donald1.jpeg' for Donald Trump (ID: 53b2f1c2-793d-5237-8fe2-1a6862629e8f)
+[2026-09-20 11:32:28] Enrolled image 'data\enrolled\donald_trump\donald2.jpeg' for Donald Trump (ID: 53b2f1c2-793d-5237-8fe2-1a6862629e8f)
+[2026-09-20 11:32:42] Enrolled image 'data\enrolled\donald_trump\donald3.jpeg' for Donald Trump (ID: 53b2f1c2-793d-5237-8fe2-1a6862629e8f)
+[2026-09-20 11:32:42] Enrollment result for Donald Trump: {'person_id': '53b2f1c2-793d-5237-8fe2-1a6862629e8f', 'person_name': 'Donald Trump', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-20 11:32:55] Enrolled image 'data\enrolled\elon_musk\elon1.jpeg' for Elon Musk (ID: 3ac51452-da5f-5667-bac0-9c70074cace3)
+[2026-09-20 11:33:11] Enrolled image 'data\enrolled\elon_musk\elon2.jpeg' for Elon Musk (ID: 3ac51452-da5f-5667-bac0-9c70074cace3)
+[2026-09-20 11:33:11] No face detected in data\enrolled\elon_musk\elon3.jpeg
+[2026-09-20 11:33:11] Enrollment result for Elon Musk: {'person_id': '3ac51452-da5f-5667-bac0-9c70074cace3', 'person_name': 'Elon Musk', 'enrolled_count': 2, 'message': 'Enrollment completed.'}
+[2026-09-20 11:33:14] Enrolled image 'data\enrolled\ilya_sutskever\ilyasutskiver.jpg' for Ilya Sutskever (ID: 3a514026-8cd0-521b-9b8e-b2c0c3e2ec1e)
+[2026-09-20 11:33:23] Enrolled image 'data\enrolled\ilya_sutskever\ilyasutskiver2.jpg' for Ilya Sutskever (ID: 3a514026-8cd0-521b-9b8e-b2c0c3e2ec1e)
+[2026-09-20 11:33:24] Multiple faces detected in data\enrolled\ilya_sutskever\ilyasutskiver3.jpg
+[2026-09-20 11:33:24] Enrollment result for Ilya Sutskever: {'person_id': '3a514026-8cd0-521b-9b8e-b2c0c3e2ec1e', 'person_name': 'Ilya Sutskever', 'enrolled_count': 2, 'message': 'Enrollment completed.'}
+[2026-09-20 11:33:34] Enrolled image 'data\enrolled\jeff_bezos\jeffbezos.jpeg' for Jeff Bezos (ID: ee7445ca-36da-51db-ae45-005893362407)
+[2026-09-20 11:34:13] Enrolled image 'data\enrolled\jeff_bezos\jeffbezos2.jpeg' for Jeff Bezos (ID: ee7445ca-36da-51db-ae45-005893362407)
+[2026-09-20 11:34:23] Enrolled image 'data\enrolled\jeff_bezos\jeffbezos3.jpeg' for Jeff Bezos (ID: ee7445ca-36da-51db-ae45-005893362407)
+[2026-09-20 11:34:23] Enrollment result for Jeff Bezos: {'person_id': 'ee7445ca-36da-51db-ae45-005893362407', 'person_name': 'Jeff Bezos', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-20 11:34:32] Enrolled image 'data\enrolled\mahatma_gandhi\gandhi1.jpeg' for Mahatma Gandhi (ID: 7ba4dab7-cb2a-5657-b660-e1b5f0c80594)
+[2026-09-20 11:34:41] Enrolled image 'data\enrolled\mahatma_gandhi\gandhi2.jpeg' for Mahatma Gandhi (ID: 7ba4dab7-cb2a-5657-b660-e1b5f0c80594)
+[2026-09-20 11:34:45] Enrolled image 'data\enrolled\mahatma_gandhi\gandhi3.jpeg' for Mahatma Gandhi (ID: 7ba4dab7-cb2a-5657-b660-e1b5f0c80594)
+[2026-09-20 11:34:45] Enrollment result for Mahatma Gandhi: {'person_id': '7ba4dab7-cb2a-5657-b660-e1b5f0c80594', 'person_name': 'Mahatma Gandhi', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-20 11:34:47] Enrolled image 'data\enrolled\michael\micheal1.jpeg' for Michael (ID: f61d04ff-03a9-5981-bc40-a7399fffb22a)
+[2026-09-20 11:34:49] Enrolled image 'data\enrolled\michael\micheal2.jpeg' for Michael (ID: f61d04ff-03a9-5981-bc40-a7399fffb22a)
+[2026-09-20 11:34:51] Enrolled image 'data\enrolled\michael\micheal3.jpeg' for Michael (ID: f61d04ff-03a9-5981-bc40-a7399fffb22a)
+[2026-09-20 11:34:51] Enrollment result for Michael: {'person_id': 'f61d04ff-03a9-5981-bc40-a7399fffb22a', 'person_name': 'Michael', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-20 11:34:53] Enrolled image 'data\enrolled\mrbeast\mrbeast1.jpeg' for MrBeast (ID: 9989bf14-4c89-5240-b31c-f3b3306e7a7e)
+[2026-09-20 11:34:54] Enrolled image 'data\enrolled\mrbeast\mrbeast2.jpeg' for MrBeast (ID: 9989bf14-4c89-5240-b31c-f3b3306e7a7e)
+[2026-09-20 11:34:56] Enrolled image 'data\enrolled\mrbeast\mrbeast3.jpeg' for MrBeast (ID: 9989bf14-4c89-5240-b31c-f3b3306e7a7e)
+[2026-09-20 11:34:56] Enrollment result for MrBeast: {'person_id': '9989bf14-4c89-5240-b31c-f3b3306e7a7e', 'person_name': 'MrBeast', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-20 11:34:57] Enrolled image 'data\enrolled\ms_dhoni\dhoni1.jpeg' for Ms Dhoni (ID: 654d77c1-622f-579f-b489-e1bbbcd1770a)
+[2026-09-20 11:34:59] Enrolled image 'data\enrolled\ms_dhoni\dhoni2.jpeg' for Ms Dhoni (ID: 654d77c1-622f-579f-b489-e1bbbcd1770a)
+[2026-09-20 11:35:00] Enrolled image 'data\enrolled\ms_dhoni\dhoni3.jpeg' for Ms Dhoni (ID: 654d77c1-622f-579f-b489-e1bbbcd1770a)
+[2026-09-20 11:35:00] Enrollment result for Ms Dhoni: {'person_id': '654d77c1-622f-579f-b489-e1bbbcd1770a', 'person_name': 'Ms Dhoni', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-20 11:35:02] Enrolled image 'data\enrolled\narayana_murthy\naryanmurthy1.jpeg' for Narayana Murthy (ID: 74b75e03-8033-5909-bf68-8337a03b321a)
+[2026-09-20 11:35:03] Enrolled image 'data\enrolled\narayana_murthy\naryanmurthy2.jpeg' for Narayana Murthy (ID: 74b75e03-8033-5909-bf68-8337a03b321a)
+[2026-09-20 11:35:05] Enrolled image 'data\enrolled\narayana_murthy\naryanmurthy3.jpeg' for Narayana Murthy (ID: 74b75e03-8033-5909-bf68-8337a03b321a)
+[2026-09-20 11:35:05] Enrollment result for Narayana Murthy: {'person_id': '74b75e03-8033-5909-bf68-8337a03b321a', 'person_name': 'Narayana Murthy', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-20 11:35:06] Enrolled image 'data\enrolled\narendra_modi\modi1.jpeg' for Narendra Modi (ID: a739f2d7-743e-5dbb-b33a-f9876d1b24be)
+[2026-09-20 11:35:08] Enrolled image 'data\enrolled\narendra_modi\modi2.jpeg' for Narendra Modi (ID: a739f2d7-743e-5dbb-b33a-f9876d1b24be)
+[2026-09-20 11:35:09] Multiple faces detected in data\enrolled\narendra_modi\modi3.jpeg
+[2026-09-20 11:35:09] Enrollment result for Narendra Modi: {'person_id': 'a739f2d7-743e-5dbb-b33a-f9876d1b24be', 'person_name': 'Narendra Modi', 'enrolled_count': 2, 'message': 'Enrollment completed.'}
+[2026-09-20 11:35:10] Enrolled image 'data\enrolled\parth\parth1.jpeg' for Parth (ID: 47c4332e-6fa9-56de-93d5-372ead689b3b)
+[2026-09-20 11:35:12] Enrolled image 'data\enrolled\parth\parth2.jpeg' for Parth (ID: 47c4332e-6fa9-56de-93d5-372ead689b3b)
+[2026-09-20 11:35:13] Enrolled image 'data\enrolled\parth\parth3.jpeg' for Parth (ID: 47c4332e-6fa9-56de-93d5-372ead689b3b)
+[2026-09-20 11:35:13] Enrollment result for Parth: {'person_id': '47c4332e-6fa9-56de-93d5-372ead689b3b', 'person_name': 'Parth', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-20 11:35:16] Enrolled image 'data\enrolled\piyush_bansal\piyush1.jpeg' for Piyush Bansal (ID: cd5334b6-0705-5801-920f-63934b555a56)
+[2026-09-20 11:35:18] Enrolled image 'data\enrolled\piyush_bansal\piyush2.jpeg' for Piyush Bansal (ID: cd5334b6-0705-5801-920f-63934b555a56)
+[2026-09-20 11:35:19] Enrolled image 'data\enrolled\piyush_bansal\piyush3.jpeg' for Piyush Bansal (ID: cd5334b6-0705-5801-920f-63934b555a56)
+[2026-09-20 11:35:19] Enrollment result for Piyush Bansal: {'person_id': 'cd5334b6-0705-5801-920f-63934b555a56', 'person_name': 'Piyush Bansal', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-20 11:35:21] Enrolled image 'data\enrolled\rohit_sharma\rohit1.jpeg' for Rohit Sharma (ID: b27df28c-2338-5a33-a8b1-364eb60a6f43)
+[2026-09-20 11:35:22] Enrolled image 'data\enrolled\rohit_sharma\rohit2.jpeg' for Rohit Sharma (ID: b27df28c-2338-5a33-a8b1-364eb60a6f43)
+[2026-09-20 11:35:24] Enrolled image 'data\enrolled\rohit_sharma\rohit3.jpeg' for Rohit Sharma (ID: b27df28c-2338-5a33-a8b1-364eb60a6f43)
+[2026-09-20 11:35:24] Enrollment result for Rohit Sharma: {'person_id': 'b27df28c-2338-5a33-a8b1-364eb60a6f43', 'person_name': 'Rohit Sharma', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-20 11:35:25] Enrolled image 'data\enrolled\sam_altman\sam1.jpeg' for Sam Altman (ID: 32b54a5a-80c8-5004-a608-6195a6a043d8)
+[2026-09-20 11:35:27] Enrolled image 'data\enrolled\sam_altman\sam2.jpeg' for Sam Altman (ID: 32b54a5a-80c8-5004-a608-6195a6a043d8)
+[2026-09-20 11:35:28] Enrolled image 'data\enrolled\sam_altman\sam3.jpeg' for Sam Altman (ID: 32b54a5a-80c8-5004-a608-6195a6a043d8)
+[2026-09-20 11:35:28] Enrollment result for Sam Altman: {'person_id': '32b54a5a-80c8-5004-a608-6195a6a043d8', 'person_name': 'Sam Altman', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-20 11:35:30] Enrolled image 'data\enrolled\shah_rukh_khan\sharukh1.jpeg' for Shah Rukh Khan (ID: 75d53455-6878-53e7-b176-be8692768ee8)
+[2026-09-20 11:35:31] Enrolled image 'data\enrolled\shah_rukh_khan\sharukh2.jpeg' for Shah Rukh Khan (ID: 75d53455-6878-53e7-b176-be8692768ee8)
+[2026-09-20 11:35:33] Enrolled image 'data\enrolled\shah_rukh_khan\sharukh3.jpeg' for Shah Rukh Khan (ID: 75d53455-6878-53e7-b176-be8692768ee8)
+[2026-09-20 11:35:33] Enrollment result for Shah Rukh Khan: {'person_id': '75d53455-6878-53e7-b176-be8692768ee8', 'person_name': 'Shah Rukh Khan', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-20 11:35:34] Enrolled image 'data\enrolled\shraddha_khapra\sardha.jpeg' for Shraddha Khapra (ID: dc8dba08-5344-5aba-a23b-f082a598adcb)
+[2026-09-20 11:35:36] Enrolled image 'data\enrolled\shraddha_khapra\sardha2.jpeg' for Shraddha Khapra (ID: dc8dba08-5344-5aba-a23b-f082a598adcb)
+[2026-09-20 11:35:37] Enrolled image 'data\enrolled\shraddha_khapra\sardha3.jpeg' for Shraddha Khapra (ID: dc8dba08-5344-5aba-a23b-f082a598adcb)
+[2026-09-20 11:35:37] Enrollment result for Shraddha Khapra: {'person_id': 'dc8dba08-5344-5aba-a23b-f082a598adcb', 'person_name': 'Shraddha Khapra', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-20 11:35:39] Enrolled image 'data\enrolled\sundar_pichai\sundar1.jpeg' for Sundar Pichai (ID: aeb0da0b-e47d-5606-86d1-ec08c3cddad4)
+[2026-09-20 11:35:40] Enrolled image 'data\enrolled\sundar_pichai\sundar2.jpeg' for Sundar Pichai (ID: aeb0da0b-e47d-5606-86d1-ec08c3cddad4)
+[2026-09-20 11:35:42] Enrolled image 'data\enrolled\sundar_pichai\sundar3.jpeg' for Sundar Pichai (ID: aeb0da0b-e47d-5606-86d1-ec08c3cddad4)
+[2026-09-20 11:35:42] Enrollment result for Sundar Pichai: {'person_id': 'aeb0da0b-e47d-5606-86d1-ec08c3cddad4', 'person_name': 'Sundar Pichai', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+
+
+=================================================================
+=== DATASET ENROLLMENT RUN: 2026-09-20 11:40:53 ===
+=================================================================
+
+[2026-09-20 11:40:53] Found a legacy 'images/' directory — it is being IGNORED by enrollment on purpose, because it may contain files that were also used for evaluation. If you still need any of those images enrolled, move them into 'data/enrolled/<person_name>/' explicitly.
+[2026-09-20 11:40:53] Using dataset directory: 'data\enrolled'
+[2026-09-20 11:41:00] Found 31 person identity group(s) to process.
+[2026-09-20 11:41:01] Image data\enrolled\alakh_pandey\alakh1.jpeg already exists. Skipping.
+[2026-09-20 11:41:02] Image data\enrolled\alakh_pandey\alakh2.jpeg already exists. Skipping.
+[2026-09-20 11:41:03] Image data\enrolled\alakh_pandey\alakh3.jpeg already exists. Skipping.
+[2026-09-20 11:41:03] Enrollment result for Alakh Pandey: {'person_id': '50552519-16e3-51bd-8d3a-93ce1d2f96e4', 'person_name': 'Alakh Pandey', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 11:41:04] Image data\enrolled\amit\amit1.jpeg already exists. Skipping.
+[2026-09-20 11:41:05] Image data\enrolled\amit\amit2.jpeg already exists. Skipping.
+[2026-09-20 11:41:05] Image data\enrolled\amit\amit3.jpeg already exists. Skipping.
+[2026-09-20 11:41:05] Enrollment result for Amit: {'person_id': '195e21e4-956a-5a50-afea-c931b61fc7a9', 'person_name': 'Amit', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 11:41:06] Image data\enrolled\ananya_pandey\ananyapandey.jpg already exists. Skipping.
+[2026-09-20 11:41:06] Enrollment result for Ananya Pandey: {'person_id': '75b7446d-711a-5df2-a5cf-1052dd00c32c', 'person_name': 'Ananya Pandey', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 11:41:07] Image data\enrolled\andrew_karpathy\andrew_karpathy.jpg already exists. Skipping.
+[2026-09-20 11:41:07] Enrollment result for Andrew Karpathy: {'person_id': 'dfac7a0f-42b3-5e4c-b24f-9206c6b7c3c4', 'person_name': 'Andrew Karpathy', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 11:41:08] Image data\enrolled\arvind_srinivas\arvind1.jpeg already exists. Skipping.
+[2026-09-20 11:41:09] Image data\enrolled\arvind_srinivas\arvind2.jpeg already exists. Skipping.
+[2026-09-20 11:41:09] Image data\enrolled\arvind_srinivas\arvind3.jpeg already exists. Skipping.
+[2026-09-20 11:41:09] Enrollment result for Arvind Srinivas: {'person_id': '432a82d9-42ff-5eaa-92c3-c3b4384a4722', 'person_name': 'Arvind Srinivas', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 11:41:10] Image data\enrolled\cristiano_ronaldo\cristino1.jpeg already exists. Skipping.
+[2026-09-20 11:41:11] Image data\enrolled\cristiano_ronaldo\cristino2.jpeg already exists. Skipping.
+[2026-09-20 11:41:12] Image data\enrolled\cristiano_ronaldo\cristino3.jpeg already exists. Skipping.
+[2026-09-20 11:41:12] Enrollment result for Cristiano Ronaldo: {'person_id': 'd6c018fd-fd39-51b2-94ce-abf38cd8700d', 'person_name': 'Cristiano Ronaldo', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 11:41:13] Image data\enrolled\dario_amodei\dario1.jpeg already exists. Skipping.
+[2026-09-20 11:41:13] Image data\enrolled\dario_amodei\dario2.jpeg already exists. Skipping.
+[2026-09-20 11:41:14] Image data\enrolled\dario_amodei\dario3.jpeg already exists. Skipping.
+[2026-09-20 11:41:14] Enrollment result for Dario Amodei: {'person_id': '4796c2cb-3d61-52f3-a171-fbda3be497e4', 'person_name': 'Dario Amodei', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 11:41:16] Image data\enrolled\darshan\darshan1.jpeg already exists. Skipping.
+[2026-09-20 11:41:16] Image data\enrolled\darshan\darshan2.jpeg already exists. Skipping.
+[2026-09-20 11:41:17] Image data\enrolled\darshan\darshan3.jpeg already exists. Skipping.
+[2026-09-20 11:41:17] Enrollment result for Darshan: {'person_id': '32dbf4d6-a3f5-51fb-8541-ee07687204da', 'person_name': 'Darshan', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 11:41:18] Image data\enrolled\donald_trump\donald1.jpeg already exists. Skipping.
+[2026-09-20 11:41:19] Image data\enrolled\donald_trump\donald2.jpeg already exists. Skipping.
+[2026-09-20 11:41:20] Image data\enrolled\donald_trump\donald3.jpeg already exists. Skipping.
+[2026-09-20 11:41:20] Enrollment result for Donald Trump: {'person_id': '53b2f1c2-793d-5237-8fe2-1a6862629e8f', 'person_name': 'Donald Trump', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 11:41:20] Image data\enrolled\elon_musk\elon1.jpeg already exists. Skipping.
+[2026-09-20 11:41:21] Image data\enrolled\elon_musk\elon2.jpeg already exists. Skipping.
+[2026-09-20 11:41:21] No face detected in data\enrolled\elon_musk\elon3.jpeg
+[2026-09-20 11:41:21] Enrollment result for Elon Musk: {'person_id': '3ac51452-da5f-5667-bac0-9c70074cace3', 'person_name': 'Elon Musk', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 11:41:22] Image data\enrolled\ilya_sutskever\ilyasutskiver.jpg already exists. Skipping.
+[2026-09-20 11:41:23] Image data\enrolled\ilya_sutskever\ilyasutskiver2.jpg already exists. Skipping.
+[2026-09-20 11:41:24] Multiple faces detected in data\enrolled\ilya_sutskever\ilyasutskiver3.jpg
+[2026-09-20 11:41:24] Enrollment result for Ilya Sutskever: {'person_id': '3a514026-8cd0-521b-9b8e-b2c0c3e2ec1e', 'person_name': 'Ilya Sutskever', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 11:41:25] Image data\enrolled\jeff_bezos\jeffbezos.jpeg already exists. Skipping.
+[2026-09-20 11:41:25] Image data\enrolled\jeff_bezos\jeffbezos2.jpeg already exists. Skipping.
+[2026-09-20 11:41:26] Image data\enrolled\jeff_bezos\jeffbezos3.jpeg already exists. Skipping.
+[2026-09-20 11:41:26] Enrollment result for Jeff Bezos: {'person_id': 'ee7445ca-36da-51db-ae45-005893362407', 'person_name': 'Jeff Bezos', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 11:41:27] Image data\enrolled\mahatma_gandhi\gandhi1.jpeg already exists. Skipping.
+[2026-09-20 11:41:28] Image data\enrolled\mahatma_gandhi\gandhi2.jpeg already exists. Skipping.
+[2026-09-20 11:41:29] Image data\enrolled\mahatma_gandhi\gandhi3.jpeg already exists. Skipping.
+[2026-09-20 11:41:29] Enrollment result for Mahatma Gandhi: {'person_id': '7ba4dab7-cb2a-5657-b660-e1b5f0c80594', 'person_name': 'Mahatma Gandhi', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 11:41:29] Image data\enrolled\michael\micheal1.jpeg already exists. Skipping.
+[2026-09-20 11:41:30] Image data\enrolled\michael\micheal2.jpeg already exists. Skipping.
+[2026-09-20 11:41:31] Image data\enrolled\michael\micheal3.jpeg already exists. Skipping.
+[2026-09-20 11:41:31] Enrollment result for Michael: {'person_id': 'f61d04ff-03a9-5981-bc40-a7399fffb22a', 'person_name': 'Michael', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 11:41:32] Image data\enrolled\mrbeast\mrbeast1.jpeg already exists. Skipping.
+[2026-09-20 11:41:33] Image data\enrolled\mrbeast\mrbeast2.jpeg already exists. Skipping.
+[2026-09-20 11:41:33] Image data\enrolled\mrbeast\mrbeast3.jpeg already exists. Skipping.
+[2026-09-20 11:41:33] Enrollment result for MrBeast: {'person_id': '9989bf14-4c89-5240-b31c-f3b3306e7a7e', 'person_name': 'MrBeast', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 11:41:34] Image data\enrolled\ms_dhoni\dhoni1.jpeg already exists. Skipping.
+[2026-09-20 11:41:35] Image data\enrolled\ms_dhoni\dhoni2.jpeg already exists. Skipping.
+[2026-09-20 11:41:36] Image data\enrolled\ms_dhoni\dhoni3.jpeg already exists. Skipping.
+[2026-09-20 11:41:36] Enrollment result for Ms Dhoni: {'person_id': '654d77c1-622f-579f-b489-e1bbbcd1770a', 'person_name': 'Ms Dhoni', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 11:41:37] Image data\enrolled\narayana_murthy\naryanmurthy1.jpeg already exists. Skipping.
+[2026-09-20 11:41:37] Image data\enrolled\narayana_murthy\naryanmurthy2.jpeg already exists. Skipping.
+[2026-09-20 11:41:38] Image data\enrolled\narayana_murthy\naryanmurthy3.jpeg already exists. Skipping.
+[2026-09-20 11:41:38] Enrollment result for Narayana Murthy: {'person_id': '74b75e03-8033-5909-bf68-8337a03b321a', 'person_name': 'Narayana Murthy', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 11:41:39] Image data\enrolled\narendra_modi\modi1.jpeg already exists. Skipping.
+[2026-09-20 11:41:40] Image data\enrolled\narendra_modi\modi2.jpeg already exists. Skipping.
+[2026-09-20 11:41:41] Multiple faces detected in data\enrolled\narendra_modi\modi3.jpeg
+[2026-09-20 11:41:41] Enrollment result for Narendra Modi: {'person_id': 'a739f2d7-743e-5dbb-b33a-f9876d1b24be', 'person_name': 'Narendra Modi', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 11:41:42] Image data\enrolled\parth\parth1.jpeg already exists. Skipping.
+[2026-09-20 11:41:42] Image data\enrolled\parth\parth2.jpeg already exists. Skipping.
+[2026-09-20 11:41:43] Image data\enrolled\parth\parth3.jpeg already exists. Skipping.
+[2026-09-20 11:41:43] Enrollment result for Parth: {'person_id': '47c4332e-6fa9-56de-93d5-372ead689b3b', 'person_name': 'Parth', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 11:41:44] Image data\enrolled\piyush_bansal\piyush1.jpeg already exists. Skipping.
+[2026-09-20 11:41:45] Image data\enrolled\piyush_bansal\piyush2.jpeg already exists. Skipping.
+[2026-09-20 11:41:46] Image data\enrolled\piyush_bansal\piyush3.jpeg already exists. Skipping.
+[2026-09-20 11:41:46] Enrollment result for Piyush Bansal: {'person_id': 'cd5334b6-0705-5801-920f-63934b555a56', 'person_name': 'Piyush Bansal', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 11:41:46] Image data\enrolled\rohit_sharma\rohit1.jpeg already exists. Skipping.
+[2026-09-20 11:41:47] Image data\enrolled\rohit_sharma\rohit2.jpeg already exists. Skipping.
+[2026-09-20 11:41:48] Image data\enrolled\rohit_sharma\rohit3.jpeg already exists. Skipping.
+[2026-09-20 11:41:48] Enrollment result for Rohit Sharma: {'person_id': 'b27df28c-2338-5a33-a8b1-364eb60a6f43', 'person_name': 'Rohit Sharma', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 11:41:49] Image data\enrolled\sam_altman\sam1.jpeg already exists. Skipping.
+[2026-09-20 11:41:50] Image data\enrolled\sam_altman\sam2.jpeg already exists. Skipping.
+[2026-09-20 11:41:51] Image data\enrolled\sam_altman\sam3.jpeg already exists. Skipping.
+[2026-09-20 11:41:51] Enrollment result for Sam Altman: {'person_id': '32b54a5a-80c8-5004-a608-6195a6a043d8', 'person_name': 'Sam Altman', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 11:41:52] Image data\enrolled\shah_rukh_khan\sharukh1.jpeg already exists. Skipping.
+[2026-09-20 11:41:52] Image data\enrolled\shah_rukh_khan\sharukh2.jpeg already exists. Skipping.
+[2026-09-20 11:41:53] Image data\enrolled\shah_rukh_khan\sharukh3.jpeg already exists. Skipping.
+[2026-09-20 11:41:53] Enrollment result for Shah Rukh Khan: {'person_id': '75d53455-6878-53e7-b176-be8692768ee8', 'person_name': 'Shah Rukh Khan', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 11:41:54] Image data\enrolled\shraddha_khapra\sardha.jpeg already exists. Skipping.
+[2026-09-20 11:41:55] Image data\enrolled\shraddha_khapra\sardha2.jpeg already exists. Skipping.
+[2026-09-20 11:41:55] Image data\enrolled\shraddha_khapra\sardha3.jpeg already exists. Skipping.
+[2026-09-20 11:41:55] Enrollment result for Shraddha Khapra: {'person_id': 'dc8dba08-5344-5aba-a23b-f082a598adcb', 'person_name': 'Shraddha Khapra', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 11:41:56] Image data\enrolled\sundar_pichai\sundar1.jpeg already exists. Skipping.
+[2026-09-20 11:41:57] Image data\enrolled\sundar_pichai\sundar2.jpeg already exists. Skipping.
+[2026-09-20 11:41:58] Image data\enrolled\sundar_pichai\sundar3.jpeg already exists. Skipping.
+[2026-09-20 11:41:58] Enrollment result for Sundar Pichai: {'person_id': 'aeb0da0b-e47d-5606-86d1-ec08c3cddad4', 'person_name': 'Sundar Pichai', 'enrolled_count': 0, 'message': 'No new images were enrolled.'}
+[2026-09-20 11:42:00] Enrolled image 'data\enrolled\test2\test1.jpeg' for Test2 (ID: dc5a9510-a371-5f60-8e87-112b55ca3694)
+[2026-09-20 11:42:01] Enrolled image 'data\enrolled\test2\test2.jpeg' for Test2 (ID: dc5a9510-a371-5f60-8e87-112b55ca3694)
+[2026-09-20 11:42:03] Enrolled image 'data\enrolled\test2\test3.jpeg' for Test2 (ID: dc5a9510-a371-5f60-8e87-112b55ca3694)
+[2026-09-20 11:42:03] Enrollment result for Test2: {'person_id': 'dc5a9510-a371-5f60-8e87-112b55ca3694', 'person_name': 'Test2', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-20 11:42:04] Enrolled image 'data\enrolled\thor\thor2.jpeg' for Thor (ID: 55ca9757-71fd-5816-a93d-ff498c4f4dc6)
+[2026-09-20 11:42:06] Enrolled image 'data\enrolled\thor\thor3.jpeg' for Thor (ID: 55ca9757-71fd-5816-a93d-ff498c4f4dc6)
+[2026-09-20 11:42:06] Enrollment result for Thor: {'person_id': '55ca9757-71fd-5816-a93d-ff498c4f4dc6', 'person_name': 'Thor', 'enrolled_count': 2, 'message': 'Enrollment completed.'}
+[2026-09-20 11:42:07] Enrolled image 'data\enrolled\tony_stark\tony1.jpeg' for Tony Stark (ID: fe27c44b-93f7-533f-b365-1fdcbdec2077)
+[2026-09-20 11:42:09] Enrolled image 'data\enrolled\tony_stark\tony2.jpeg' for Tony Stark (ID: fe27c44b-93f7-533f-b365-1fdcbdec2077)
+[2026-09-20 11:42:10] Enrolled image 'data\enrolled\tony_stark\tony3.jpeg' for Tony Stark (ID: fe27c44b-93f7-533f-b365-1fdcbdec2077)
+[2026-09-20 11:42:10] Enrollment result for Tony Stark: {'person_id': 'fe27c44b-93f7-533f-b365-1fdcbdec2077', 'person_name': 'Tony Stark', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-20 11:42:12] Enrolled image 'data\enrolled\virat_kohli\virat1.jpeg' for Virat Kohli (ID: 6076e6f7-3d31-5757-a1b3-47467aa5bd96)
+[2026-09-20 11:42:14] Enrolled image 'data\enrolled\virat_kohli\virat2.jpeg' for Virat Kohli (ID: 6076e6f7-3d31-5757-a1b3-47467aa5bd96)
+[2026-09-20 11:42:15] Enrolled image 'data\enrolled\virat_kohli\virat3.jpeg' for Virat Kohli (ID: 6076e6f7-3d31-5757-a1b3-47467aa5bd96)
+[2026-09-20 11:42:15] Enrollment result for Virat Kohli: {'person_id': '6076e6f7-3d31-5757-a1b3-47467aa5bd96', 'person_name': 'Virat Kohli', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-20 11:42:17] Enrolled image 'data\enrolled\vladimir_putin\putin1.jpeg' for Vladimir Putin (ID: 99c3c26e-eb61-5bc2-a60c-283da511dee2)
+[2026-09-20 11:42:18] Enrolled image 'data\enrolled\vladimir_putin\putin2.jpeg' for Vladimir Putin (ID: 99c3c26e-eb61-5bc2-a60c-283da511dee2)
+[2026-09-20 11:42:20] Enrolled image 'data\enrolled\vladimir_putin\putin3.jpeg' for Vladimir Putin (ID: 99c3c26e-eb61-5bc2-a60c-283da511dee2)
+[2026-09-20 11:42:20] Enrollment result for Vladimir Putin: {'person_id': '99c3c26e-eb61-5bc2-a60c-283da511dee2', 'person_name': 'Vladimir Putin', 'enrolled_count': 3, 'message': 'Enrollment completed.'}
+[2026-09-20 11:42:21] Enrolled image 'data\enrolled\yann_lecun\yan_lecun.jpeg' for Yann Lecun (ID: d80e2b80-8e52-51e9-96e6-63544870fc93)
+[2026-09-20 11:42:23] Enrolled image 'data\enrolled\yann_lecun\yan_lecun2.jpeg' for Yann Lecun (ID: d80e2b80-8e52-51e9-96e6-63544870fc93)
+[2026-09-20 11:42:23] Enrollment result for Yann Lecun: {'person_id': 'd80e2b80-8e52-51e9-96e6-63544870fc93', 'person_name': 'Yann Lecun', 'enrolled_count': 2, 'message': 'Enrollment completed.'}
+[2026-09-20 11:42:23] Batch enrollment completed. Total newly enrolled images: 16.
+
+-----------------------------------------------------------------
+=== RUN END: 2026-09-20 11:42:23 ===
+=================================================================
+
+
+
+=================================================================
+=== EVALUATION RUN: 2026-09-20 11:55:51 ===
+=================================================================
+
+[2026-09-20 11:55:51] Using evaluation directory: 'data\evaluation'
+[2026-09-20 11:56:02] Starting evaluation of 43 test image(s)...
+[2026-09-20 11:56:03] alakh4.jpeg               | Alakh Pandey       | Alakh Pandey       | 0.7076  | CORRECT
+[2026-09-20 11:56:04] alexandra4.jpeg           | Alexandra Daddario | unknown            | 0.1442  | FALSE REJECTION
+[2026-09-20 11:56:05] amit4.jpeg                | Amit               | Amit               | 0.7443  | CORRECT
+[2026-09-20 11:56:06] andrew4.jpeg              | Andrew             | unknown            | 0.1492  | FALSE REJECTION
+[2026-09-20 11:56:07] Andy Jassy.jpeg           | Andy Jassy         | unknown            | 0.2348  | CORRECT REJECTION
+[2026-09-20 11:56:08] arvind4.jpeg              | Arvind Srinivas    | Arvind Srinivas    | 0.7077  | CORRECT
+[2026-09-20 11:56:09] bradpit4.jpeg             | Brad Pitt          | unknown            | 0.1424  | FALSE REJECTION
+[2026-09-20 11:56:10] cox4.jpeg                 | Courteney Cox      | unknown            | 0.1356  | FALSE REJECTION
+[2026-09-20 11:56:11] cristino4.jpeg            | Cristiano Ronaldo  | unknown            | 0.6550  | FALSE REJECTION
+[2026-09-20 11:56:12] dario4.jpeg               | Dario Amodei       | Dario Amodei       | 0.7048  | CORRECT
+[2026-09-20 11:56:12] darshan3.jpeg             | Darshan            | Darshan            | 1.0000  | CORRECT
+[2026-09-20 11:56:13] donald4.jpeg              | Donald Trump       | unknown            | 0.6942  | FALSE REJECTION
+[2026-09-20 11:56:14] emma4.jpeg                | Emma Watson        | unknown            | 0.1281  | FALSE REJECTION
+[2026-09-20 11:56:15] girl4.jpeg                | Girl               | unknown            | 0.2031  | FALSE REJECTION
+[2026-09-20 11:56:16] gordan4.jpeg              | Gordon Ramsay      | unknown            | 0.1297  | FALSE REJECTION
+[2026-09-20 11:56:17] jeffbezos4.jpeg           | Jeff Bezos         | Jeff Bezos         | 0.7175  | CORRECT
+[2026-09-20 11:56:18] joseph4.jpeg              | Joseph Gordon-Levitt | unknown            | 0.1703  | FALSE REJECTION
+[2026-09-20 11:56:19] kiyan_pillay.jpeg         | Kiyan Pillay       | unknown            | 0.2066  | CORRECT REJECTION
+[2026-09-20 11:56:20] krish_naik.jpeg           | Krish Naik         | unknown            | 0.2306  | FALSE REJECTION
+[2026-09-20 11:56:22] micheal4.jpeg             | Michael            | Michael            | 0.7170  | CORRECT
+[2026-09-20 11:56:24] modi4.jpeg                | Narendra Modi      | unknown            | 0.7000  | FALSE REJECTION
+[2026-09-20 11:56:25] mrbeast4.jpeg             | MrBeast            | MrBeast            | 0.8172  | CORRECT
+[2026-09-20 11:56:28] naryanmurthy4.jpeg        | Narayana Murthy    | Narayana Murthy    | 0.7996  | CORRECT
+[2026-09-20 11:56:29] nishida4.jpeg             | Yuji Nishida       | unknown            | 0.1915  | FALSE REJECTION
+[2026-09-20 11:56:31] nitish_singh.jpeg         | Nitish Singh       | unknown            | 0.1666  | FALSE REJECTION
+[2026-09-20 11:56:32] parth4.jpeg               | Parth              | unknown            | 0.6218  | FALSE REJECTION
+[2026-09-20 11:56:33] piyush4.jpeg              | Piyush Bansal      | unknown            | 0.6644  | FALSE REJECTION
+[2026-09-20 11:56:34] putin4.jpeg               | Vladimir Putin     | Vladimir Putin     | 0.7415  | CORRECT
+[2026-09-20 11:56:35] rutvik.jpeg               | Rutvik             | unknown            | 0.1486  | CORRECT REJECTION
+[2026-09-20 11:56:35] ryan4.jpeg                | Ryan Gosling       | error              | N/A     | ERROR
+[2026-09-20 11:56:36] sam4.jpeg                 | Sam Altman         | Sam Altman         | 0.8072  | CORRECT
+[2026-09-20 11:56:37] sardha4.jpeg              | Shraddha Khapra    | Shraddha Khapra    | 0.7459  | CORRECT
+[2026-09-20 11:56:38] sharukh4.jpeg             | Shah Rukh Khan     | Shah Rukh Khan     | 0.7289  | CORRECT
+[2026-09-20 11:56:39] sheren4.jpeg              | Sheren             | unknown            | 0.1058  | FALSE REJECTION
+[2026-09-20 11:56:40] shisho4.jpeg              | Shisho             | error              | N/A     | ERROR
+[2026-09-20 11:56:41] sink4.jpeg                | Sadie Sink         | unknown            | 0.1096  | FALSE REJECTION
+[2026-09-20 11:56:42] stefani4.jpeg             | Gwen Stefani       | unknown            | 0.1002  | FALSE REJECTION
+[2026-09-20 11:56:43] tom4.jpeg                 | Tom Cruise         | unknown            | 0.2024  | FALSE REJECTION
+[2026-09-20 11:56:44] yan_lecun4.jpeg           | Yann LeCun         | unknown            | 0.6929  | FALSE REJECTION
+[2026-09-20 11:56:45] yan_lecun5.jpeg           | Yann LeCun         | Yann Lecun         | 0.7572  | MISMATCH
+[2026-09-20 11:56:46] yan_lecun6.jpeg           | Yann LeCun         | unknown            | 0.6983  | FALSE REJECTION
+[2026-09-20 11:56:47] yan_lecun7.jpeg           | Yann LeCun         | Yann Lecun         | 0.7485  | MISMATCH
+[2026-09-20 11:56:48] yash.jpeg                 | Yash               | unknown            | 0.2430  | CORRECT REJECTION
+[2026-09-20 11:56:48] EVALUATION COMPLETE: Total=43, Genuine=39, Unknown=4, Correct=13, Mismatch=2, Errors=2, FRR=56.41%, FAR=0.00%, KnownAccuracy=33.33%
+
+-----------------------------------------------------------------
+=== RUN END: 2026-09-20 11:56:48 ===
+=================================================================
+
