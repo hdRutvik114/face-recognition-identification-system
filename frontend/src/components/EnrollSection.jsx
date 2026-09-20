@@ -1,20 +1,18 @@
 import { useState } from 'react'
 import { enrollPerson } from '../services/api'
 import ImageUploader from './ImageUploader'
+import CameraEnrollment from './CameraEnrollment'
 import ResultBadge from './ResultBadge'
 
 /**
  * EnrollSection — complete enrollment workflow.
  *
- * State:
- *   name     : controlled text input
- *   images   : selected File objects (max 3)
- *   previews : object URL strings for previews
- *   loading  : request in flight
- *   result   : backend response object
- *   error    : top-level error string
+ * Supports two enrollment methods:
+ *   - "camera" : Guided 3-shot camera enrollment (Apple Face ID-inspired)
+ *   - "upload" : File-based multi-image uploader (max 3 images)
  */
 export default function EnrollSection() {
+  const [enrollMode, setEnrollMode] = useState('camera')
   const [name, setName] = useState('')
   const [images, setImages] = useState([])
   const [previews, setPreviews] = useState([])
@@ -147,126 +145,208 @@ export default function EnrollSection() {
 
         {/* Card */}
         <div className="card" style={{ padding: '28px 28px 32px' }}>
-          <form onSubmit={handleSubmit} noValidate>
-            {/* Name field */}
-            <div style={{ marginBottom: '24px' }}>
-              <label htmlFor="enroll-name" className="field-label">
-                Full Name
-              </label>
-              <input
-                id="enroll-name"
-                className="input-field"
-                type="text"
-                value={name}
-                onChange={(e) => {
-                  setName(e.target.value)
-                  setError(null)
-                }}
-                placeholder="e.g. Elon Musk"
-                disabled={loading}
-                autoComplete="off"
-                maxLength={80}
-              />
-            </div>
+          {/* Method Switcher: Camera Capture vs Image Upload */}
+          <div
+            style={{
+              display: 'flex',
+              background: 'rgba(255, 255, 255, 0.04)',
+              border: '1px solid var(--color-border)',
+              borderRadius: '9999px',
+              padding: '4px',
+              marginBottom: '26px',
+              maxWidth: '380px',
+            }}
+          >
+            <button
+              type="button"
+              onClick={() => {
+                setEnrollMode('camera')
+                setError(null)
+              }}
+              id="mode-camera-btn"
+              style={{
+                flex: 1,
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '8px',
+                padding: '9px 18px',
+                borderRadius: '9999px',
+                border: 'none',
+                background: enrollMode === 'camera' ? 'var(--color-accent)' : 'transparent',
+                color: enrollMode === 'camera' ? '#07080a' : 'var(--color-text-secondary)',
+                fontFamily: 'var(--font-body)',
+                fontSize: '13.5px',
+                fontWeight: enrollMode === 'camera' ? '600' : '400',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+              }}
+            >
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                <circle cx="12" cy="13" r="4" />
+              </svg>
+              Live Camera
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setEnrollMode('upload')
+                setError(null)
+              }}
+              id="mode-upload-btn"
+              style={{
+                flex: 1,
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '8px',
+                padding: '9px 18px',
+                borderRadius: '9999px',
+                border: 'none',
+                background: enrollMode === 'upload' ? 'var(--color-accent)' : 'transparent',
+                color: enrollMode === 'upload' ? '#07080a' : 'var(--color-text-secondary)',
+                fontFamily: 'var(--font-body)',
+                fontSize: '13.5px',
+                fontWeight: enrollMode === 'upload' ? '600' : '400',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+              }}
+            >
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <circle cx="8.5" cy="8.5" r="1.5" />
+                <polyline points="21 15 16 10 5 21" />
+              </svg>
+              Upload Files
+            </button>
+          </div>
 
-            {/* Image uploader */}
-            <div style={{ marginBottom: '24px' }}>
-              <label className="field-label">Face Images (max 3)</label>
-              <ImageUploader
-                images={images}
-                previews={previews}
-                onChange={handleImageChange}
-                disabled={loading}
-              />
-            </div>
+          {/* Shared Full Name Field */}
+          <div style={{ marginBottom: '24px' }}>
+            <label htmlFor="enroll-name" className="field-label">
+              Full Name
+            </label>
+            <input
+              id="enroll-name"
+              className="input-field"
+              type="text"
+              value={name}
+              onChange={(e) => {
+                setName(e.target.value)
+                setError(null)
+              }}
+              placeholder="e.g. Elon Musk"
+              disabled={loading}
+              autoComplete="off"
+              maxLength={80}
+            />
+          </div>
 
-            {/* Inline error */}
-            {error && (
-              <div
-                role="alert"
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  background: 'var(--color-error-dim)',
-                  border: '1px solid rgba(217,92,92,0.2)',
-                  borderRadius: '8px',
-                  padding: '12px 16px',
-                  marginBottom: '20px',
-                  fontFamily: 'var(--font-body)',
-                  fontSize: '14px',
-                  color: 'var(--color-error)',
-                }}
-              >
-                <svg
-                  width="15"
-                  height="15"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  style={{ flexShrink: 0 }}
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <line x1="12" y1="8" x2="12" y2="12" />
-                  <line x1="12" y1="16" x2="12.01" y2="16" />
-                </svg>
-                {error}
-              </div>
-            )}
-
-            {/* Actions */}
-            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-              <button
-                type="submit"
-                className="btn-primary"
-                disabled={loading}
-                id="enroll-submit-btn"
-                style={{ minWidth: '120px' }}
-              >
-                {loading ? (
-                  <>
-                    <span className="spinner" />
-                    Enrolling…
-                  </>
-                ) : (
-                  <>
-                    <svg
-                      width="15"
-                      height="15"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <circle cx="12" cy="8" r="4" />
-                      <path d="M20 21a8 8 0 0 0-16 0" />
-                    </svg>
-                    Enroll
-                  </>
-                )}
-              </button>
-
-              {(hasResult || images.length > 0 || name) && (
-                <button
-                  type="button"
-                  className="btn-ghost"
-                  onClick={handleReset}
+          {/* Mode 1: Camera Enrollment */}
+          {enrollMode === 'camera' ? (
+            <CameraEnrollment name={name} onNameChange={setName} />
+          ) : (
+            /* Mode 2: File Upload Enrollment (100% preserved) */
+            <form onSubmit={handleSubmit} noValidate>
+              <div style={{ marginBottom: '24px' }}>
+                <label className="field-label">Face Images (max 3)</label>
+                <ImageUploader
+                  images={images}
+                  previews={previews}
+                  onChange={handleImageChange}
                   disabled={loading}
-                  id="enroll-reset-btn"
-                >
-                  Reset
-                </button>
-              )}
-            </div>
-          </form>
+                />
+              </div>
 
-          {/* Result panel */}
-          {hasResult && <EnrollResult result={result} />}
+              {/* Inline error */}
+              {error && (
+                <div
+                  role="alert"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    background: 'var(--color-error-dim)',
+                    border: '1px solid rgba(217,92,92,0.2)',
+                    borderRadius: '8px',
+                    padding: '12px 16px',
+                    marginBottom: '20px',
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '14px',
+                    color: 'var(--color-error)',
+                  }}
+                >
+                  <svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    style={{ flexShrink: 0 }}
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="8" x2="12" y2="12" />
+                    <line x1="12" y1="16" x2="12.01" y2="16" />
+                  </svg>
+                  {error}
+                </div>
+              )}
+
+              {/* Actions */}
+              <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                <button
+                  type="submit"
+                  className="btn-primary"
+                  disabled={loading}
+                  id="enroll-submit-btn"
+                  style={{ minWidth: '120px' }}
+                >
+                  {loading ? (
+                    <>
+                      <span className="spinner" />
+                      Enrolling…
+                    </>
+                  ) : (
+                    <>
+                      <svg
+                        width="15"
+                        height="15"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <circle cx="12" cy="8" r="4" />
+                        <path d="M20 21a8 8 0 0 0-16 0" />
+                      </svg>
+                      Enroll
+                    </>
+                  )}
+                </button>
+
+                {(hasResult || images.length > 0 || name) && (
+                  <button
+                    type="button"
+                    className="btn-ghost"
+                    onClick={handleReset}
+                    disabled={loading}
+                    id="enroll-reset-btn"
+                  >
+                    Reset
+                  </button>
+                )}
+              </div>
+            </form>
+          )}
+
+          {/* Result panel for file upload mode */}
+          {enrollMode === 'upload' && hasResult && <EnrollResult result={result} />}
         </div>
       </div>
     </section>
@@ -277,7 +357,7 @@ export default function EnrollSection() {
  * EnrollResult — displays the full enrollment response.
  * Shows enrolled_count, skipped_count, rejected_count + per-image details.
  */
-function EnrollResult({ result }) {
+export function EnrollResult({ result }) {
   const { person_name, enrolled_count, skipped_count, rejected_count, details, message } = result
 
   const allRejected = enrolled_count === 0 && skipped_count === 0

@@ -1062,3 +1062,461 @@ Then stop.
 **Do not implement anything until I approve the plan.**
 
 ![alt text](image-3.png)
+
+Task: 
+I now want to add a production-style camera-based enrollment flow to the existing frontend.
+
+IMPORTANT:
+Do NOT redesign or replace the existing website.
+Do NOT break the existing Enroll or Identify functionality.
+First inspect the existing frontend, backend API integration, components, styling, and project structure before making changes.
+
+The goal is to add a polished "Camera Enrollment" experience that feels like a real production face-recognition product, consistent with the visual language and quality of the existing Code Nimbus-inspired frontend.
+
+==================================================
+FEATURE: CAMERA-BASED FACE ENROLLMENT
+==================================================
+
+Create a dedicated camera enrollment page/flow.
+
+The user should enter the person's name and then use their device camera to capture exactly 3 enrollment images.
+
+The flow should feel guided and simple rather than like a raw webcam preview.
+
+Example flow:
+
+1. Enter person's name
+2. Start camera
+3. Capture image 1
+4. Capture image 2
+5. Capture image 3
+6. Review the three captured images
+7. Submit all three images to the existing `/enroll` API
+8. Display the actual backend enrollment result
+
+==================================================
+CAMERA EXPERIENCE
+==================================================
+
+Use the browser's native camera access through:
+
+navigator.mediaDevices.getUserMedia()
+
+Request the front-facing/user camera when available.
+
+Before capturing:
+
+Show a polished camera frame with:
+
+- live camera preview
+- face-positioning guide
+- short instruction
+- capture button
+- current capture progress
+
+Example:
+
+"Position your face inside the frame"
+
+"Capture 1 of 3"
+
+Do NOT implement complicated facial tracking or liveness detection in the frontend.
+
+The backend remains responsible for actual face detection and validation.
+
+==================================================
+3 CAPTURE FLOW
+==================================================
+
+The three captures should introduce only SMALL variations.
+
+Do NOT ask the user to make large movements.
+
+Capture 1:
+"Look straight at the camera"
+Small neutral expression.
+
+Capture 2:
+"Give a small smile"
+Only a slight natural smile.
+
+Capture 3:
+"Turn your face slightly"
+Only a very small left/right variation.
+
+The intention is to create slightly different representations of the same person while keeping the face clearly visible.
+
+Do not ask the user to dramatically turn their head, close their eyes, move far away, etc.
+
+After each capture:
+
+- Freeze/show the captured image
+- Show a thumbnail/progress indicator
+- Allow the user to retake that specific image
+- Continue to the next capture
+
+The user should always know:
+
+Capture 1 ✓
+Capture 2 ✓
+Capture 3 ○
+
+==================================================
+CAMERA UI
+==================================================
+
+Make the camera experience look like a production application.
+
+Use:
+
+- rounded camera container
+- subtle border/glow
+- face-positioning frame overlay
+- clean typography
+- clear capture button
+- small progress indicator
+- smooth transitions
+- loading states
+- helpful error messages
+
+Do not make it look like a developer/debugging tool.
+
+Avoid excessive animations, gradients, or decorative elements.
+
+Keep it consistent with the existing Code Nimbus-inspired visual system already present in the application.
+
+Use the existing Tailwind CSS v4 setup.
+
+Do not introduce another styling framework.
+
+==================================================
+CAPTURE VALIDATION
+==================================================
+
+Frontend validation should only handle basic camera/capture concerns.
+
+Handle:
+
+- camera permission denied
+- camera unavailable
+- browser does not support camera access
+- camera stream failure
+- user stops camera
+- capture failure
+
+Do NOT attempt to determine whether the face is valid using frontend image processing.
+
+The backend already performs:
+
+- face detection
+- no-face rejection
+- multiple-face rejection
+- embedding generation
+- database enrollment
+
+Therefore, use the backend as the source of truth.
+
+==================================================
+API INTEGRATION
+==================================================
+
+IMPORTANT:
+
+Use the existing API service layer.
+
+Do NOT create random fetch/axios calls scattered throughout components.
+
+Inspect how the current frontend communicates with the backend and follow the existing architecture.
+
+The existing backend endpoint is:
+
+POST /enroll
+
+It expects:
+
+name
+images[]
+
+The backend currently accepts up to 3 images.
+
+Send the three captured images as multipart/form-data.
+
+The request should conceptually be:
+
+FormData:
+    name = person's name
+    images = captured image 1
+    images = captured image 2
+    images = captured image 3
+
+Do NOT send base64 strings if the existing API expects UploadFile/multipart files.
+
+Use actual Blob/File objects generated from the captured canvas frames.
+
+Set appropriate filenames for the captured images, for example:
+
+camera_capture_1.jpg
+camera_capture_2.jpg
+camera_capture_3.jpg
+
+Do not manually set the multipart Content-Type header if Axios/browser needs to generate the boundary automatically.
+
+==================================================
+BACKEND RESPONSE
+==================================================
+
+Do not invent response fields.
+
+Inspect the existing `/enroll` implementation and use the actual response returned by the backend.
+
+The current backend returns information such as:
+
+- person_id
+- person_name
+- enrolled_count
+- skipped_count
+- rejected_count
+- details
+- message
+
+Display the actual backend result in a polished result state.
+
+For example:
+
+Enrollment Complete
+
+Rithvik
+
+3 images enrolled
+
+Then optionally show the per-image results:
+
+Capture 1   ✓ Enrolled
+Capture 2   ✓ Enrolled
+Capture 3   ✓ Enrolled
+
+If the backend rejects or skips an image, show the actual reason returned by the backend.
+
+Do NOT replace backend errors with generic "success" messages.
+
+==================================================
+REVIEW BEFORE SUBMIT
+==================================================
+
+After the third capture:
+
+Show a review step.
+
+Display the three captured images as cards/thumbnails.
+
+Example:
+
+Your enrollment photos
+
+[ Photo 1 ] [ Photo 2 ] [ Photo 3 ]
+
+[ Retake ]      [ Submit Enrollment ]
+
+Allow the user to retake an individual image before submitting.
+
+Do not automatically submit immediately after capture 3.
+
+The user should explicitly click the final enrollment button.
+
+==================================================
+LOADING STATE
+==================================================
+
+When submitting:
+
+Disable the submit button.
+
+Show:
+
+"Enrolling face..."
+
+Use a subtle loading indicator.
+
+Prevent duplicate API submissions.
+
+After the API responds, stop the camera stream.
+
+==================================================
+CAMERA CLEANUP
+==================================================
+
+This is important.
+
+Stop all MediaStream tracks when:
+
+- the component/page unmounts
+- the user leaves the camera flow
+- enrollment succeeds
+- enrollment fails
+- the user cancels camera enrollment
+
+Do not leave the webcam running in the background.
+
+==================================================
+RESPONSIVE DESIGN
+==================================================
+
+The experience must work properly on:
+
+- desktop
+- laptop
+- tablet
+- mobile
+
+On mobile, the camera preview should use the available viewport effectively.
+
+Buttons should be large enough to use comfortably.
+
+==================================================
+PRODUCTION-QUALITY UX
+==================================================
+
+The experience should feel like a real product, not a demo.
+
+Include:
+
+- clear step progression
+- meaningful empty states
+- permission errors
+- retry actions
+- loading states
+- success state
+- backend rejection state
+- camera cleanup
+- accessible buttons
+- keyboard-friendly controls where applicable
+
+Keep the UI visually consistent with the existing website.
+
+Do NOT over-engineer.
+
+==================================================
+IMPORTANT ARCHITECTURE RULE
+==================================================
+
+Before coding:
+
+1. Inspect the current frontend structure.
+2. Inspect the existing API service.
+3. Inspect the current `/enroll` integration.
+4. Inspect the existing design system/components.
+5. Reuse existing components/styles wherever possible.
+6. Identify exactly which files need to change.
+7. Then implement the camera enrollment flow.
+
+Do not modify the backend unless absolutely necessary.
+
+The existing backend already supports:
+
+POST /enroll
+
+with:
+
+name
+images[]
+
+The goal is to integrate the camera flow with the existing backend, not redesign the backend.
+
+### Face Capture / Camera Interaction Reference
+
+For the face-capture experience, use **Apple Face ID's face-positioning interaction** as the primary UX reference.
+
+Study how a real face-capture system:
+
+* guides the user to position their face
+* uses a clear face-positioning frame
+* keeps the face as the visual focus
+* communicates whether the face is correctly positioned
+* provides subtle capture/scanning feedback
+* handles the transition from camera → captured image → result
+* avoids unnecessary UI decoration
+
+The goal is to make the experience feel like a **real computer-vision product**, not a generic AI website.
+
+Do NOT copy Apple's branding, exact graphics, animations, or UI.
+
+### Important
+
+Do not add:
+
+* random glowing face outlines
+* neon scanning effects
+* sci-fi HUD elements
+* excessive corner brackets
+* fake "AI scanning" animations
+* unnecessary particles
+* generic purple/blue AI gradients
+* decorative 3D elements
+
+The face and camera frame should do most of the visual work.
+
+Use a **simple, purposeful face-positioning frame** with subtle feedback.
+
+For example, the capture experience should communicate states such as:
+
+**Position your face**
+
+→ face detected / correctly positioned
+
+→ **Capture**
+
+→ captured image preview
+
+→ **Identify**
+
+The exact states and wording must still be compatible with what the existing backend actually supports.
+
+Do not pretend the backend performs live face tracking or live quality analysis if it does not.
+
+If the existing backend only accepts an uploaded image, build the camera/capture UI only if the browser-side implementation can be added without changing the backend contract. Otherwise, keep the experience focused on image upload and preview.
+
+The final result should feel like a **real face-recognition application**, not "AI slop."
+
+==================================================
+FINAL USER FLOW
+==================================================
+
+The final experience should feel like:
+
+Enroll Person
+       ↓
+Enter Name
+       ↓
+Start Camera
+       ↓
+"Look straight"
+       ↓
+Capture 1
+       ↓
+"Small smile"
+       ↓
+Capture 2
+       ↓
+"Slightly turn your face"
+       ↓
+Capture 3
+       ↓
+Review Photos
+       ↓
+Submit Enrollment
+       ↓
+POST /enroll
+       ↓
+Backend processes faces
+       ↓
+Show actual enrollment result
+
+Keep the visual quality consistent with the existing Code Nimbus-inspired production frontend.
+
+Do not add fake data.
+Do not add fake face detection.
+Do not add frontend liveness detection.
+Do not change the existing backend API contract.
+Do not break the existing Identify flow.
+
+Before making major changes, explain briefly what files you plan to modify and why. Then implement the feature.
