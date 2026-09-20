@@ -26,6 +26,110 @@ const CAPTURE_STEPS = [
   },
 ]
 
+/**
+ * Lightweight frontend validation for a captured camera frame:
+ * 1. Checks for extreme dark (avg luminance < 32) or extreme bright (> 228).
+ * 2. Checks for face visibility:
+ *    - First attempts native window.FaceDetector if available.
+ *    - Falls back to a lightweight contrast & skin-tone density check in the center oval region.
+ *
+ * This check provides fast user feedback while keeping the backend as the final authority.
+ */
+async function validateCapturedQuality(canvas, ctx, width, height) {
+  const imgData = ctx.getImageData(0, 0, width, height)
+  const data = imgData.data
+
+  // 1. Lighting / Brightness check
+  let totalLuminance = 0
+  let sampleCount = 0
+  // Sample every 4th pixel for performance
+  for (let i = 0; i < data.length; i += 16) {
+    const r = data[i]
+    const g = data[i + 1]
+    const b = data[i + 2]
+    const lum = 0.299 * r + 0.587 * g + 0.114 * b
+    totalLuminance += lum
+    sampleCount++
+  }
+
+  const avgBrightness = totalLuminance / sampleCount
+
+  // Extremely dark or extremely bright
+  if (avgBrightness < 20 || avgBrightness > 238) {
+    return {
+      valid: false,
+      reason: 'The image is too dark or too bright. Please adjust the lighting and take the photo again.',
+    }
+  }
+
+  // 2. Face Visibility Check
+  // A) Browser Native FaceDetector API (Chrome / Edge / Opera)
+  if (typeof window !== 'undefined' && 'FaceDetector' in window) {
+    try {
+      const detector = new window.FaceDetector({ fastMode: true, maxDetectedFaces: 3 })
+      const faces = await detector.detect(canvas)
+      if (!faces || faces.length === 0) {
+        return {
+          valid: false,
+          reason: 'No face detected. Please position your face inside the frame and take the photo again.',
+        }
+      }
+      return { valid: true }
+    } catch (_) {
+      // Fall through to heuristic if detector fails
+    }
+  }
+
+  // B) Fallback: Central Region Variance & Skin-tone density
+  const xStart = Math.floor(width * 0.25)
+  const xEnd = Math.floor(width * 0.75)
+  const yStart = Math.floor(height * 0.15)
+  const yEnd = Math.floor(height * 0.85)
+
+  let centerLuminances = []
+  let skinTonePixels = 0
+  let centerPixelCount = 0
+
+  for (let y = yStart; y < yEnd; y += 4) {
+    for (let x = xStart; x < xEnd; x += 4) {
+      const idx = (y * width + x) * 4
+      const r = data[idx]
+      const g = data[idx + 1]
+      const b = data[idx + 2]
+      const lum = 0.299 * r + 0.587 * g + 0.114 * b
+
+      centerLuminances.push(lum)
+      centerPixelCount++
+
+      // Standard YCbCr skin-tone boundaries (covers diverse human skin complexions)
+      const cb = 128 - 0.168736 * r - 0.331264 * g + 0.5 * b
+      const cr = 128 + 0.5 * r - 0.418688 * g - 0.081312 * b
+
+      if (cb >= 77 && cb <= 135 && cr >= 130 && cr <= 175) {
+        skinTonePixels++
+      }
+    }
+  }
+
+  // Standard deviation in the center region
+  const centerMean = centerLuminances.reduce((a, b) => a + b, 0) / centerPixelCount
+  const centerVariance =
+    centerLuminances.reduce((sum, val) => sum + Math.pow(val - centerMean, 2), 0) / centerPixelCount
+  const centerStdDev = Math.sqrt(centerVariance)
+  const skinRatio = skinTonePixels / centerPixelCount
+
+  // Flat/blank surface (covered camera, blank wall, uniform background)
+  // Or if skin-tone pixels are virtually absent and edge contrast is low
+  if (centerStdDev < 8 || (skinRatio < 0.015 && centerStdDev < 18)) {
+    return {
+      valid: false,
+      reason: 'No face detected. Please position your face inside the frame and take the photo again.',
+    }
+  }
+
+  return { valid: true }
+}
+
 export default function CameraEnrollment({ name, onNameChange }) {
   const [stage, setStage] = useState('idle') // 'idle' | 'capturing' | 'review' | 'result'
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -35,6 +139,7 @@ export default function CameraEnrollment({ name, onNameChange }) {
   const [submitting, setSubmitting] = useState(false)
   const [backendResult, setBackendResult] = useState(null)
   const [errorMsg, setErrorMsg] = useState(null)
+  const [qualityError, setQualityError] = useState(null) // { message: string, previewUrl: string }
   const [flash, setFlash] = useState(false)
 
   const videoRef = useRef(null)
@@ -56,6 +161,31 @@ export default function CameraEnrollment({ name, onNameChange }) {
     setCameraActive(false)
   }, [])
 
+  // Dedicated callback ref for the video element so stream attaches immediately upon mounting
+  const setVideoRef = useCallback((node) => {
+    videoRef.current = node
+    if (node && streamRef.current) {
+      if (node.srcObject !== streamRef.current) {
+        node.srcObject = streamRef.current
+      }
+      node.play().catch((err) => {
+        console.warn('Video auto-play warning:', err)
+      })
+    }
+  }, [])
+
+  // Sync streamRef to videoRef whenever stage changes to 'capturing' or cameraActive updates
+  useEffect(() => {
+    if (stage === 'capturing' && videoRef.current && streamRef.current) {
+      if (videoRef.current.srcObject !== streamRef.current) {
+        videoRef.current.srcObject = streamRef.current
+      }
+      videoRef.current.play().catch((err) => {
+        console.warn('Video auto-play warning:', err)
+      })
+    }
+  }, [stage, cameraActive])
+
   // Always clean up camera when unmounting
   useEffect(() => {
     return () => {
@@ -73,29 +203,37 @@ export default function CameraEnrollment({ name, onNameChange }) {
 
     setCameraError(null)
     setErrorMsg(null)
+    setQualityError(null)
 
     try {
       stopCamera()
 
-      const constraints = {
-        video: {
-          facingMode: 'user',
-          width: { ideal: 1280 },
-          height: { ideal: 720 },
-        },
-        audio: false,
+      let mediaStream
+      try {
+        mediaStream = await navigator.mediaDevices.getUserMedia({
+          video: {
+            facingMode: 'user',
+            width: { ideal: 1280 },
+            height: { ideal: 720 },
+          },
+          audio: false,
+        })
+      } catch (firstErr) {
+        console.warn('Ideal video constraints failed, trying basic video constraint:', firstErr)
+        mediaStream = await navigator.mediaDevices.getUserMedia({
+          video: true,
+          audio: false,
+        })
       }
 
-      const mediaStream = await navigator.mediaDevices.getUserMedia(constraints)
       streamRef.current = mediaStream
+      setCameraActive(true)
+      setStage('capturing')
 
       if (videoRef.current) {
         videoRef.current.srcObject = mediaStream
-        await videoRef.current.play()
+        videoRef.current.play().catch(() => {})
       }
-
-      setCameraActive(true)
-      setStage('capturing')
     } catch (err) {
       console.error('Camera access error:', err)
       let message = 'Could not access device camera.'
@@ -110,14 +248,20 @@ export default function CameraEnrollment({ name, onNameChange }) {
     }
   }
 
-  // Capture current video frame to Blob & File
-  const captureFrame = () => {
-    if (!videoRef.current || !cameraActive) return
+  // Capture current video frame to Blob & File with lightweight quality check
+  const captureFrame = async () => {
+    if (!videoRef.current || !streamRef.current || !cameraActive) return
 
     const video = videoRef.current
-    const canvas = document.createElement('canvas')
     const width = video.videoWidth || 640
     const height = video.videoHeight || 480
+
+    if (width <= 0 || height <= 0) {
+      console.warn('Video frame dimensions are 0, cannot capture yet')
+      return
+    }
+
+    const canvas = document.createElement('canvas')
     canvas.width = width
     canvas.height = height
 
@@ -130,6 +274,19 @@ export default function CameraEnrollment({ name, onNameChange }) {
     // Visual shutter flash
     setFlash(true)
     setTimeout(() => setFlash(false), 200)
+
+    // Run lightweight frontend quality validation
+    const quality = await validateCapturedQuality(canvas, ctx, width, height)
+    if (!quality.valid) {
+      const rejectedUrl = canvas.toDataURL('image/jpeg', 0.85)
+      setQualityError({
+        message: quality.reason,
+        previewUrl: rejectedUrl,
+      })
+      return
+    }
+
+    setQualityError(null)
 
     canvas.toBlob(
       (blob) => {
@@ -165,6 +322,7 @@ export default function CameraEnrollment({ name, onNameChange }) {
 
   // Retake a specific capture slot
   const handleRetake = (index) => {
+    setQualityError(null)
     setCurrentIndex(index)
     setStage('capturing')
     startCamera()
@@ -172,6 +330,7 @@ export default function CameraEnrollment({ name, onNameChange }) {
 
   // Reset entire camera flow
   const handleResetAll = () => {
+    setQualityError(null)
     captures.forEach((c) => {
       if (c?.previewUrl) URL.revokeObjectURL(c.previewUrl)
     })
@@ -423,24 +582,64 @@ export default function CameraEnrollment({ name, onNameChange }) {
               borderRadius: '18px',
               overflow: 'hidden',
               background: '#030406',
-              border: '1px solid var(--color-border-strong)',
-              boxShadow: '0 8px 32px rgba(0,0,0,0.6)',
+              border: qualityError
+                ? '2px solid var(--color-error)'
+                : '1px solid var(--color-border-strong)',
+              boxShadow: qualityError
+                ? '0 0 24px rgba(217,92,92,0.3)'
+                : '0 8px 32px rgba(0,0,0,0.6)',
+              transition: 'all 0.3s ease',
             }}
           >
             {/* Live Video Feed (mirrored for natural look) */}
             <video
-              ref={videoRef}
+              ref={setVideoRef}
               playsInline
               autoPlay
               muted
+              onLoadedMetadata={() => {
+                if (videoRef.current) {
+                  videoRef.current.play().catch(console.warn)
+                }
+              }}
               style={{
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover',
                 transform: 'scaleX(-1)',
-                display: 'block',
+                display: qualityError ? 'none' : 'block',
               }}
             />
+
+            {/* Frozen Rejected Capture Preview (overlay) */}
+            {qualityError && (
+              <div style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}>
+                <img
+                  src={qualityError.previewUrl}
+                  alt="Rejected capture"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                />
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: '14px',
+                    left: '14px',
+                    background: 'rgba(217, 92, 92, 0.92)',
+                    color: '#ffffff',
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '11px',
+                    fontWeight: '600',
+                    letterSpacing: '0.06em',
+                    textTransform: 'uppercase',
+                    padding: '4px 12px',
+                    borderRadius: '9999px',
+                    boxShadow: '0 2px 10px rgba(0,0,0,0.5)',
+                  }}
+                >
+                  Capture Rejected
+                </div>
+              </div>
+            )}
 
             {/* Shutter flash animation */}
             {flash && (
@@ -457,68 +656,112 @@ export default function CameraEnrollment({ name, onNameChange }) {
               />
             )}
 
-            {/* Face ID-inspired Oval Guide Overlay */}
-            <div
-              style={{
-                position: 'absolute',
-                inset: 0,
-                pointerEvents: 'none',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                zIndex: 10,
-              }}
-            >
-              {/* Center Oval Frame */}
+            {/* Face ID-inspired Oval Guide Overlay (hidden during rejected freeze) */}
+            {!qualityError && (
               <div
                 style={{
-                  width: 'min(58vw, 240px)',
-                  height: 'min(76vw, 310px)',
-                  borderRadius: '50%',
-                  border: '2px dashed rgba(245, 200, 66, 0.65)',
-                  boxShadow: '0 0 0 9999px rgba(0, 0, 0, 0.38)',
-                  position: 'relative',
+                  position: 'absolute',
+                  inset: 0,
+                  pointerEvents: 'none',
                   display: 'flex',
-                  flexDirection: 'column',
                   alignItems: 'center',
-                  justifyContent: 'space-between',
-                  padding: '24px 0',
+                  justifyContent: 'center',
+                  zIndex: 10,
                 }}
               >
-                {/* Top instruction text inside frame */}
-                <span
+                {/* Center Oval Frame */}
+                <div
                   style={{
-                    fontFamily: 'var(--font-body)',
-                    fontSize: '12px',
-                    fontWeight: '500',
-                    color: 'var(--color-accent)',
-                    background: 'rgba(7, 8, 10, 0.75)',
-                    padding: '4px 12px',
-                    borderRadius: '9999px',
-                    letterSpacing: '0.04em',
-                    backdropFilter: 'blur(8px)',
+                    width: 'min(58vw, 240px)',
+                    height: 'min(76vw, 310px)',
+                    borderRadius: '50%',
+                    border: '2px dashed rgba(245, 200, 66, 0.65)',
+                    boxShadow: '0 0 0 9999px rgba(0, 0, 0, 0.38)',
+                    position: 'relative',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    padding: '24px 0',
                   }}
                 >
-                  Position face inside
-                </span>
+                  {/* Top instruction text inside frame */}
+                  <span
+                    style={{
+                      fontFamily: 'var(--font-body)',
+                      fontSize: '12px',
+                      fontWeight: '500',
+                      color: 'var(--color-accent)',
+                      background: 'rgba(7, 8, 10, 0.75)',
+                      padding: '4px 12px',
+                      borderRadius: '9999px',
+                      letterSpacing: '0.04em',
+                      backdropFilter: 'blur(8px)',
+                    }}
+                  >
+                    Position face inside
+                  </span>
 
-                {/* Subtle alignment crosshair indicator */}
-                <span
-                  style={{
-                    fontFamily: 'var(--font-body)',
-                    fontSize: '11px',
-                    color: 'rgba(255,255,255,0.7)',
-                    background: 'rgba(7, 8, 10, 0.65)',
-                    padding: '3px 10px',
-                    borderRadius: '9999px',
-                    backdropFilter: 'blur(8px)',
-                  }}
-                >
-                  {currentStep.subtitle}
-                </span>
+                  {/* Subtle alignment crosshair indicator */}
+                  <span
+                    style={{
+                      fontFamily: 'var(--font-body)',
+                      fontSize: '11px',
+                      color: 'rgba(255,255,255,0.7)',
+                      background: 'rgba(7, 8, 10, 0.65)',
+                      padding: '3px 10px',
+                      borderRadius: '9999px',
+                      backdropFilter: 'blur(8px)',
+                    }}
+                  >
+                    {currentStep.subtitle}
+                  </span>
+                </div>
               </div>
-            </div>
+            )}
           </div>
+
+          {/* Quality Error Notification Banner */}
+          {qualityError && (
+            <div
+              role="alert"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                flexWrap: 'wrap',
+                gap: '14px',
+                background: 'var(--color-error-dim)',
+                border: '1px solid rgba(217, 92, 92, 0.32)',
+                borderRadius: '12px',
+                padding: '14px 18px',
+                fontFamily: 'var(--font-body)',
+                fontSize: '13.5px',
+                color: 'var(--color-error)',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flex: 1, minWidth: '260px' }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="12" y1="8" x2="12" y2="12" />
+                  <line x1="12" y1="16" x2="12.01" y2="16" />
+                </svg>
+                <span style={{ lineHeight: '1.45', fontWeight: '500' }}>{qualityError.message}</span>
+              </div>
+              <button
+                type="button"
+                className="btn-primary"
+                onClick={() => setQualityError(null)}
+                style={{ height: '38px', padding: '0 18px', fontSize: '13px' }}
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="1 4 1 10 7 10" />
+                  <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
+                </svg>
+                Retake Photo
+              </button>
+            </div>
+          )}
 
           {/* Shutter and Controls Bar */}
           <div
@@ -534,6 +777,7 @@ export default function CameraEnrollment({ name, onNameChange }) {
               type="button"
               className="btn-ghost"
               onClick={() => {
+                setQualityError(null)
                 stopCamera()
                 setStage('idle')
               }}
@@ -542,39 +786,54 @@ export default function CameraEnrollment({ name, onNameChange }) {
               Cancel
             </button>
 
-            {/* Apple Camera-style Shutter Button */}
-            <button
-              type="button"
-              onClick={captureFrame}
-              id="camera-shutter-btn"
-              aria-label="Capture Photo"
-              title="Capture Photo"
-              style={{
-                width: '68px',
-                height: '68px',
-                borderRadius: '50%',
-                background: 'transparent',
-                border: '4px solid #ffffff',
-                padding: '4px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                cursor: 'pointer',
-                transition: 'transform 0.1s ease, filter 0.2s ease',
-              }}
-              onMouseDown={(e) => (e.currentTarget.style.transform = 'scale(0.92)')}
-              onMouseUp={(e) => (e.currentTarget.style.transform = 'scale(1)')}
-            >
-              <div
+            {/* Apple Camera-style Shutter Button (hidden when rejected, replaced by Retake) */}
+            {qualityError ? (
+              <button
+                type="button"
+                className="btn-primary"
+                onClick={() => setQualityError(null)}
+                style={{ height: '46px', padding: '0 24px', fontSize: '14px' }}
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="1 4 1 10 7 10" />
+                  <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
+                </svg>
+                Retake Photo
+              </button>
+            ) : (
+              <button
+                type="button"
+                onClick={captureFrame}
+                id="camera-shutter-btn"
+                aria-label="Capture Photo"
+                title="Capture Photo"
                 style={{
-                  width: '100%',
-                  height: '100%',
+                  width: '68px',
+                  height: '68px',
                   borderRadius: '50%',
-                  background: 'var(--color-accent)',
-                  boxShadow: '0 0 12px rgba(245,200,66,0.4)',
+                  background: 'transparent',
+                  border: '4px solid #ffffff',
+                  padding: '4px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  cursor: 'pointer',
+                  transition: 'transform 0.1s ease, filter 0.2s ease',
                 }}
-              />
-            </button>
+                onMouseDown={(e) => (e.currentTarget.style.transform = 'scale(0.92)')}
+                onMouseUp={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+              >
+                <div
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    borderRadius: '50%',
+                    background: 'var(--color-accent)',
+                    boxShadow: '0 0 12px rgba(245,200,66,0.4)',
+                  }}
+                />
+              </button>
+            )}
 
             <div style={{ width: '64px' }} />
           </div>
