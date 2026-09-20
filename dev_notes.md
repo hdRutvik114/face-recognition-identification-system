@@ -65,3 +65,15 @@ This is important where Multiple embeddings can belong to the person. Therefore 
 
 
 The thereshold till now 70 is good ...i have to check with more of them 
+![Now this is the problem ](image.png)
+
+i guess we have to store 4 to 5 images per person with diffrent angles ...currently i have 3 images per person 
+
+
+![I rounded the threshold ](image-1.png)
+but if reduce them the tests might pass but 1 gets rejected
+I guess we should put more photos of a person ..then might get 95 to 98 % known result 
+
+
+# As i changed the threshold to 0.65  
+![alt text](image-2.png)
