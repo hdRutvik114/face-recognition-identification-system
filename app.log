@@ -2651,3 +2651,35 @@ second line for run check
 [2026-09-20 22:42:31] Identification request with file 'putin4.jpeg'
 [2026-09-20 22:50:39] Identification request with file 'putin4.jpeg'
 [2026-09-20 22:50:59] Identification result: {'status': 'identified', 'person_id': '99c3c26e-eb61-5bc2-a60c-283da511dee2', 'person_name': 'Vladimir Putin', 'score': 0.7414956, 'message': 'Person identified successfully.'}
+
+
+=================================================================
+=== RUN START: 2026-09-21 00:01:48 ===
+=================================================================
+
+[2026-09-21 00:02:37] Enrollment request for 'Rutbik' with 3 image(s)
+[2026-09-21 00:02:38] No face detected in C:\Users\YATIRAJ\AppData\Local\Temp\tmpwd3_7zw3.jpg
+[2026-09-21 00:02:38] No face detected in C:\Users\YATIRAJ\AppData\Local\Temp\tmpc2vbfyns.jpg
+[2026-09-21 00:02:39] No face detected in C:\Users\YATIRAJ\AppData\Local\Temp\tmpp92syt1v.jpg
+[2026-09-21 00:02:39] Enrollment result for Rutbik: {'person_id': 'e4a805f0-5eb4-5e54-b93b-b619551a3e67', 'person_name': 'Rutbik', 'enrolled_count': 0, 'skipped_count': 0, 'rejected_count': 3, 'details': [{'image': 'tmpwd3_7zw3.jpg', 'status': 'rejected', 'reason': 'No face detected'}, {'image': 'tmpc2vbfyns.jpg', 'status': 'rejected', 'reason': 'No face detected'}, {'image': 'tmpp92syt1v.jpg', 'status': 'rejected', 'reason': 'No face detected'}], 'message': 'Enrollment completed.'}
+[2026-09-21 00:02:39] Enrollment result: {'person_id': 'e4a805f0-5eb4-5e54-b93b-b619551a3e67', 'person_name': 'Rutbik', 'enrolled_count': 0, 'skipped_count': 0, 'rejected_count': 3, 'details': [{'image': 'tmpwd3_7zw3.jpg', 'status': 'rejected', 'reason': 'No face detected'}, {'image': 'tmpc2vbfyns.jpg', 'status': 'rejected', 'reason': 'No face detected'}, {'image': 'tmpp92syt1v.jpg', 'status': 'rejected', 'reason': 'No face detected'}], 'message': 'Enrollment completed.'}
+[2026-09-21 00:03:17] Enrollment request for 'Rutbik' with 3 image(s)
+[2026-09-21 00:03:17] No face detected in C:\Users\YATIRAJ\AppData\Local\Temp\tmpni0l_8a3.jpg
+[2026-09-21 00:03:18] No face detected in C:\Users\YATIRAJ\AppData\Local\Temp\tmpy7dcfm1y.jpg
+[2026-09-21 00:03:18] No face detected in C:\Users\YATIRAJ\AppData\Local\Temp\tmpfk4qgxnb.jpg
+[2026-09-21 00:03:18] Enrollment result for Rutbik: {'person_id': 'e4a805f0-5eb4-5e54-b93b-b619551a3e67', 'person_name': 'Rutbik', 'enrolled_count': 0, 'skipped_count': 0, 'rejected_count': 3, 'details': [{'image': 'tmpni0l_8a3.jpg', 'status': 'rejected', 'reason': 'No face detected'}, {'image': 'tmpy7dcfm1y.jpg', 'status': 'rejected', 'reason': 'No face detected'}, {'image': 'tmpfk4qgxnb.jpg', 'status': 'rejected', 'reason': 'No face detected'}], 'message': 'Enrollment completed.'}
+[2026-09-21 00:03:18] Enrollment result: {'person_id': 'e4a805f0-5eb4-5e54-b93b-b619551a3e67', 'person_name': 'Rutbik', 'enrolled_count': 0, 'skipped_count': 0, 'rejected_count': 3, 'details': [{'image': 'tmpni0l_8a3.jpg', 'status': 'rejected', 'reason': 'No face detected'}, {'image': 'tmpy7dcfm1y.jpg', 'status': 'rejected', 'reason': 'No face detected'}, {'image': 'tmpfk4qgxnb.jpg', 'status': 'rejected', 'reason': 'No face detected'}], 'message': 'Enrollment completed.'}
+[2026-09-21 00:11:52] Enrollment request for 'rvikt' with 3 image(s)
+[2026-09-21 00:11:59] No face detected in C:\Users\YATIRAJ\AppData\Local\Temp\tmp8wlv4b_r.jpg
+[2026-09-21 00:12:00] No face detected in C:\Users\YATIRAJ\AppData\Local\Temp\tmpe5enthts.jpg
+[2026-09-21 00:12:00] No face detected in C:\Users\YATIRAJ\AppData\Local\Temp\tmp9wlzhp2v.jpg
+[2026-09-21 00:12:00] Enrollment result for rvikt: {'person_id': '45ea500a-ff28-5b19-abfe-23101c427562', 'person_name': 'rvikt', 'enrolled_count': 0, 'skipped_count': 0, 'rejected_count': 3, 'details': [{'image': 'tmp8wlv4b_r.jpg', 'status': 'rejected', 'reason': 'No face detected'}, {'image': 'tmpe5enthts.jpg', 'status': 'rejected', 'reason': 'No face detected'}, {'image': 'tmp9wlzhp2v.jpg', 'status': 'rejected', 'reason': 'No face detected'}], 'message': 'Enrollment completed.'}
+[2026-09-21 00:12:00] Enrollment result: {'person_id': '45ea500a-ff28-5b19-abfe-23101c427562', 'person_name': 'rvikt', 'enrolled_count': 0, 'skipped_count': 0, 'rejected_count': 3, 'details': [{'image': 'tmp8wlv4b_r.jpg', 'status': 'rejected', 'reason': 'No face detected'}, {'image': 'tmpe5enthts.jpg', 'status': 'rejected', 'reason': 'No face detected'}, {'image': 'tmp9wlzhp2v.jpg', 'status': 'rejected', 'reason': 'No face detected'}], 'message': 'Enrollment completed.'}
+[2026-09-21 00:12:34] Enrollment request for 'rvikt' with 3 image(s)
+[2026-09-21 00:12:40] Enrolled image 'C:\Users\YATIRAJ\AppData\Local\Temp\tmpflkki473.jpg' for rvikt (ID: 45ea500a-ff28-5b19-abfe-23101c427562)
+[2026-09-21 00:12:41] Enrolled image 'C:\Users\YATIRAJ\AppData\Local\Temp\tmpou8pvjye.jpg' for rvikt (ID: 45ea500a-ff28-5b19-abfe-23101c427562)
+[2026-09-21 00:12:44] Enrolled image 'C:\Users\YATIRAJ\AppData\Local\Temp\tmpkgamzfsv.jpg' for rvikt (ID: 45ea500a-ff28-5b19-abfe-23101c427562)
+[2026-09-21 00:12:44] Enrollment result for rvikt: {'person_id': '45ea500a-ff28-5b19-abfe-23101c427562', 'person_name': 'rvikt', 'enrolled_count': 3, 'skipped_count': 0, 'rejected_count': 0, 'details': [{'image': 'tmpflkki473.jpg', 'status': 'enrolled', 'reason': 'Successfully enrolled'}, {'image': 'tmpou8pvjye.jpg', 'status': 'enrolled', 'reason': 'Successfully enrolled'}, {'image': 'tmpkgamzfsv.jpg', 'status': 'enrolled', 'reason': 'Successfully enrolled'}], 'message': 'Enrollment completed.'}
+[2026-09-21 00:12:44] Enrollment result: {'person_id': '45ea500a-ff28-5b19-abfe-23101c427562', 'person_name': 'rvikt', 'enrolled_count': 3, 'skipped_count': 0, 'rejected_count': 0, 'details': [{'image': 'tmpflkki473.jpg', 'status': 'enrolled', 'reason': 'Successfully enrolled'}, {'image': 'tmpou8pvjye.jpg', 'status': 'enrolled', 'reason': 'Successfully enrolled'}, {'image': 'tmpkgamzfsv.jpg', 'status': 'enrolled', 'reason': 'Successfully enrolled'}], 'message': 'Enrollment completed.'}
+[2026-09-21 00:21:02] Identification request with file 'camera_identify.jpg'
+[2026-09-21 00:21:13] Identification result: {'status': 'error', 'message': 'No face detected.'}
