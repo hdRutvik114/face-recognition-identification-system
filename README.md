@@ -1,153 +1,344 @@
-Face recognition system 
-
 # Face Recognition Identification System
 
-This project is a face recognition system that can enroll people and identify them from a new image.
+A face recognition and identification system that allows enrolling known individuals with multiple photos, generating 512-dimensional face embeddings, storing them in a Qdrant vector database, and identifying individuals from new images using cosine similarity and a calibrated rejection threshold.
 
-The main idea is simple:
-
-**Image → Face Detection  → Face Embedding → Similarity Search → Known / Unknown**
-
-I built this project as part of the AI/ML Intern assignment for Code Nimbus Solutions.
+Built for the **Code Nimbus Solutions AI/ML Intern** assignment.
 
 ---
 
-## What the system does
-
-The system supports two main operations:
-
-### 1. Enroll a person :
-
-When a person is enrolled, the system:
-
-1. Takes an image of the person
-2. Detects the face in the image.
-3. Generates a face embedding.
-4. Stores the embedding along with the person's name and ID in Qdrant.
-
-I currently store multiple images for each enrolled person so that the system has more than one representation of the same person (because lighting , Angles , expressions matters)
-
-### 2. Identify a person
-
-When a new image is given:
-
-1. The system detects the face.
-2. Generates its face embedding.
-3. Searches the enrolled embeddings using similarity.
-4. Finds the closest enrolled person.
-5. Checks the similarity score against a threshold.
-6. If the score is high enough, the person is identified.
-7. Otherwise, the system returns **Unknown**.
-
----
-
-## Model Used
-
-I used **InsightFace with the `buffalo_l` model**.
-
-It provides the face detection and face recognition pipeline that I use in this project.
-
-The face recognition model generates a **512-dimensional embedding** for each detected face.
-
-Instead of comparing the original images directly, I compare these embeddings.
-
----
-
-## Similarity-Based Matching
-
-The generated face embedding is stored in **Qdrant**, a vector database.
-
-For a new face, its embedding is compared against the enrolled embeddings using **cosine similarity**.
-
-A higher similarity score means that  two face embeddings are same or similar
-The system first finds the best matching enrolled person and then checks is checking whther the similarity score is above threshold(A value which is specified after many evaluations using the existing dataset) if they are above then they are similar or else UNKOWN
-
----
-
-## Unknown Rejection
-
-As I above mentioned
-The system should not always return the closest person.
-
-For example, if an unknown person is given to the system, there will still be some enrolled face that is mathematically the "closest".
-
-So I added a similarity threshold.
-
-Currently I am using:
-
-**Threshold = 0.65**
-
-If the best similarity score is below `0.65`, the system rejects the match and returns:
+## 📌 Architecture & Pipeline
 
 ```text
-Unknown person
-
-
-## Handling Invalid Images
-
-The system currently handles some failure cases explicitly.
-
-It returns an error when:
-
-- No face is detected.
-- More than one face is detected.
-- The input image cannot be read.
-
-For multiple faces, I don't randomly choose one of them. Since this version
-of the system is designed to identify one person at a time, the image is
-rejected instead.
+Input Image ➔ Face Detection ➔ 512-d Face Embedding ➔ Qdrant Similarity Search ➔ Best Match ➔ Similarity Threshold (0.65) ➔ Known / Unknown
 ```
 
-## Evaluation
+![Face Recognition System Architecture](architecture_diagram.png)
 
-My test dataset was composed of 43 images with both enrolled and unknown people on them. Evaluation images for enrolled persons are separated from those used during enrollment.
+---
 
-### Threshold Selection
+## ✨ Features
 
-Initially, I tried a threshold value of **0.70**.
+- **Multi-Image Enrollment:** Enroll up to 3 distinct photos per person to capture variations in facial angle, lighting, and expression.
+- **512-Dimensional Deep Embeddings:** Extracts dense facial feature vectors using InsightFace (`buffalo_l`).
+- **Cloud Vector Database (Qdrant):** Fast vector indexing and cosine distance similarity search with payload-based metadata.
+- **Calibrated Unknown Rejection:** Prevents assigning false identities to unknown individuals by enforcing a cosine similarity cutoff (`Threshold = 0.65`).
+- **Single-Face Input Guard:** Rejects images containing multiple faces or no faces to avoid misattribution.
+- **Duplicate Image Detection:** Computes SHA-256 hashes of input images to prevent inserting duplicate vectors into the collection.
+- **Identity Collision Protection:** Prevents cross-enrolling the same face under conflicting names.
+- **RESTful API & Web UI:** Built with FastAPI on the backend and an interactive camera-enabled React frontend.
 
-While testing, I found that some correct identifications were being rejected because their similarity score was slightly below 0.70. For example:
+---
 
-- Cristiano Ronaldo – 0.654971
-- Donald Trump – 0.694228
-- Narendra Modi – 0.699977
-- Piyush Bansal – 0.664388
-- Yann LeCun – 0.692923
+## 🧠 Model & Face Embeddings
 
-I finally ran the evaluation with a threshold value of **0.65**.
+- **Detection & Recognition Pipeline:** [InsightFace](https://github.com/deepinsight/insightface) using the pretrained **`buffalo_l`** model pack.
+- **Embedding Vector:** Generates a normalized **512-dimensional numerical vector** representing unique facial landmark patterns and structures.
+- **Comparison:** Instead of pixel-by-pixel comparisons, query face embeddings are compared against enrolled embeddings in multidimensional vector space.
 
-### Current Results
+---
 
-`[ADD SCREENSHOT FROM app.log HERE]`
+## 🔍 Similarity Matching & Vector Database
 
-| Metric | Value |
-|---|---|
-| Known-Person Accuracy | 95.45% |
-| False Rejection Rate (FRR) | 4.55% |
-| Unknown Rejection Rate | 95.24% |
-| False Acceptance Rate (FAR) | 0% |
-| Known people correctly identified | 21/22 |
-| Unknown people correctly rejected | 20/21 |
+The system uses **Qdrant** as the vector search engine:
 
-Remaining genuine FRR came from one person with their highest similarity score at around 0.62, which was below the current threshold.
+1. **Storage:** Each enrolled image's 512-d embedding is stored as a point in Qdrant with associated payload metadata (`person_id`, `person_name`, `image_id`).
+2. **Metric:** **Cosine Similarity** ($\text{Cosine Distance} = 1 - \text{Cosine Similarity}$).
+3. **Querying:** When a new query image is received, the system extracts its embedding and queries Qdrant for the top candidate matches.
+4. **Candidate Selection:** Groups match scores by `person_id` and takes the maximum score per identity to evaluate against the threshold.
 
-> **Note:** These metrics come from my current evaluation dataset only — they don't reflect generalized real-world accuracy.
+---
 
-### Failure Cases
+## 🛡️ Unknown Rejection & Threshold Selection
 
-(Here we can make in ,multiple faces can be detetected -> Improvement stage)
+In vector databases, a nearest-neighbor query will **always** return a closest point—even if the person is a complete stranger. Without a cutoff threshold, every unknown visitor would be falsely matched to whoever looks least different.
 
-If the chosen picturehave many faces in it then  We are unable to select only 1 face from this image — we received a `multiple-face` then it gives error on it. This is by design, as identifying the wrong face can lead to incorrect identifications.
+### Threshold Calibration:
+- **Initial Test (`0.70`):** While zero unknown faces were accepted, genuine enrolled faces with slight angle or lighting variations were falsely rejected (e.g., Cristiano Ronaldo scored `0.6550`, Donald Trump scored `0.6942`, Piyush Bansal scored `0.6644`, Yann LeCun scored `0.6929`).
+- **Selected Threshold (`0.65`):** Lowering the threshold to `0.65` correctly admitted genuine candidates while still cleanly rejecting all unknown candidates (the highest unknown candidate scored `0.4219`).
 
+```text
+If Similarity Score >= 0.65  ➔  Identified Person (Name + Score)
+If Similarity Score < 0.65   ➔  Unknown Person
+```
 
-Other possible failure cases include:
+---
 
-- Poor lighting
-- Large changes in face angle
-- Blurry images
-- Very low quality images
-- Faces partially hidden
-- A person not included in the enrolled database
+## 🧪 Evaluation Summary
 
+The system was evaluated on a dedicated 45-image evaluation dataset (`data/evaluation/`) completely isolated from enrollment data.
 
+| Metric | Result | Description |
+|---|---:|---|
+| **Total Evaluation Images** | **45** | 22 Known + 23 Unknown |
+| **Known-Person Accuracy** | **95.45%** | 21 / 22 correctly identified |
+| **False Rejection Rate (FRR)** | **4.55%** | 1 / 22 (`parth4.jpeg` scored `0.6218`) |
+| **Unknown Rejection Rate** | **95.65%** | 22 / 23 correctly rejected as `unknown` |
+| **False Acceptance Rate (FAR)** | **0.00%** | 0 / 23 unknown accepted as known |
+| **Input Errors** | **1** | `ryan2.jpeg` (Multiple faces detected) |
 
+> 📖 **Full Report:** For individual image scores, per-identity test logs, and failure case breakdowns, see the **[Detailed Evaluation Document](docs/EVALUATION.md)**.
+
+---
+
+## ⚠️ Input Validation & Failure Handling
+
+The system catches and returns explicit status responses for invalid inputs:
+
+- **No Face Detected:** Returns status `error` with `"No face detected."`
+- **Multiple Faces Detected:** Returns status `multiple` with `"Multiple faces detected."`
+- **Unreadable / Corrupted Image:** Returns status `error` with `"Could not read image."`
+- **Duplicate Image:** Returns status `skipped` with `"Image already exists."`
+
+---
+
+## 📂 Project Structure
+
+```text
+CODE_NIMUBS/
+├── app/
+│   ├── config/
+│   │   └── settings.py           # Pydantic settings & environment variables
+│   ├── service/
+│   │   ├── enrollment_service.py # Enrollment logic, deduplication & consistency
+│   │   └── identification_service.py # Detection, search & threshold matching
+│   ├── vectorstore/
+│   │   └── vector_store.py       # Qdrant client, collections & queries
+│   ├── detect.py                 # Standalone face detection helper
+│   ├── logging_utils.py          # Formatted logging to app.log
+│   ├── main.py                   # FastAPI application & route definitions
+│   └── similarity.py             # Cosine similarity calculations
+├── data/
+│   ├── enrolled/                 # Enrolled identity photo folders
+│   └── evaluation/               # Held-out 45 evaluation images
+├── docs/
+│   └── EVALUATION.md             # In-depth technical evaluation document
+├── frontend/                     # React + Vite web application
+│   ├── src/                      # UI components (camera, upload, results)
+│   ├── package.json
+│   └── vite.config.js
+├── tests/
+│   ├── test_enrollment.py        # Automated batch enrollment test script
+│   ├── test_evaluation.py        # Complete 45-image evaluation runner
+│   └── test_qdrant_integrity.py  # Checks database integrity & person_ids
+├── architecture_diagram.png      # Complete architecture flowchart
+├── requirements.txt              # Python dependencies
+└── README.md                     # Project documentation
+```
+
+---
+
+## 🛠️ Tech Stack
+
+- **Backend Framework:** Python 3.10+, FastAPI, Uvicorn
+- **AI / Computer Vision:** InsightFace (`buffalo_l`), ONNX Runtime, OpenCV, NumPy
+- **Vector Database:** Qdrant (Cloud / Local) with Cosine metric
+- **Configuration & Validation:** Pydantic Settings
+- **Frontend (Optional):** React 19, Vite, Lucide Icons
+
+---
+
+## 🚀 Setup & Installation
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/hdRutvik114/face-recognition-identification-system.git
+cd face-recognition-identification-system
+```
+
+### 2. Set Up Python Virtual Environment
+```bash
+# Windows (PowerShell)
+python -m venv .venv
+.venv\Scripts\activate
+
+# macOS / Linux
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+### 3. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Configure Environment Variables
+Create a `.env` file in the project root:
+```env
+QDRANT_URL=https://your-qdrant-instance.cloud.qdrant.io:6333
+QDRANT_API_KEY=your_qdrant_api_key_here
+QDRANT_COLLECTION_NAME=face_embeddings_2
+EMBEDDING_MODEL_NAME=buffalo_l
+EMBEDDING_VECTOR_SIZE=512
+```
+
+---
+
+## ⚡ Running the Application
+
+### 1. Start the FastAPI Backend
+```bash
+uvicorn app.main:app --reload
+```
+The server will start at `http://127.0.0.1:8000`.
+- **Interactive Swagger Docs:** `http://127.0.0.1:8000/docs`
+- **Health Check:** `http://127.0.0.1:8000/`
+
+### 2. Start the Frontend (Optional)
+```bash
+cd frontend
+npm install
+npm run dev
+```
+Open `http://localhost:5173` in your browser.
+
+---
+
+## 📡 API Usage & Endpoints
+
+### 1. Health Check
+* **Endpoint:** `GET /`
+* **Response:**
+  ```json
+  {
+    "message": "Face Recognition API is running"
+  }
+  ```
+
+---
+
+### 2. Enroll a Person
+Upload 1 to 3 images to register or update an individual's identity.
+
+* **Endpoint:** `POST /enroll`
+* **Content-Type:** `multipart/form-data`
+* **Form Fields:**
+  * `name` (string, required): Full name of the person.
+  * `images` (files, required): 1 to 3 image files (`.jpeg`, `.png`, `.jpg`).
+
+#### Example `curl` Request:
+```bash
+curl -X POST "http://127.0.0.1:8000/enroll" \
+  -F "name=Sundar Pichai" \
+  -F "images=@data/enrolled/sundar_pichai/sundar1.jpeg" \
+  -F "images=@data/enrolled/sundar_pichai/sundar2.jpeg" \
+  -F "images=@data/enrolled/sundar_pichai/sundar3.jpeg"
+```
+
+#### Example Successful Response:
+```json
+{
+  "person_id": "4d7e8b9a-1c2d-5e3f-8a9b-0c1d2e3f4a5b",
+  "person_name": "Sundar Pichai",
+  "enrolled_count": 3,
+  "skipped_count": 0,
+  "rejected_count": 0,
+  "details": [
+    {
+      "image": "sundar1.jpeg",
+      "status": "enrolled",
+      "reason": "Successfully enrolled"
+    },
+    {
+      "image": "sundar2.jpeg",
+      "status": "enrolled",
+      "reason": "Successfully enrolled"
+    },
+    {
+      "image": "sundar3.jpeg",
+      "status": "enrolled",
+      "reason": "Successfully enrolled"
+    }
+  ],
+  "message": "Enrollment completed."
+}
+```
+
+---
+
+### 3. Identify a Person
+Submit a single image to recognize whether the person is enrolled.
+
+* **Endpoint:** `POST /identify`
+* **Content-Type:** `multipart/form-data`
+* **Form Fields:**
+  * `image` (file, required): Target image file.
+
+#### Example `curl` Request:
+```bash
+curl -X POST "http://127.0.0.1:8000/identify" \
+  -F "image=@data/evaluation/alakh4.jpeg"
+```
+
+#### Response Cases:
+
+**Case A: Known / Identified Person (`Score >= 0.65`)**
+```json
+{
+  "status": "identified",
+  "person_id": "8a3e9c1d-...",
+  "person_name": "Alakh Pandey",
+  "score": 0.7076,
+  "message": "Person identified successfully."
+}
+```
+
+**Case B: Unknown Person (`Score < 0.65`)**
+```json
+{
+  "status": "unknown",
+  "person_id": null,
+  "person_name": null,
+  "score": 0.4219,
+  "message": "Unknown person."
+}
+```
+
+**Case C: Multiple Faces Detected**
+```json
+{
+  "status": "multiple",
+  "message": "Multiple faces detected."
+}
+```
+
+**Case D: No Face Detected**
+```json
+{
+  "status": "error",
+  "message": "No face detected."
+}
+```
+
+---
+
+## 🧪 Running Tests & Evaluation
+
+### Run Batch Enrollment Test:
+```bash
+python tests/test_enrollment.py
+```
+
+### Run Accuracy & Threshold Evaluation:
+```bash
+python tests/test_evaluation.py
+```
+
+### Check Qdrant Consistency & Constraints:
+```bash
+python tests/test_qdrant_integrity.py
+```
+
+---
+
+## 🔍 Limitations & Future Improvements
+
+### Current Limitations:
+- **Single Subject Identification:** Input images with multiple faces are rejected rather than simultaneously bounding and identifying each individual.
+- **Controlled Evaluation Dataset:** Tested on a 45-image curated dataset; real-world performance will vary across extreme demographic diversity, heavy motion blur, or CCTV angles.
+- **Static Threshold:** A single global threshold of `0.65` is applied across all image resolutions and angles.
+
+### Future Roadmap:
+- [ ] **Multi-Face Recognition:** Return bounding boxes and identifications for all individuals in a group photo simultaneously.
+- [ ] **Image Quality Assessment:** Pre-score image sharpness and illumination before inference to prompt users to retake blurry photos.
+- [ ] **Adaptive Thresholding:** Adjust cosine similarity cutoffs dynamically based on detected face yaw/pitch angles.
+- [ ] **Liveness Detection:** Integrate anti-spoofing checks (blink detection / texture analysis) to prevent static photo presentation attacks.
