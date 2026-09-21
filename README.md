@@ -183,6 +183,21 @@ The server will start at `http://127.0.0.1:8000`.
 - **Interactive Swagger Docs:** `http://127.0.0.1:8000/docs`
 - **Health Check:** `http://127.0.0.1:8000/`
 
+## Qdrant Configuration
+
+This project uses Qdrant Cloud for storing and searching face embeddings.
+
+For evaluation/testing purposes, the Qdrant credentials used by the project
+have been provided separately with the submission.
+
+Set the following environment variables before running the application:
+
+QDRANT_URL=<provided credential>
+QDRANT_API_KEY=<provided credential>
+QDRANT_COLLECTION_NAME=face_embeddings
+
+The repository does not contain the credentials directly to avoid exposing
+API keys publicly.
 ### 2. Start the Frontend (Optional)
 ```bash
 cd frontend
