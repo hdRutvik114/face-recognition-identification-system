@@ -165,7 +165,8 @@ pip install -r requirements.txt
 Create a `.env` file in the project root:
 ```env
 QDRANT_URL=https://your-qdrant-instance.cloud.qdrant.io:6333
-QDRANT_API_KEY=your_qdrant_api_key_here
+QDRANT_API_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3MiOiJtIiwic3ViamVjdCI6ImFwaS1rZXk6NDM5M2ZhMTUtNzk1Ny00MjJkLWJhYTctODk2NjczNTdkNmY2In0.mrQ4kdGuF_DmfdoE1l95JxaRj5rgwOao6CUoWOy-1bc
+
 QDRANT_COLLECTION_NAME=face_embeddings_2
 EMBEDDING_MODEL_NAME=buffalo_l
 EMBEDDING_VECTOR_SIZE=512
