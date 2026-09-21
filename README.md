@@ -6,17 +6,17 @@ Built for the **Code Nimbus Solutions AI/ML Intern** assignment.
 
 ---
 
-## 📌 Architecture & Pipeline
+## Architecture & Pipeline
 
 ```text
-Input Image ➔ Face Detection ➔ 512-d Face Embedding ➔ Qdrant Similarity Search ➔ Best Match ➔ Similarity Threshold (0.65) ➔ Known / Unknown
+Input Image -> Face Detection -> 512-d Face Embedding -> Qdrant Similarity Search -> Best Match -> Similarity Threshold (0.65) -> Known / Unknown
 ```
 
 ![Face Recognition System Architecture](architecture_diagram.png)
 
 ---
 
-## ✨ Features
+## Features
 
 - **Multi-Image Enrollment:** Enroll up to 3 distinct photos per person to capture variations in facial angle, lighting, and expression.
 - **512-Dimensional Deep Embeddings:** Extracts dense facial feature vectors using InsightFace (`buffalo_l`).
@@ -29,7 +29,7 @@ Input Image ➔ Face Detection ➔ 512-d Face Embedding ➔ Qdrant Similarity Se
 
 ---
 
-## 🧠 Model & Face Embeddings
+## Model & Face Embeddings
 
 - **Detection & Recognition Pipeline:** [InsightFace](https://github.com/deepinsight/insightface) using the pretrained **`buffalo_l`** model pack.
 - **Embedding Vector:** Generates a normalized **512-dimensional numerical vector** representing unique facial landmark patterns and structures.
@@ -37,7 +37,7 @@ Input Image ➔ Face Detection ➔ 512-d Face Embedding ➔ Qdrant Similarity Se
 
 ---
 
-## 🔍 Similarity Matching & Vector Database
+## Similarity Matching & Vector Database
 
 The system uses **Qdrant** as the vector search engine:
 
@@ -48,7 +48,7 @@ The system uses **Qdrant** as the vector search engine:
 
 ---
 
-## 🛡️ Unknown Rejection & Threshold Selection
+## Unknown Rejection & Threshold Selection
 
 In vector databases, a nearest-neighbor query will **always** return a closest point—even if the person is a complete stranger. Without a cutoff threshold, every unknown visitor would be falsely matched to whoever looks least different.
 
@@ -57,13 +57,13 @@ In vector databases, a nearest-neighbor query will **always** return a closest p
 - **Selected Threshold (`0.65`):** Lowering the threshold to `0.65` correctly admitted genuine candidates while still cleanly rejecting all unknown candidates (the highest unknown candidate scored `0.4219`).
 
 ```text
-If Similarity Score >= 0.65  ➔  Identified Person (Name + Score)
-If Similarity Score < 0.65   ➔  Unknown Person
+If Similarity Score >= 0.65  ->  Identified Person (Name + Score)
+If Similarity Score < 0.65   ->  Unknown Person
 ```
 
 ---
 
-## 🧪 Evaluation Summary
+## Evaluation Summary
 
 The system was evaluated on a dedicated 45-image evaluation dataset (`data/evaluation/`) completely isolated from enrollment data.
 
@@ -76,11 +76,11 @@ The system was evaluated on a dedicated 45-image evaluation dataset (`data/evalu
 | **False Acceptance Rate (FAR)** | **0.00%** | 0 / 23 unknown accepted as known |
 | **Input Errors** | **1** | `ryan2.jpeg` (Multiple faces detected) |
 
-> 📖 **Full Report:** For individual image scores, per-identity test logs, and failure case breakdowns, see the **[Detailed Evaluation Document](docs/EVALUATION.md)**.
+> **Full Report:** For individual image scores, per-identity test logs, and failure case breakdowns, see the **[Detailed Evaluation Document](docs/EVALUATION.md)**.
 
 ---
 
-## ⚠️ Input Validation & Failure Handling
+## Input Validation & Failure Handling
 
 The system catches and returns explicit status responses for invalid inputs:
 
@@ -91,7 +91,7 @@ The system catches and returns explicit status responses for invalid inputs:
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 CODE_NIMUBS/
@@ -127,7 +127,7 @@ CODE_NIMUBS/
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Backend Framework:** Python 3.10+, FastAPI, Uvicorn
 - **AI / Computer Vision:** InsightFace (`buffalo_l`), ONNX Runtime, OpenCV, NumPy
@@ -137,7 +137,7 @@ CODE_NIMUBS/
 
 ---
 
-## 🚀 Setup & Installation
+## Setup & Installation
 
 ### 1. Clone the Repository
 ```bash
@@ -173,7 +173,7 @@ EMBEDDING_VECTOR_SIZE=512
 
 ---
 
-## ⚡ Running the Application
+## Running the Application
 
 ### 1. Start the FastAPI Backend
 ```bash
@@ -193,7 +193,7 @@ Open `http://localhost:5173` in your browser.
 
 ---
 
-## 📡 API Usage & Endpoints
+## API Usage & Endpoints
 
 ### 1. Health Check
 * **Endpoint:** `GET /`
@@ -311,7 +311,7 @@ curl -X POST "http://127.0.0.1:8000/identify" \
 
 ---
 
-## 🧪 Running Tests & Evaluation
+## Running Tests & Evaluation
 
 ### Run Batch Enrollment Test:
 ```bash
@@ -330,7 +330,7 @@ python tests/test_qdrant_integrity.py
 
 ---
 
-## 🔍 Limitations & Future Improvements
+## Limitations & Future Improvements
 
 ### Current Limitations:
 - **Single Subject Identification:** Input images with multiple faces are rejected rather than simultaneously bounding and identifying each individual.
