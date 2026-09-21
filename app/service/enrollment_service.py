@@ -7,14 +7,10 @@ from insightface.app import FaceAnalysis
 from app.vectorstore.vector_store import VectorStore
 from app.logging_utils import log_message
 
-# Fixed namespace so that uuid5(NAMESPACE, name) is stable across
-# process restarts and across runs. Do not change this value once
-# you have enrolled data, or every person_id will change.
+
 PERSON_ID_NAMESPACE = uuid.UUID("6f6f9f2a-5a1b-4b3a-9c1e-2a2f8b7e0d11")
 
-# Separate from the /identify threshold (0.65) on purpose - these answer
-# different questions ("is this a confident enough match to accept?" vs
-# "is this face already in the system at all?") and are tuned independently.
+
 ENROLLMENT_DUPLICATE_THRESHOLD = 0.70
 
 
@@ -64,10 +60,7 @@ class EnrollmentService:
             )
 
     def enroll(self, image_paths, person_name):
-        # The identity the entered name CLAIMS to refer to. Used only as a
-        # comparison point below - never assumed correct on its own, and
-        # never used directly as a new face's storage id unless there's no
-        # collision to worry about.
+       
         claimed_person_id = self.resolve_person_id(person_name)
 
         enrolled_count = 0
@@ -81,12 +74,9 @@ class EnrollmentService:
         target_person_id = None
         target_is_new = False
 
-        # ------------------------------------------------------------------
-        # Phase 1: validate every image and resolve/verify face identity
-        # against the EXISTING Qdrant database only. Nothing is written to
-        # Qdrant in this phase, so no image is ever compared against
-        # another not-yet-inserted image from this same request.
-        # ------------------------------------------------------------------
+       
+
+    
         pending = []  # list of (image_path, embedding, image_id)
 
         for image_path in image_paths:
@@ -257,7 +247,7 @@ class EnrollmentService:
             pending.append((image_path, embedding, image_id))
 
         # ------------------------------------------------------------------
-        # Phase 2: enforce the max-3-images-per-identity rule and insert.
+        #  enforce the max-3-images-per-identity rule and insert.
         # ------------------------------------------------------------------
         existing_count = (
             self.vector_store.count_person_images(target_person_id)
