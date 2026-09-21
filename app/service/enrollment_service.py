@@ -181,6 +181,7 @@ class EnrollmentService:
         log_message(
             f"Enrollment result for {person_name}: {res}"
         )
+        
     
         return res
     

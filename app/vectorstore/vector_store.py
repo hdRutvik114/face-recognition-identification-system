@@ -89,7 +89,19 @@ class VectorStore:
     )
 
         return results.points     
-           
+
+    # NEW: returns the single best raw Qdrant match (a ScoredPoint with
+    # .score and .payload), or None if the collection is empty. This is
+    # what enrollment_service.py's duplicate-identity check calls - it's
+    # a thin wrapper over search(), not a new search strategy.
+    def find_best_match(self, embedding):
+        results = self.search(embedding, limit=1)
+
+        if not results:
+            return None
+
+        return results[0]
+
     def image_exists(self, image_id):
 
         results = self.client.scroll(
