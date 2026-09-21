@@ -7,6 +7,13 @@ import Toast from './Toast'
 // Identification threshold — confirmed hardcoded in identification_service.py
 const THRESHOLD = 0.65
 
+const SCAN_STEPS = [
+  'Detecting facial landmarks…',
+  'Generating 512-d embedding…',
+  'Matching against database…',
+  'Verifying confidence score…',
+]
+
 /**
  * IdentifySection — complete identification workflow.
  *
@@ -25,11 +32,24 @@ export default function IdentifySection() {
   const [image, setImage] = useState(null)
   const [preview, setPreview] = useState(null)
   const [loading, setLoading] = useState(false)
+  const [scanStep, setScanStep] = useState(0)
   const [result, setResult] = useState(null)
   const [toast, setToast] = useState(null)
   const [dragging, setDragging] = useState(false)
   const inputRef = useRef(null)
   const toastTimer = useRef(null)
+
+  // Cycle scanning step text while loading
+  useEffect(() => {
+    if (!loading) {
+      setScanStep(0)
+      return
+    }
+    const interval = setInterval(() => {
+      setScanStep((prev) => (prev + 1) % SCAN_STEPS.length)
+    }, 600)
+    return () => clearInterval(interval)
+  }, [loading])
 
   // Auto-dismiss toast
   const showToast = (message, type = 'error') => {
@@ -242,7 +262,7 @@ export default function IdentifySection() {
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: preview ? '1fr 1fr' : '1fr',
+                gridTemplateColumns: preview || loading || result ? '1fr 1fr' : '1fr',
                 gap: '28px',
                 transition: 'grid-template-columns 0.3s ease',
               }}
@@ -262,8 +282,11 @@ export default function IdentifySection() {
                       aspectRatio: '4/3',
                       borderRadius: '10px',
                       overflow: 'hidden',
-                      border: '1px solid var(--color-border-strong)',
+                      border: loading
+                        ? '1px solid var(--color-accent)'
+                        : '1px solid var(--color-border-strong)',
                       marginBottom: '16px',
+                      transition: 'border-color 0.2s ease',
                     }}
                   >
                     <img
@@ -271,6 +294,27 @@ export default function IdentifySection() {
                       alt="Selected face"
                       style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                     />
+
+                    {/* Subtle biometric scan line & dynamic text badge */}
+                    {loading && (
+                      <>
+                        <div className="scan-line" />
+                        <div className="scan-badge">
+                          <span
+                            className="spinner"
+                            style={{
+                              width: '12px',
+                              height: '12px',
+                              borderWidth: '2px',
+                              borderColor: 'rgba(245,200,66,0.3)',
+                              borderTopColor: 'var(--color-accent)',
+                            }}
+                          />
+                          {SCAN_STEPS[scanStep]}
+                        </div>
+                      </>
+                    )}
+
                     {!loading && (
                       <button
                         type="button"
@@ -341,7 +385,7 @@ export default function IdentifySection() {
                     {loading ? (
                       <>
                         <span className="spinner" />
-                        Identifying…
+                        Scanning…
                       </>
                     ) : (
                       <>
@@ -376,8 +420,143 @@ export default function IdentifySection() {
                 </div>
               </form>
 
+              {/* Right: Active Scanning Progress Card or Result */}
+              {loading && (
+                <div
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.025)',
+                    border: '1px solid var(--color-border)',
+                    borderRadius: '12px',
+                    padding: '24px 20px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    gap: '16px',
+                    boxShadow: '0 4px 20px rgba(0,0,0,0.25)',
+                  }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                    <div
+                      style={{
+                        width: '36px',
+                        height: '36px',
+                        borderRadius: '50%',
+                        background: 'var(--color-accent-dim)',
+                        border: '1px solid rgba(245, 200, 66, 0.3)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        color: 'var(--color-accent)',
+                        flexShrink: 0,
+                      }}
+                    >
+                      <span
+                        className="spinner"
+                        style={{
+                          width: '16px',
+                          height: '16px',
+                          borderWidth: '2px',
+                          borderColor: 'rgba(245,200,66,0.25)',
+                          borderTopColor: 'var(--color-accent)',
+                        }}
+                      />
+                    </div>
+                    <div>
+                      <div
+                        style={{
+                          fontFamily: 'var(--font-heading)',
+                          fontSize: '14px',
+                          color: 'var(--color-text-primary)',
+                          letterSpacing: '0.02em',
+                        }}
+                      >
+                        {SCAN_STEPS[scanStep]}
+                      </div>
+                      <div
+                        style={{
+                          fontFamily: 'var(--font-body)',
+                          fontSize: '12px',
+                          color: 'var(--color-text-secondary)',
+                          marginTop: '2px',
+                        }}
+                      >
+                        Comparing face embeddings in real time
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Step indicators */}
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginTop: '2px' }}>
+                    {SCAN_STEPS.map((text, idx) => {
+                      const isCurrent = scanStep === idx
+                      const isDone = scanStep > idx
+                      return (
+                        <div
+                          key={text}
+                          style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '8px',
+                            fontSize: '12.5px',
+                            fontFamily: 'var(--font-body)',
+                            color: isCurrent
+                              ? 'var(--color-accent)'
+                              : isDone
+                              ? 'var(--color-text-primary)'
+                              : 'var(--color-text-muted)',
+                            transition: 'color 0.25s ease',
+                          }}
+                        >
+                          <span
+                            style={{
+                              width: '6px',
+                              height: '6px',
+                              borderRadius: '50%',
+                              background: isCurrent
+                                ? 'var(--color-accent)'
+                                : isDone
+                                ? 'var(--color-success)'
+                                : 'rgba(255,255,255,0.15)',
+                              boxShadow: isCurrent ? '0 0 8px var(--color-accent)' : 'none',
+                              transition: 'all 0.25s ease',
+                            }}
+                          />
+                          <span>{text}</span>
+                        </div>
+                      )
+                    })}
+                  </div>
+
+                  {/* Animated Progress Line */}
+                  <div
+                    style={{
+                      width: '100%',
+                      height: '2px',
+                      background: 'rgba(255,255,255,0.06)',
+                      borderRadius: '2px',
+                      overflow: 'hidden',
+                      position: 'relative',
+                      marginTop: '4px',
+                    }}
+                  >
+                    <div
+                      style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        bottom: 0,
+                        width: '45%',
+                        background: 'linear-gradient(90deg, transparent, var(--color-accent), transparent)',
+                        boxShadow: '0 0 8px var(--color-accent)',
+                        animation: 'scanSweep 1.8s ease-in-out infinite',
+                      }}
+                    />
+                  </div>
+                </div>
+              )}
+
               {/* Right: result */}
-              {result && <IdentifyResult result={result} />}
+              {!loading && result && <IdentifyResult result={result} />}
             </div>
           )}
         </div>

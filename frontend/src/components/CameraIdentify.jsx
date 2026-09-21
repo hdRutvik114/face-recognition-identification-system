@@ -97,11 +97,19 @@ async function validateCapturedQuality(canvas, ctx, width, height) {
   return { valid: true }
 }
 
+const SCAN_STEPS = [
+  'Detecting face…',
+  'Extracting embedding…',
+  'Matching identity…',
+  'Verifying score…',
+]
+
 export default function CameraIdentify() {
   const [stage, setStage] = useState('idle') // 'idle' | 'capturing' | 'result'
   const [cameraActive, setCameraActive] = useState(false)
   const [cameraError, setCameraError] = useState(null)
   const [identifying, setIdentifying] = useState(false)
+  const [scanStep, setScanStep] = useState(0)
   const [capturedPreview, setCapturedPreview] = useState(null)
   const [result, setResult] = useState(null)
   const [errorMsg, setErrorMsg] = useState(null)
@@ -110,6 +118,18 @@ export default function CameraIdentify() {
 
   const videoRef = useRef(null)
   const streamRef = useRef(null)
+
+  // Cycle scanning step text while identifying
+  useEffect(() => {
+    if (!identifying) {
+      setScanStep(0)
+      return
+    }
+    const interval = setInterval(() => {
+      setScanStep((prev) => (prev + 1) % SCAN_STEPS.length)
+    }, 550)
+    return () => clearInterval(interval)
+  }, [identifying])
 
   // Safe camera stream terminator
   const stopCamera = useCallback(() => {
@@ -567,7 +587,7 @@ export default function CameraIdentify() {
             )}
 
             {/* Face ID-inspired Oval Guide Overlay */}
-            {!qualityError && (
+            {!qualityError && !identifying && (
               <div
                 style={{
                   position: 'absolute',
@@ -626,6 +646,26 @@ export default function CameraIdentify() {
                   </span>
                 </div>
               </div>
+            )}
+
+            {/* Clean Biometric Scanning Overlay */}
+            {identifying && (
+              <>
+                <div className="scan-line" />
+                <div className="scan-badge">
+                  <span
+                    className="spinner"
+                    style={{
+                      width: '13px',
+                      height: '13px',
+                      borderWidth: '2px',
+                      borderColor: 'rgba(245,200,66,0.3)',
+                      borderTopColor: 'var(--color-accent)',
+                    }}
+                  />
+                  {SCAN_STEPS[scanStep]}
+                </div>
+              </>
             )}
           </div>
 
