@@ -77,6 +77,7 @@ DISPLAY_NAME_OVERRIDES = {
     "andy": "Andy Jassy",
     "yash": "Yash",
     "kiyan": "Kiyan Pillay",
+    
 }
 
 
@@ -107,6 +108,8 @@ UNKNOWN_PEOPLE = {
     "Tom Cruise",
     "Yash",
     "Yuji Nishida",
+     "Rayntwo",
+    "Ryanthree",
 }
 
 
