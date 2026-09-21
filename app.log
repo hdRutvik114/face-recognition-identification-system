@@ -2605,3 +2605,66 @@ second line for run check
 === RUN START: 2026-09-20 19:34:08 ===
 =================================================================
 
+
+
+=================================================================
+=== RUN START: 2026-09-21 15:38:34 ===
+=================================================================
+
+[2026-09-21 15:41:48] Enrollment request for 'Rutvik' with 3 image(s)
+[2026-09-21 15:41:59] Rutvik already has 3 images in Qdrant. Skipping.
+[2026-09-21 15:42:02] Multiple faces detected in C:\Users\YATIRAJ\AppData\Local\Temp\tmpjhp26rho.jpeg
+[2026-09-21 15:42:04] Rutvik already has 3 images in Qdrant. Skipping.
+[2026-09-21 15:42:04] Enrollment result for Rutvik: {'person_id': '2f69a78b-2ecd-51fe-b555-1bfb4ec879b9', 'person_name': 'Rutvik', 'enrolled_count': 0, 'skipped_count': 2, 'rejected_count': 1, 'details': [{'image': 'tmpfb_t_lkz.jpeg', 'status': 'skipped', 'reason': 'Maximum 3 images already enrolled'}, {'image': 'tmpjhp26rho.jpeg', 'status': 'rejected', 'reason': 'Multiple faces detected'}, {'image': 'tmpst7jtgbv.jpeg', 'status': 'skipped', 'reason': 'Maximum 3 images already enrolled'}], 'message': 'Enrollment completed.'}
+[2026-09-21 15:42:04] Enrollment result: {'person_id': '2f69a78b-2ecd-51fe-b555-1bfb4ec879b9', 'person_name': 'Rutvik', 'enrolled_count': 0, 'skipped_count': 2, 'rejected_count': 1, 'details': [{'image': 'tmpfb_t_lkz.jpeg', 'status': 'skipped', 'reason': 'Maximum 3 images already enrolled'}, {'image': 'tmpjhp26rho.jpeg', 'status': 'rejected', 'reason': 'Multiple faces detected'}, {'image': 'tmpst7jtgbv.jpeg', 'status': 'skipped', 'reason': 'Maximum 3 images already enrolled'}], 'message': 'Enrollment completed.'}
+
+
+=================================================================
+=== RUN START: 2026-09-21 15:42:36 ===
+=================================================================
+
+
+
+=================================================================
+=== RUN START: 2026-09-21 15:42:58 ===
+=================================================================
+
+[2026-09-21 15:44:08] Enrollment request for 'Rutvik' with 3 image(s)
+
+
+=================================================================
+=== RUN START: 2026-09-21 15:46:25 ===
+=================================================================
+
+[2026-09-21 15:50:14] Enrollment request for 'Rutvik' with 3 image(s)
+[2026-09-21 15:50:29] Multiple faces detected in C:\Users\YATIRAJ\AppData\Local\Temp\tmp20e9i6kc.jpeg
+[2026-09-21 15:50:31] Enrolled image 'C:\Users\YATIRAJ\AppData\Local\Temp\tmpryvzyllk.jpeg' for Rutvik (ID: 64036f2a-068d-4987-b275-137d77982f47)
+[2026-09-21 15:50:31] Enrolled image 'C:\Users\YATIRAJ\AppData\Local\Temp\tmphlecvni5.jpeg' for Rutvik (ID: 64036f2a-068d-4987-b275-137d77982f47)
+[2026-09-21 15:50:31] Enrollment result for Rutvik: {'person_id': '64036f2a-068d-4987-b275-137d77982f47', 'person_name': 'Rutvik', 'enrolled_count': 2, 'skipped_count': 0, 'rejected_count': 1, 'details': [{'image': 'tmp20e9i6kc.jpeg', 'status': 'rejected', 'reason': 'Multiple faces detected'}, {'image': 'tmpryvzyllk.jpeg', 'status': 'enrolled', 'reason': 'Successfully enrolled'}, {'image': 'tmphlecvni5.jpeg', 'status': 'enrolled', 'reason': 'Successfully enrolled'}], 'message': 'Enrollment completed.'}
+[2026-09-21 15:50:31] Enrollment result: {'person_id': '64036f2a-068d-4987-b275-137d77982f47', 'person_name': 'Rutvik', 'enrolled_count': 2, 'skipped_count': 0, 'rejected_count': 1, 'details': [{'image': 'tmp20e9i6kc.jpeg', 'status': 'rejected', 'reason': 'Multiple faces detected'}, {'image': 'tmpryvzyllk.jpeg', 'status': 'enrolled', 'reason': 'Successfully enrolled'}, {'image': 'tmphlecvni5.jpeg', 'status': 'enrolled', 'reason': 'Successfully enrolled'}], 'message': 'Enrollment completed.'}
+[2026-09-21 15:58:13] Identification request with file 'emma4.jpeg'
+[2026-09-21 15:58:25] Identification result: {'status': 'unknown', 'person_id': None, 'person_name': None, 'score': 0.5554317, 'message': 'Unknown person.'}
+[2026-09-21 15:58:46] Identification request with file 'emma4.jpeg'
+[2026-09-21 15:58:55] Identification result: {'status': 'unknown', 'person_id': None, 'person_name': None, 'score': 0.5554317, 'message': 'Unknown person.'}
+[2026-09-21 15:59:06] Enrollment request for 'Rutvik' with 3 image(s)
+[2026-09-21 15:59:10] Image C:\Users\YATIRAJ\AppData\Local\Temp\tmpayv6b36d.jpeg already exists. Skipping.
+[2026-09-21 15:59:12] Multiple faces detected in C:\Users\YATIRAJ\AppData\Local\Temp\tmprn348rmz.jpeg
+[2026-09-21 15:59:13] Image C:\Users\YATIRAJ\AppData\Local\Temp\tmpl4utalcx.jpeg already exists. Skipping.
+[2026-09-21 15:59:13] Enrollment result for Rutvik: {'person_id': None, 'person_name': 'Rutvik', 'enrolled_count': 0, 'skipped_count': 2, 'rejected_count': 1, 'details': [{'image': 'tmpayv6b36d.jpeg', 'status': 'skipped', 'reason': 'Image already exists'}, {'image': 'tmprn348rmz.jpeg', 'status': 'rejected', 'reason': 'Multiple faces detected'}, {'image': 'tmpl4utalcx.jpeg', 'status': 'skipped', 'reason': 'Image already exists'}], 'message': 'Enrollment completed.'}
+[2026-09-21 15:59:13] Enrollment result: {'person_id': None, 'person_name': 'Rutvik', 'enrolled_count': 0, 'skipped_count': 2, 'rejected_count': 1, 'details': [{'image': 'tmpayv6b36d.jpeg', 'status': 'skipped', 'reason': 'Image already exists'}, {'image': 'tmprn348rmz.jpeg', 'status': 'rejected', 'reason': 'Multiple faces detected'}, {'image': 'tmpl4utalcx.jpeg', 'status': 'skipped', 'reason': 'Image already exists'}], 'message': 'Enrollment completed.'}
+[2026-09-21 15:59:59] Enrollment request for 'Rutvik' with 3 image(s)
+[2026-09-21 16:00:01] Image C:\Users\YATIRAJ\AppData\Local\Temp\tmptwx0mb_m.jpeg already exists. Skipping.
+[2026-09-21 16:00:04] Multiple faces detected in C:\Users\YATIRAJ\AppData\Local\Temp\tmpiue3umr_.jpeg
+[2026-09-21 16:00:05] Enrolled image 'C:\Users\YATIRAJ\AppData\Local\Temp\tmpqhmszmp4.jpeg' for Rutvik (ID: 66a9724c-e620-46c4-8e90-30fca4b7e570)
+[2026-09-21 16:00:05] Enrollment result for Rutvik: {'person_id': '66a9724c-e620-46c4-8e90-30fca4b7e570', 'person_name': 'Rutvik', 'enrolled_count': 1, 'skipped_count': 1, 'rejected_count': 1, 'details': [{'image': 'tmptwx0mb_m.jpeg', 'status': 'skipped', 'reason': 'Image already exists'}, {'image': 'tmpiue3umr_.jpeg', 'status': 'rejected', 'reason': 'Multiple faces detected'}, {'image': 'tmpqhmszmp4.jpeg', 'status': 'enrolled', 'reason': 'Successfully enrolled'}], 'message': 'Enrollment completed.'}
+[2026-09-21 16:00:05] Enrollment result: {'person_id': '66a9724c-e620-46c4-8e90-30fca4b7e570', 'person_name': 'Rutvik', 'enrolled_count': 1, 'skipped_count': 1, 'rejected_count': 1, 'details': [{'image': 'tmptwx0mb_m.jpeg', 'status': 'skipped', 'reason': 'Image already exists'}, {'image': 'tmpiue3umr_.jpeg', 'status': 'rejected', 'reason': 'Multiple faces detected'}, {'image': 'tmpqhmszmp4.jpeg', 'status': 'enrolled', 'reason': 'Successfully enrolled'}], 'message': 'Enrollment completed.'}
+[2026-09-21 16:00:23] Enrollment request for 'Rutvik' with 3 image(s)
+[2026-09-21 16:00:25] Image C:\Users\YATIRAJ\AppData\Local\Temp\tmpp9kec47c.jpeg already exists. Skipping.
+[2026-09-21 16:00:27] Image C:\Users\YATIRAJ\AppData\Local\Temp\tmp3pddaifz.jpeg already exists. Skipping.
+[2026-09-21 16:00:29] Multiple faces detected in C:\Users\YATIRAJ\AppData\Local\Temp\tmpy5uru3w0.jpeg
+[2026-09-21 16:00:29] Enrollment result for Rutvik: {'person_id': None, 'person_name': 'Rutvik', 'enrolled_count': 0, 'skipped_count': 2, 'rejected_count': 1, 'details': [{'image': 'tmpp9kec47c.jpeg', 'status': 'skipped', 'reason': 'Image already exists'}, {'image': 'tmp3pddaifz.jpeg', 'status': 'skipped', 'reason': 'Image already exists'}, {'image': 'tmpy5uru3w0.jpeg', 'status': 'rejected', 'reason': 'Multiple faces detected'}], 'message': 'Enrollment completed.'}
+[2026-09-21 16:00:29] Enrollment result: {'person_id': None, 'person_name': 'Rutvik', 'enrolled_count': 0, 'skipped_count': 2, 'rejected_count': 1, 'details': [{'image': 'tmpp9kec47c.jpeg', 'status': 'skipped', 'reason': 'Image already exists'}, {'image': 'tmp3pddaifz.jpeg', 'status': 'skipped', 'reason': 'Image already exists'}, {'image': 'tmpy5uru3w0.jpeg', 'status': 'rejected', 'reason': 'Multiple faces detected'}], 'message': 'Enrollment completed.'}
+[2026-09-21 16:00:46] Identification request with file 'emma4.jpeg'
+[2026-09-21 16:00:59] Identification result: {'status': 'identified', 'person_id': '66a9724c-e620-46c4-8e90-30fca4b7e570', 'person_name': 'Rutvik', 'score': 0.99999994, 'message': 'Person identified successfully.'}
+[2026-09-21 16:01:16] Identification request with file 'emma2.jpeg'
+[2026-09-21 16:01:27] Identification result: {'status': 'multiple', 'message': 'Multiple faces detected.'}
